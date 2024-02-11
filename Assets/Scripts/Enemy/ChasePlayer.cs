@@ -19,7 +19,7 @@ public class ChasePlayer : MonoBehaviour
         else
         {
             //Attack
-            Debug.Log("Atacado shulo");
+            
         }
         
        
