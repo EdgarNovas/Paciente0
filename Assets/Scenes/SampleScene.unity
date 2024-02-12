@@ -985,7 +985,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   gridWorldSize: {x: 23, y: 17}
-  nodeRadius: 0.1
+  nodeRadius: 0.5
 --- !u!4 &1618531835
 Transform:
   m_ObjectHideFlags: 0
@@ -1222,7 +1222,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6728310559327261777, guid: 0f6bf63a231417442b0d4598c7a7280a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.19
+      value: -1.66
       objectReference: {fileID: 0}
     - target: {fileID: 6728310559327261777, guid: 0f6bf63a231417442b0d4598c7a7280a, type: 3}
       propertyPath: m_LocalPosition.z

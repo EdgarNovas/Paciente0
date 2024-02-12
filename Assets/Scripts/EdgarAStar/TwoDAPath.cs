@@ -5,6 +5,7 @@ using Edgar;
 
 public class TwoDAPath : MonoBehaviour
 {
+    
     public LayerMask unwalkableMask;
     public Vector2 gridWorldSize;
     public float nodeRadius;
@@ -48,16 +49,29 @@ public class TwoDAPath : MonoBehaviour
         }
     }
 
+    public Node NodeFromWorldPoint(Vector3 worldPosition)
+    {
+        float percentX = (worldPosition.x + gridWorldSize.x / 2) /gridWorldSize.x;
+        float percentY = (worldPosition.y + gridWorldSize.y / 2) /gridWorldSize.y;//En 3d Esto cambiarlo a z
+        percentX = Mathf.Clamp01(percentX);
+        percentY = Mathf.Clamp01(percentY);
+
+        int x = Mathf.RoundToInt((gridSizeX - 1) * percentX);
+        int y = Mathf.RoundToInt((gridSizeY - 1) * percentY);
+        return grid[x, y];
+        
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(transform.position, new Vector3(gridWorldSize.x, gridWorldSize.y, 1));
 
         if (grid != null)
         {
+            
             foreach (Edgar.Node n in grid)
             {
                 Gizmos.color = n.walkable ? Color.white : Color.red;
-
                 Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - .1f));
             }
         }
