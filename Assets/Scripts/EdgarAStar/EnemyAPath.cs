@@ -40,7 +40,7 @@ public class EnemyAPath : MonoBehaviour
             {
                 Vector2 worldPoint = worldBottomLeft + Vector2.right * (x * nodeDiameter + nodeRadius) + Vector2.up * (y * nodeDiameter + nodeRadius);
                 bool walkable = !(Physics.CheckSphere(worldPoint, nodeRadius, unwalkableMask));
-                grid[x, y] = new Edgar.Node(walkable, worldPoint);
+                grid[x, y] = new Node(walkable, worldPoint,x,y);
                 
             }
         }
