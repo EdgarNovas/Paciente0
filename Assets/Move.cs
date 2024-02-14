@@ -16,22 +16,22 @@ public class Move : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.A))
         {
             gameObject.transform.Translate(-speed * Time.deltaTime, 0, 0);
         }
 
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.D))
         {
             gameObject.transform.Translate(speed * Time.deltaTime, 0, 0);
         }
 
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.W))
         {
             gameObject.transform.Translate(0, speed * Time.deltaTime, 0);
         }
 
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.S))
         {
             gameObject.transform.Translate(0, -speed * Time.deltaTime, 0);
         }
