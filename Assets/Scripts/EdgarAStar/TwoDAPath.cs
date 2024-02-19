@@ -5,7 +5,7 @@ using Edgar;
 
 public class TwoDAPath : MonoBehaviour
 {
-    
+    public bool onlyDispayPathGizmos;
     public LayerMask unwalkableMask;
     public Vector2 gridWorldSize;
     public float nodeRadius;
@@ -25,6 +25,14 @@ public class TwoDAPath : MonoBehaviour
         
         CreateGrid();
         
+    }
+
+    public int MaxSize
+    {
+        get
+        {
+            return gridSizeX * gridSizeY;
+        }
     }
 
 
@@ -91,20 +99,36 @@ public class TwoDAPath : MonoBehaviour
     {
         Gizmos.DrawWireCube(transform.position, new Vector3(gridWorldSize.x, gridWorldSize.y, 1));
 
-        if (grid != null)
+        if (onlyDispayPathGizmos)
         {
-            
-            foreach (Edgar.Node n in grid)
+            if(path != null)
             {
-                Gizmos.color = n.walkable ? Color.white : Color.red;
-                if (path != null)
-                    if (path.Contains(n))
-                    {
-                        Gizmos.color = Color.black;
-                    }
-                Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - .1f));
+                foreach(Node n in path) 
+                {
+                    Gizmos.color = Color.black;
+                
+                    Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - .1f));
+                }
             }
         }
+        else
+        {
+            if (grid != null)
+            {
+
+                foreach (Edgar.Node n in grid)
+                {
+                    Gizmos.color = n.walkable ? Color.white : Color.red;
+                    if (path != null)
+                        if (path.Contains(n))
+                        {
+                            Gizmos.color = Color.black;
+                        }
+                    Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - .1f));
+                }
+            }
+        }
+        
     }
 
     
