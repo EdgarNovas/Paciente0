@@ -1162,6 +1162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dab5be185178d54ebe7f0ac5acf29ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onlyDispayPathGizmos: 0
   unwalkableMask:
     serializedVersion: 2
     m_Bits: 8
