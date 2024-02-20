@@ -5,7 +5,7 @@ using Edgar;
 
 public class TwoDAPath : MonoBehaviour
 {
-    public bool onlyDispayPathGizmos;
+    public bool displayGridGizmos;
     public LayerMask unwalkableMask;
     public Vector2 gridWorldSize;
     public float nodeRadius;
@@ -14,18 +14,21 @@ public class TwoDAPath : MonoBehaviour
     float nodeDiameter;
     int gridSizeX, gridSizeY;
 
-    void Start()
+    private void Awake()
     {
-        
         nodeDiameter = nodeRadius * 2;
-        
+
         gridSizeX = Mathf.RoundToInt(gridWorldSize.x / nodeDiameter);
-        
+
         gridSizeY = Mathf.RoundToInt(gridWorldSize.y / nodeDiameter);
-        
+
         CreateGrid();
-        
     }
+    
+        
+       
+        
+    
 
     public int MaxSize
     {
@@ -93,41 +96,21 @@ public class TwoDAPath : MonoBehaviour
         
     }
 
-    public List<Node> path;
-
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(transform.position, new Vector3(gridWorldSize.x, gridWorldSize.y, 1));
 
-        if (onlyDispayPathGizmos)
+        if (grid != null && displayGridGizmos)
         {
-            if(path != null)
-            {
-                foreach(Node n in path) 
-                {
-                    Gizmos.color = Color.black;
-                
-                    Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - .1f));
-                }
-            }
-        }
-        else
-        {
-            if (grid != null)
-            {
 
-                foreach (Edgar.Node n in grid)
-                {
-                    Gizmos.color = n.walkable ? Color.white : Color.red;
-                    if (path != null)
-                        if (path.Contains(n))
-                        {
-                            Gizmos.color = Color.black;
-                        }
-                    Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - .1f));
-                }
+            foreach (Edgar.Node n in grid)
+            {
+                Gizmos.color = n.walkable ? Color.white : Color.red;
+                
+                Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - .1f));
             }
         }
+        
         
     }
 
