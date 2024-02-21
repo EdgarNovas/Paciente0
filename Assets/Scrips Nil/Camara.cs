@@ -5,21 +5,58 @@ using UnityEngine;
 
 public class Camara : MonoBehaviour
 {
-    //[SerializeField] CinemachineVirtualCamera cameraCM;
-    // Start is called before the first frame update
-    public float cameraMoveSpeed = 5f;
+    
+    public Transform player;
 
-    void Update()
+    Vector3 target, mousePos, refVel;
+
+    private float zStart;
+
+    [SerializeField] float cameraDist = 2f;
+
+    private float smoothTime;
+
+    void Start ()
     {
-        // Obtener la posición del mouse en el mundo
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        // Mantener la posición Z de la cámara constante (en un juego 2D)
-        mousePosition.z = transform.position.z;
-
-        // Mover la cámara hacia la posición del mouse
-        transform.position = Vector3.Lerp(transform.position, mousePosition, Time.deltaTime * cameraMoveSpeed);
+        target = player.position;
+        zStart = transform.position.z;
     }
+
+    void Update ()
+    {
+        mousePos = CaptureMousePos();
+        target = UpdateTargetPos();
+        UpdateCameraPosition();
+    }
+
+    Vector3 CaptureMousePos()
+    {
+        Vector2 ret = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+        ret *= 2;
+        ret -= Vector2.one;
+        float max = 0.9f;
+        if (Mathf.Abs(ret.x) > max || Mathf.Abs(ret.y) > max)
+        {
+            ret = ret.normalized;
+        }
+        return ret;
+    }
+
+    Vector3 UpdateTargetPos()
+    {
+        Vector3 mouseOffset = mousePos * cameraDist;
+        Vector3 ret = player.position + mouseOffset;
+        ret.z = zStart;
+        return ret;
+    }
+
+    void UpdateCameraPosition()
+    {
+        Vector3 tempPos;
+        tempPos = Vector3.SmoothDamp(transform.position, target, ref refVel, smoothTime);
+        transform.position = tempPos;   
+    }
+    
 }
 
     
