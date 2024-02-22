@@ -13,7 +13,10 @@ public class Num_rescue : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == ""Rescue"
+        if (collision.gameObject.tag == "Rescue")
+        {
+
+        }
     }
     // Update is called once per frame
 }
