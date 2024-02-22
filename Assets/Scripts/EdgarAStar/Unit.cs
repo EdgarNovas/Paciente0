@@ -7,13 +7,30 @@ public class Unit : MonoBehaviour
 
     public Transform target;
     [SerializeField]float speed = 15f;
+    [SerializeField] int attackingDistance;
+    [SerializeField] int stoppingDistance;
 
     Vector3[] path;
     int targetIndex;
 
     private void FixedUpdate()
     {
-        PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+        if(Vector2.Distance(target.position, transform.position) > 4)
+        {
+            PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+            /*
+            if ()
+            {
+                StopCoroutine("FollowPath");
+                //Attack
+            }
+            */
+        }
+        else
+        {
+            //Wander
+        }
+        
     }
 
 

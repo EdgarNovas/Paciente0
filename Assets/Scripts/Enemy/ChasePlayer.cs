@@ -6,19 +6,20 @@ public class ChasePlayer : MonoBehaviour
 {
     [SerializeField] Transform player;
     [SerializeField] float speed;
-    [SerializeField] float stoppingDistance;
+    [SerializeField] float detectingDistance;
     // Update is called once per frame
     void Update()
     {
-        Vector2 direction = player.position - transform.position;
-        
-        if(Vector2.Distance(player.position, transform.position)> stoppingDistance )
+        //float distance = Mathf.Sqrt(Mathf.Pow(direction.x, 2f) + Mathf.Pow(direction.y, 2f));
+
+        if (Vector2.Distance(player.position, transform.position)> detectingDistance)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+            //Wander
+
         }
         else
         {
-            //Attack
+            
             
         }
         
