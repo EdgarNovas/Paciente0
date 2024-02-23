@@ -29,6 +29,7 @@ public class Camara : MonoBehaviour
         UpdateCameraPosition();
     }
 
+    // position mouse
     Vector3 CaptureMousePos()
     {
         Vector2 ret = Camera.main.ScreenToViewportPoint(Input.mousePosition);
@@ -42,6 +43,7 @@ public class Camara : MonoBehaviour
         return ret;
     }
 
+    // calcul camera move
     Vector3 UpdateTargetPos()
     {
         Vector3 mouseOffset = mousePos * cameraDist;
@@ -50,6 +52,7 @@ public class Camara : MonoBehaviour
         return ret;
     }
 
+    // move camera
     void UpdateCameraPosition()
     {
         Vector3 tempPos;

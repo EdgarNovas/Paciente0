@@ -1,39 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class Move : MonoBehaviour
 {
-    public float speed = 3f;
+    float horitzontal;
+
+    float vertical;
+
+    public float speed = 2000.0f;
+
+    private Rigidbody2D body;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        body = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        //Determinate direction 1,0,-1
+        horitzontal = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            gameObject.transform.Translate(-speed * Time.deltaTime, 0, 0); //isquierda
-        }
+        vertical = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetKey(KeyCode.D))
-        {
-            gameObject.transform.Translate(speed * Time.deltaTime, 0, 0);//derecha
-        }
-
-        if (Input.GetKey(KeyCode.W))
-        {
-            gameObject.transform.Translate(0, speed * Time.deltaTime, 0);//arriva
-        }
-
-        if (Input.GetKey(KeyCode.S))
-        {
-            gameObject.transform.Translate(0, -speed * Time.deltaTime, 0);//abajo
-        }
+        Velocity();
     }
+
+    private void Velocity()
+    {
+        //Velocity and direction
+        body.velocity = new Vector2(horitzontal, vertical).normalized * speed *   Time.fixedDeltaTime;
+    }
+
 }
