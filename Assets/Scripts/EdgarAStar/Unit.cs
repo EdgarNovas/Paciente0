@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Unit : MonoBehaviour
@@ -13,22 +14,66 @@ public class Unit : MonoBehaviour
     Vector3[] path;
     int targetIndex;
 
+    //RANDOM WONDER
+    float randomDegree;
+    Vector2 newPath;
+    float distance;
+    Vector2 direction;
+    public LayerMask obstacleMask;
+    private float delay;
+    private float resetDelay = 1.2f;
+
+    private void Awake()
+    {
+        delay = resetDelay;
+    }
+
     private void FixedUpdate()
     {
-        if(Vector2.Distance(target.position, transform.position) > 4)
+        if(Vector2.Distance(target.position, transform.position) < 8)
         {
             PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
-            /*
-            if ()
-            {
-                StopCoroutine("FollowPath");
-                //Attack
+
+            if (Vector2.Distance(target.position, transform.position) <= 4) 
+            { 
+                //Start Animation
+                //Hit player
+
+            
             }
-            */
         }
         else
         {
-            //Wander
+            //Get z axis
+            //Choose random degree 1 to 360
+            //Raycast to see if there's a wall
+            //See if place is a valid point
+            if (delay > 0f)
+            {
+                delay -= Time.fixedDeltaTime;
+            }
+            else
+            {
+                delay = resetDelay;
+
+                randomDegree = (float)Random.Range(1, 360) * Mathf.Deg2Rad;
+                distance = Random.Range(5, 20);
+                RaycastHit2D hit;
+                newPath.x =  Mathf.Cos(randomDegree);
+                newPath.y =  Mathf.Sin(randomDegree);
+                
+                direction = ((TransformToV2() + newPath) - TransformToV2()).normalized;
+                hit = Physics2D.Raycast(transform.position, direction, distance, obstacleMask);
+                if (!hit)
+                {
+                    //target.position = newPath;
+                    PathRequestManager.RequestPath(transform.position, TransformToV2()+ direction * distance, OnPathFound);
+                }
+
+            }
+            
+
+
         }
         
     }
@@ -66,6 +111,11 @@ public class Unit : MonoBehaviour
         }
     }
 
+    Vector2 TransformToV2()
+    {
+        return new Vector2(transform.position.x, transform.position.y);
+    }
+
     public void OnDrawGizmos()
     {
         if(path != null)
@@ -86,6 +136,8 @@ public class Unit : MonoBehaviour
                 
             }
         }
+
+        Gizmos.DrawLine(transform.position, transform.position + (Vector3)direction*distance);
     }
 
 }
