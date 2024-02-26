@@ -7,7 +7,7 @@ public class NumRescued : MonoBehaviour
 {
     public TextMeshProUGUI rescueText;
 
-    public int rescuedPeople = 0;
+
     void Start()
     {
         RefreshRescuedText();
@@ -15,7 +15,6 @@ public class NumRescued : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameManager.Instance.AddPeople();
-        rescuedPeople++;
         RefreshRescuedText();
     }
 
@@ -23,7 +22,7 @@ public class NumRescued : MonoBehaviour
     {
         if (rescueText != null)
         {
-            rescueText.text = "Rescued: " + rescuedPeople.ToString();
+            rescueText.text = "Rescued: " + GameManager.Instance.rescuedPeople.ToString();
         }
     }
 

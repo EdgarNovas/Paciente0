@@ -1,7 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -13,10 +13,29 @@ public class Health : MonoBehaviour
         RefreshHealthText();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            Damage(1);
+            Debug.Log(health);
+        }
+    }
+
     public void Damage(int damage)
     {
         health -= damage;
-        RefreshHealthText();
+        if (health > 0)
+        {
+            RefreshHealthText();
+        }
+        else
+        {
+            //MORISTE
+            SceneManager.LoadScene(1);
+        }
+
+
     }
 
     public void GetHealthpac()
