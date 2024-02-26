@@ -3,23 +3,18 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class NumRescue : MonoBehaviour
+public class NumRescued : MonoBehaviour
 {
-    public static NumRescue Instance { get; private set; }
     public TextMeshProUGUI rescueText;
 
-    public int rescuedPeople = 2;
-
-    private void Awake()
+    public int rescuedPeople = 0;
+    void Start()
     {
-        if (Instance != null) { return; }
-
-        Instance = this;
+        RefreshRescuedText();
     }
-
-
-    public void AddPeople()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        GameManager.Instance.AddPeople();
         rescuedPeople++;
         RefreshRescuedText();
     }
