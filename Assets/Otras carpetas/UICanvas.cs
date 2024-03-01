@@ -10,7 +10,15 @@ public class UICanvas : MonoBehaviour
     private void Awake()
     {
         personRescued.text = GameManager.Instance.rescuedPeople.ToString();
+        GameManager.Instance.rescueEvent.AddListener(PeopleHasBeenRescued);
     }
+
+
+    void PeopleHasBeenRescued()
+    {
+        personRescued.text = GameManager.Instance.rescuedPeople.ToString();
+    }
+
 
 
 }

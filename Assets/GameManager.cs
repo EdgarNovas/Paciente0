@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+
+    public UnityEvent rescueEvent;
 
     public int rescuedPeople = 0;
 
@@ -19,6 +22,7 @@ public class GameManager : MonoBehaviour
    public void AddPeople()
     {
         rescuedPeople++;
+        rescueEvent.Invoke();
     }
 
 
