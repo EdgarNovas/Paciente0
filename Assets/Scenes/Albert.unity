@@ -283,14 +283,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 821044898}
-  m_LocalRotation: {x: -0, y: -0, z: -0.19625883, w: 0.9805522}
-  m_LocalPosition: {x: 0.11, y: 1.16, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.26099175, w: 0.9653411}
+  m_LocalPosition: {x: 0.14, y: 0.97, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1328597223}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -22.637}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -30.258}
 --- !u!1 &920613655
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,7 +346,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1159486189}
   m_LocalRotation: {x: -0, y: -0, z: 0.1726531, w: 0.9849827}
-  m_LocalPosition: {x: -0.46, y: 2.09, z: 0}
+  m_LocalPosition: {x: -0.08, y: 1.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -368,7 +368,7 @@ GameObject:
   - component: {fileID: 1328597219}
   m_Layer: 0
   m_Name: Escopeta
-  m_TagString: Untagged
+  m_TagString: Armas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -512,11 +512,11 @@ GameObject:
   - component: {fileID: 1834719906}
   - component: {fileID: 1834719905}
   - component: {fileID: 1834719907}
-  - component: {fileID: 1834719908}
   - component: {fileID: 1834719904}
+  - component: {fileID: 1834719908}
   m_Layer: 0
   m_Name: Pistola
-  m_TagString: Untagged
+  m_TagString: Armas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -640,11 +640,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1834719903}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3698d3a6763360040849ddc6e37918a5, type: 3}
+  m_Script: {fileID: 11500000, guid: 9726dcbcd3960d543acf359613358e46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 920613656}
-  firePoint2: {fileID: 821044899}
   bulletPrefab: {fileID: 3734071787719130839, guid: c1376edb812d3014192d4518bddd3edc, type: 3}
-  bulletPrefab2: {fileID: 3734071787719130839, guid: c1376edb812d3014192d4518bddd3edc, type: 3}
   bulletForce: 20
