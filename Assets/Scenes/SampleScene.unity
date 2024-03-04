@@ -381,7 +381,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &304043524
 GameObject:
@@ -456,6 +456,7 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 8
+  typeOfZombie: {fileID: 11400000, guid: 7d156fe3158a1e64e95dc198e43cfe87, type: 2}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,7 +699,7 @@ PrefabInstance:
       objectReference: {fileID: 1015700401}
     - target: {fileID: 6728310559327261777, guid: 0f6bf63a231417442b0d4598c7a7280a, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6728310559327261777, guid: 0f6bf63a231417442b0d4598c7a7280a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -747,6 +748,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 935979612471547099, guid: 0f6bf63a231417442b0d4598c7a7280a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1310475699}
+    - targetCorrespondingSourceObject: {fileID: 935979612471547099, guid: 0f6bf63a231417442b0d4598c7a7280a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1310475704}
   m_SourcePrefab: {fileID: 100100000, guid: 0f6bf63a231417442b0d4598c7a7280a, type: 3}
 --- !u!1 &878153237
 GameObject:
@@ -876,7 +880,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &889505320
 GameObject:
@@ -1006,7 +1010,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &899868522
 GameObject:
@@ -1305,7 +1309,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 907e45b54a2a6624bb58963cadd00ec2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1345,12 +1349,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913194465}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -24.94, y: 6.4, z: -0.11}
-  m_LocalScale: {x: 3.0294354, y: 1.5410407, z: 1}
+  m_LocalPosition: {x: -30.99, y: 8.2, z: -0.11}
+  m_LocalScale: {x: 4.939677, y: 3.7694275, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1015700400
 PrefabInstance:
@@ -1456,6 +1460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rescuedPeople: 0
+  <life>k__BackingField: 5
 --- !u!4 &1265631704
 Transform:
   m_ObjectHideFlags: 0
@@ -1599,7 +1604,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1310475694 stripped
 GameObject:
@@ -1625,6 +1630,20 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 8
+  typeOfZombie: {fileID: 11400000, guid: 1821c22ef25fabb4aaa00afc6cce546d, type: 2}
+--- !u!114 &1310475704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310475694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49e7d8087d177d742806ecfcc4c84daa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typesOfZombies: {fileID: 11400000, guid: 1821c22ef25fabb4aaa00afc6cce546d, type: 2}
 --- !u!1 &1365783425
 GameObject:
   m_ObjectHideFlags: 0
@@ -1651,8 +1670,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1365783425}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -26.55, y: -5.76, z: -0.110000014}
-  m_LocalScale: {x: 3.0294354, y: 1.5410407, z: 1}
+  m_LocalPosition: {x: -30.94, y: -1.05, z: -0.110000014}
+  m_LocalScale: {x: 3, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1878,12 +1897,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1473072672}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -29.51, y: 9.69, z: -0.11}
+  m_LocalPosition: {x: -36.69, y: 16.51, z: -0.11}
   m_LocalScale: {x: 3.0294354, y: 1.5410407, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1563850083
 GameObject:
@@ -2013,7 +2032,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1612665453 stripped
 GameObject:
@@ -2039,6 +2058,7 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 8
+  typeOfZombie: {fileID: 11400000, guid: 597f698d1c72a12478e231a02a6b28b1, type: 2}
 --- !u!1 &1618531833
 GameObject:
   m_ObjectHideFlags: 0
@@ -2309,8 +2329,7 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5844227070515159489, guid: c241915b33f39114ab4336b5b1a1b0e1, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

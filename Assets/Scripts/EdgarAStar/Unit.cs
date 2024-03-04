@@ -22,10 +22,13 @@ public class Unit : MonoBehaviour
     public LayerMask obstacleMask;
     private float delay;
     private float resetDelay = 1.2f;
+    float coolDownAttack = 1f;
+    [SerializeField] TypesOfZombies typeOfZombie;
 
     private void Awake()
     {
         delay = resetDelay;
+        coolDownAttack = typeOfZombie.cooldownResetTime;
     }
 
     private void FixedUpdate()
@@ -34,12 +37,11 @@ public class Unit : MonoBehaviour
         {
             PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
 
-            if (Vector2.Distance(target.position, transform.position) <= 4) 
-            { 
-                //Start Animation
-                //Hit player
+            if (Vector2.Distance(target.position, transform.position) <= 4 && coolDownAttack <= 0) 
+            {
+                GameManager.Instance.Damage(typeOfZombie.zombieDamage);
+                coolDownAttack = typeOfZombie.cooldownResetTime;
 
-            
             }
         }
         else
@@ -71,11 +73,9 @@ public class Unit : MonoBehaviour
                 }
 
             }
-            
-
-
         }
-        
+
+        coolDownAttack -= Time.fixedDeltaTime;
     }
 
 
