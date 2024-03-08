@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,22 +6,10 @@ using UnityEngine;
 
 public class LifeP : MonoBehaviour
 {
+    [field: SerializeField] public int life { get; private set; }
 
-    public int life { get; private set; } = 4;
-
-
-    public void Damage(int damage)
+    private void Awake()
     {
-        life -= damage;
-    }
-
-    public void GetHealthpac()
-    {
-        life++;
-
-        if (life == 4)
-        {
-            life = 4;
-        }
+        life = GameManager.Instance.life;
     }
 }
