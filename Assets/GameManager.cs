@@ -24,6 +24,10 @@ public class GameManager : MonoBehaviour
         rescuedPeople++;
     }
 
+    public int GetRescuedPeople()
+    {
+        return rescuedPeople;
+    }
 
     public void Damage(int damage)
     {
