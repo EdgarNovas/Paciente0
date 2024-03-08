@@ -10,9 +10,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
+  - Unwalkable
   - Bullet
   - Water
   - UI
+  - Target
   - Armas
   - 
   - 
