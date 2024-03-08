@@ -21,5 +21,8 @@ public class GameManager : MonoBehaviour
         rescuedPeople++;
     }
 
-
+    public int GetRescuedPeople()
+    {
+        return rescuedPeople;
+    }
 }
