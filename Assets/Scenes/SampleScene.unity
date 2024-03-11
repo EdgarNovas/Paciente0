@@ -451,8 +451,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1015700401}
   speed: 15
-  attackingDistance: 0
-  stoppingDistance: 0
+  attackingDistance: 5
+  stoppingDistance: 2
   obstacleMask:
     serializedVersion: 2
     m_Bits: 8
@@ -2328,6 +2328,18 @@ PrefabInstance:
     - target: {fileID: 6598708011183296485, guid: c241915b33f39114ab4336b5b1a1b0e1, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067246050649681897, guid: c241915b33f39114ab4336b5b1a1b0e1, type: 3}
+      propertyPath: m_Simulated
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067246050649681897, guid: c241915b33f39114ab4336b5b1a1b0e1, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067246050649681897, guid: c241915b33f39114ab4336b5b1a1b0e1, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
