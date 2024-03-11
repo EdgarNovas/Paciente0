@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     public int rescuedPeople = 0;
 
+    public string sceneToLoad;
+
     [field: SerializeField] public int life { get; private set; } = 100;
 
     private void Awake()
@@ -45,4 +47,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void OnRestart()
+    {
+        SceneManager.LoadScene(sceneToLoad);
+    }
 }
+
+
