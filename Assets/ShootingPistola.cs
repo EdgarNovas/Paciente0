@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ShootingPistola : MonoBehaviour
 {
+    //CameraShake
+    
     public Transform firePoint;
     public GameObject bulletPrefab;
 
