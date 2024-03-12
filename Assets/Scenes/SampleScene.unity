@@ -697,6 +697,18 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1015700401}
+    - target: {fileID: 5548251155945972326, guid: 0f6bf63a231417442b0d4598c7a7280a, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548251155945972326, guid: 0f6bf63a231417442b0d4598c7a7280a, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548251155945972326, guid: 0f6bf63a231417442b0d4598c7a7280a, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6728310559327261777, guid: 0f6bf63a231417442b0d4598c7a7280a, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -2329,6 +2341,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9067246050649681897, guid: c241915b33f39114ab4336b5b1a1b0e1, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067246050649681897, guid: c241915b33f39114ab4336b5b1a1b0e1, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067246050649681897, guid: c241915b33f39114ab4336b5b1a1b0e1, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2353,6 +2377,18 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1015700401}
+    - target: {fileID: 5548251155945972326, guid: 0f6bf63a231417442b0d4598c7a7280a, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548251155945972326, guid: 0f6bf63a231417442b0d4598c7a7280a, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548251155945972326, guid: 0f6bf63a231417442b0d4598c7a7280a, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6588632659744091771, guid: 0f6bf63a231417442b0d4598c7a7280a, type: 3}
       propertyPath: m_Direction
       value: 0
