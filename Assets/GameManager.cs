@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 
     public int rescuedPeople = 0;
 
-    [field: SerializeField] public int life { get; private set; } = 100;
+    [field: SerializeField] public int health { get; private set; } = 100;
 
     private void Awake()
     {
@@ -31,17 +31,17 @@ public class GameManager : MonoBehaviour
 
     public void Damage(int damage)
     {
-        life -= damage;
+        health -= damage;
         
     }
 
-    public void GetHealthpac()
+    public void GetHealthpack()
     {
-        life++;
+        health++;
 
-        if (life == 4)
+        if (health == 4)
         {
-            life = 4;
+            health = 4;
         }
     }
 }

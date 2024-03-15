@@ -6,6 +6,7 @@ using UnityEngine;
 public class UICanvas : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI personRescued;
+    [SerializeField] TextMeshProUGUI health;
 
     private void Awake()
     {
