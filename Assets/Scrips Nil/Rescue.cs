@@ -10,5 +10,4 @@ public class Rescue : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-   
 }

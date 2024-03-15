@@ -9,7 +9,7 @@ public class Move : MonoBehaviour
 
     float vertical;
 
-    public float speed = 2000.0f;
+    public float speed = 10.0f;
 
     private Rigidbody2D body;
 
@@ -33,7 +33,7 @@ public class Move : MonoBehaviour
     private void Velocity()
     {
         //Velocity and direction
-        body.velocity = new Vector2(horitzontal, vertical).normalized * speed *   Time.fixedDeltaTime;
+        body.AddForce(new Vector2(horitzontal, vertical).normalized * speed ,ForceMode2D.Force); 
+            //= new Vector2(horitzontal, vertical).normalized * speed * Time.fixedDeltaTime;
     }
-
 }
