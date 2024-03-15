@@ -108,6 +108,7 @@ public class Unit : MonoBehaviour
                 currentWaypoint = path[targetIndex];
             }
             transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, speed * Time.deltaTime);
+            
             yield return null;
         }
     }
