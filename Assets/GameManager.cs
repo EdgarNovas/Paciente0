@@ -38,12 +38,12 @@ public class GameManager : MonoBehaviour
     public void GetHealthpac()
     {
         life++;
-        /*
+        
         if (life == 4)
         {
             life = 4;
         }
-        */
+        
     }
 
 }
