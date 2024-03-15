@@ -16,8 +16,8 @@ public class DashMove : MonoBehaviour
 
     public BoxCollider2D normalColision;
     public BoxCollider2D dashColision;
-
-    int contador;
+    bool dash;
+    float contador;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +31,8 @@ public class DashMove : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
+            contador = 0;
+            dash = true;
             //BoxCollider2D1 NO
             normalColision.enabled = false;
             //BoxCollider2D2 SI
@@ -43,13 +45,15 @@ public class DashMove : MonoBehaviour
             //Dash
             rb.AddForce( direction * dashSpeed,ForceMode2D.Impulse);
 
-            for(int i = 0; i <= 10; i++)
-            {
-                contador++;
-            }
+        }
 
-            if (contador == 10)
+        if (dash) 
+        {
+            contador += Time.deltaTime;
+
+            if (contador > 1f)
             {
+                dash = false;
                 normalColision.enabled = true;
                 dashColision.enabled = false;
             }
