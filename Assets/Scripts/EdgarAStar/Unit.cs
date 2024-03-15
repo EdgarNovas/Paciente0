@@ -29,6 +29,7 @@ public class Unit : MonoBehaviour
     {
         delay = resetDelay;
         coolDownAttack = typeOfZombie.cooldownResetTime;
+        target= GameManager.Instance.PlayerTransform;
     }
 
     private void FixedUpdate()

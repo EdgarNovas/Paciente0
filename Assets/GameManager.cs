@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     public int rescuedPeople = 0;
 
+    [SerializeField] Transform transformPlayer;
+
     [field: SerializeField] public int life { get; private set; } = 100;
 
     private void Awake()
@@ -44,5 +46,8 @@ public class GameManager : MonoBehaviour
             life = 4;
         }
     }
+
+    public Transform PlayerTransform { get { return transformPlayer; } }
+
 
 }
