@@ -3,15 +3,19 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Armas
+  - Bullet
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
   - Unwalkable
+  - Bullet
   - Water
   - UI
   - Target
+  - Armas
   - 
   - 
   - 
@@ -20,7 +24,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - DashPlayer
   - 
   - 
   - 

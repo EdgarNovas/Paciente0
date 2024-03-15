@@ -1,13 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    [SerializeField] private int rescuedPeople = 0;
+    public UnityEvent rescueEvent;
+
+    public int rescuedPeople = 0;
+
+    [SerializeField] Transform transformPlayer;
 
     [field: SerializeField] public int life { get; private set; } = 100;
 
@@ -22,8 +27,13 @@ public class GameManager : MonoBehaviour
    public void AddPeople()
     {
         rescuedPeople++;
+        rescueEvent.Invoke();
     }
 
+    public int GetRescuedPeople()
+    {
+        return rescuedPeople;
+    }
 
     public void Damage(int damage)
     {
@@ -40,5 +50,8 @@ public class GameManager : MonoBehaviour
             life = 4;
         }
     }
+
+    public Transform PlayerTransform { get { return transformPlayer; } }
+
 
 }
