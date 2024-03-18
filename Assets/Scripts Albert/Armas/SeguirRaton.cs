@@ -29,5 +29,9 @@ public class SeguirRaton : MonoBehaviour
         //rb.rotation = angle;
         transform.rotation = new Quaternion();
         transform.Rotate(new Vector3(0, 0, angle), Space.Self);
+        if (lookDir.y >=0)
+        {
+            
+        }
     }
 }
