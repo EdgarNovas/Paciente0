@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     public int rescuedPeople = 0;
+    public int amountBullets = 25;
 
     [field: SerializeField] public int health { get; private set; } = 100;
 

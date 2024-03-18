@@ -14,7 +14,11 @@ public class ShootingPistola : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            Shoot();
+            if (GameManager.Instance.amountBullets > 0)
+            {
+                Shoot();
+                GameManager.Instance.amountBullets--;
+            }
         }
     }
 

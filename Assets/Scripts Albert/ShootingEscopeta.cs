@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class ShootingEscopeta : MonoBehaviour
     public GameObject bulletPrefab2;
     public GameObject bulletPrefab3;
 
+ 
     public float bulletForce = 20f;
 
     // Update is called once per frame
@@ -18,9 +20,13 @@ public class ShootingEscopeta : MonoBehaviour
     {
         if(Input.GetButtonDown("Fire1"))
         {
+            if(GameManager.Instance.amountBullets > 0) { 
             Shoot();
+              GameManager.Instance.amountBullets--;
+            }
         }
     }
+
 
     void Shoot()
     {
