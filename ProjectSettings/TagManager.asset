@@ -6,16 +6,18 @@ TagManager:
   tags:
   - Armas
   - Bullet
+  - Curar
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
   - Unwalkable
-  - Bullet
   - Water
+  - UI
   - UI
   - Target
   - Armas
+  - Bullet
   - 
   - 
   - 
@@ -23,10 +25,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - DashPlayer
   - 
   - 
   - 
