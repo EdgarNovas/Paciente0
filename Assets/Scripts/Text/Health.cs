@@ -13,14 +13,7 @@ public class Health : MonoBehaviour
         RefreshHealthText();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            Damage(1);
-            Debug.Log(health);
-        }
-    }
+ 
 
     public void Damage(int damage)
     {

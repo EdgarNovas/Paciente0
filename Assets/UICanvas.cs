@@ -7,6 +7,7 @@ public class UICanvas : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI personRescued;
     [SerializeField] TextMeshProUGUI health;
+    [SerializeField] TextMeshProUGUI NumBullets;
 
     private void Awake()
     {
