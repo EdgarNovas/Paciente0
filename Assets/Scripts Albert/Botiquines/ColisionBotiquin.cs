@@ -10,7 +10,7 @@ public class ColisionBotiquin : MonoBehaviour
     {
         if(collision.gameObject.tag == "Curar")
         {
-            GameManager.Instance.GetHealthpac();
+            GameManager.Instance.GetHealthpack();
             Destroy(collision.gameObject);
         }
     }
