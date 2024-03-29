@@ -1,34 +1,35 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class HUDWeapon : MonoBehaviour
 {
-    public SpriteRenderer weaponSpriteRenderer; // Referencia al SpriteRenderer para mostrar el sprite del arma
-    private ChangeGun changeGun; // Referencia al controlador de armas
+    public Sprite pistolaSprite;
+    public Sprite escopetaSprite;
 
-    void Start()
+    public static HUDWeapon Instance { get; private set; }
+    private void Awake()
     {
-        // Obtener referencia al controlador de armas (puede variar dependiendo de tu implementación)
-        changeGun = FindObjectOfType<ChangeGun>();
+        if (Instance != null) { return; }
 
-        // Asegúrate de que weaponSpriteRenderer no sea nulo
-        if (weaponSpriteRenderer == null)
+        Instance = this;
+    }
+
+    public void ComprobarArma(ChangeGun changeGun)
+    {
+        if (changeGun.gunUsing == 0)
         {
-            Debug.LogError("No se ha asignado un SpriteRenderer para mostrar el sprite del arma en el HUD.");
+            GetComponent<SpriteRenderer>().sprite = pistolaSprite; // Asigna el sprite de la pistola
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().sprite = escopetaSprite; // Asigna el sprite de la escopeta
         }
     }
 
-    void Update()
+    internal void ComprobarArma()
     {
-        // Obtener el sprite del arma actual desde el controlador de armas
-        Sprite currentWeaponSprite = changeGun.GetCurrentWeaponSprite();
-
-        // Asegurarse de que el sprite no sea nulo y que el SpriteRenderer esté asignado
-        if (currentWeaponSprite != null && weaponSpriteRenderer != null)
-        {
-            // Mostrar el sprite del arma en el HUD
-            weaponSpriteRenderer.sprite = currentWeaponSprite;
-        }
+        throw new NotImplementedException();
     }
 }
