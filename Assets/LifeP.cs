@@ -10,6 +10,6 @@ public class LifeP : MonoBehaviour
 
     private void Awake()
     {
-        life = GameManager.Instance.health;
+        life = GameManager.Instance.life;
     }
 }
