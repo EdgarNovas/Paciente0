@@ -1190,6 +1190,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85c4c399cb5e54d4e896188e88473528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 5
+  rb: {fileID: 0}
+  cam: {fileID: 0}
 --- !u!1 &1065564161
 GameObject:
   m_ObjectHideFlags: 0
@@ -1817,7 +1820,8 @@ MonoBehaviour:
       m_Calls: []
   rescuedPeople: 0
   amountBullets: 25
-  <health>k__BackingField: 100
+  transformPlayer: {fileID: 0}
+  <life>k__BackingField: 100
 --- !u!4 &1307786824
 Transform:
   m_ObjectHideFlags: 0
@@ -2080,7 +2084,7 @@ GameObject:
   - component: {fileID: 1382611004}
   m_Layer: 0
   m_Name: Player (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

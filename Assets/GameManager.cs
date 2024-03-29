@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour
     public int rescuedPeople = 0;
     public int amountBullets = 25;
 
-    [field: SerializeField] public int health { get; private set; } = 100;
+    [SerializeField] Transform transformPlayer;
+    [field: SerializeField] public int life { get; private set; } = 100;
 
     private void Awake()
     {
@@ -36,20 +37,21 @@ public class GameManager : MonoBehaviour
 
     public void Damage(int damage)
     {
-        health -= damage;
+        life -= damage;
         
     }
 
     public void GetHealthpack()
     {
-        if (health == 4)
+        if (life == 4)
 
-        health++;
+        life++;
         {
-            health = 4;
+            life = 4;
         }
         
     }
+    public Transform PlayerTransform { get { return transformPlayer; } }
 }
 
 
