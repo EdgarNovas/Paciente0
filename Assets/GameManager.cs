@@ -37,17 +37,17 @@ public class GameManager : MonoBehaviour
 
     public void Damage(int damage)
     {
-        health -= damage;
+        life -= damage;
         
     }
 
     public void GetHealthpack()
     {
-        if (health == 4)
+        if (life == 4)
 
-        health++;
+        life++;
         {
-            health = 4;
+            life = 4;
         }
         
     }
