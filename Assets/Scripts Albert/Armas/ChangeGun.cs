@@ -11,7 +11,7 @@ public class ChangeGun : MonoBehaviour
 
     void Start()
     {
-        HUDWeapon.Instance.ComprobarArma(this);
+       // HUDWeapon.Instance.ComprobarArma(this);
     }
     // Update is called once per frame
     void Update()
@@ -54,7 +54,7 @@ public class ChangeGun : MonoBehaviour
         }
         
         CambiarArmaActual();
-        HUDWeapon.Instance.ComprobarArma(this);
+        //HUDWeapon.Instance.ComprobarArma(this);
     }
 
     void SeleccionarArmaSiguiente()
@@ -69,7 +69,7 @@ public class ChangeGun : MonoBehaviour
         }
         
         CambiarArmaActual();
-        HUDWeapon.Instance.ComprobarArma(this);
+       // HUDWeapon.Instance.ComprobarArma(this);
     }
 
 

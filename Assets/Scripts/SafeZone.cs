@@ -29,7 +29,7 @@ public class SafeZone : MonoBehaviour
         barProgress.transform.position = this.gameObject.transform.position + new Vector3(0, barYSpacing, 0);
         barBackground.transform.position = this.gameObject.transform.position + new Vector3(0, barYSpacing, 0);
 
-        if (playerInsideRange && GameManager.Instance.GetRescuedPeople() == 3)
+        if (playerInsideRange && GameManager.Instance.GetRescuedPeople() >= 3)
         {
             barFilledPercentage = elapsedTime / secondsToStay;
             barProgress.fillAmount = barFilledPercentage; 
@@ -44,7 +44,7 @@ public class SafeZone : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") && GameManager.Instance.GetRescuedPeople() == 3)
+        if (collision.gameObject.CompareTag("Player") && GameManager.Instance.GetRescuedPeople() >= 3)
         {
             startTime = Time.time;
             playerInsideRange = true;
