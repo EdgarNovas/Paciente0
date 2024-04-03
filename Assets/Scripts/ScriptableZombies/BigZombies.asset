@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BigZombies
   m_EditorClassIdentifier: 
   zombieHp: 80
-  zombieSpeed: 5
+  zombieSpeed: 1
   zombieDamage: 40
   cooldownResetTime: 0.9
