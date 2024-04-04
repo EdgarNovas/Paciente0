@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class ChangeGun : MonoBehaviour
 {
-    int gunUsing = 0;
+    public int gunUsing = 0;
     public List<GameObject> guns = new List<GameObject>();
 
-    /*void Start()
+    
+
+    void Start()
     {
-        
-    }*/
+       // HUDWeapon.Instance.ComprobarArma(this);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -19,7 +21,7 @@ public class ChangeGun : MonoBehaviour
 
     void CambiarArmaActual()
     {
-        for(int i = 0; i < guns.Count; i++)
+        for (int i = 0; i < guns.Count; i++)
         {
             guns[i].SetActive(false);
         }
@@ -50,19 +52,25 @@ public class ChangeGun : MonoBehaviour
         {
             gunUsing--; //se resta
         }
+        
         CambiarArmaActual();
+        //HUDWeapon.Instance.ComprobarArma(this);
     }
 
     void SeleccionarArmaSiguiente()
     {
-        if (gunUsing >= (guns.Count-1))
+        if (gunUsing >= (guns.Count - 1))
         {
             gunUsing = 0;
         }
         else
-        { 
+        {
             gunUsing++; //se suma
         }
+        
         CambiarArmaActual();
+       // HUDWeapon.Instance.ComprobarArma(this);
     }
+
+
 }
