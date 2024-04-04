@@ -1,35 +1,23 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class HUDWeapon : MonoBehaviour
 {
     public Sprite pistolaSprite;
     public Sprite escopetaSprite;
-
-    public static HUDWeapon Instance { get; private set; }
-    private void Awake()
+    public ChangeGun playerGun;
+    public Sprite ComprobarArma()
     {
-        if (Instance != null) { return; }
-
-        Instance = this;
-    }
-
-    public void ComprobarArma(ChangeGun changeGun)
-    {
-        if (changeGun.gunUsing == 0)
+        if (playerGun.gunUsing == 0)
         {
-            GetComponent<SpriteRenderer>().sprite = pistolaSprite; // Asigna el sprite de la pistola
+            return pistolaSprite; // Asigna el sprite de la pistola
         }
         else
         {
-            GetComponent<SpriteRenderer>().sprite = escopetaSprite; // Asigna el sprite de la escopeta
+            return escopetaSprite; // Asigna el sprite de la escopeta
         }
-    }
-
-    internal void ComprobarArma()
-    {
-        throw new NotImplementedException();
     }
 }
