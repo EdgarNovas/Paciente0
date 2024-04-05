@@ -37,10 +37,10 @@ public class DashMove : MonoBehaviour
             normalColision.enabled = false;
             //BoxCollider2D2 SI
             dashColision.enabled = true;
-            //Mouse Position
-            Vector2 direction = Camera.main.ScreenToViewportPoint(Input.mousePosition);
             //Move direction
-            direction = direction - centerPos;
+            float horizontalDir = Input.GetAxisRaw("Horizontal");
+            float verticalDir = Input.GetAxisRaw("Vertical");
+            Vector2 direction = new Vector2 (horizontalDir, verticalDir);
             direction = direction.normalized;
             //Dash
             rb.AddForce( direction * dashSpeed,ForceMode2D.Impulse);
