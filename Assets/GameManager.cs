@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public int rescuedPeople = 0;
     public int amountBullets = 25;
 
+    
+
     [SerializeField] Transform transformPlayer;
     [field: SerializeField] public int life { get; private set; } = 100;
 
@@ -38,7 +40,10 @@ public class GameManager : MonoBehaviour
     public void Damage(int damage)
     {
         life -= damage;
-        
+        if (life <= 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
     }
 
     public void GetHealthpack()
