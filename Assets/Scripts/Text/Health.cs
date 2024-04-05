@@ -13,20 +13,13 @@ public class Health : MonoBehaviour
         RefreshHealthText();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            Damage(1);
-            Debug.Log(health);
-        }
-    }
+ 
 
     public void Damage(int damage)
     {
-        health -= damage;
         if (health > 0)
         {
+            health -= damage;
             RefreshHealthText();
         }
         else
@@ -40,11 +33,6 @@ public class Health : MonoBehaviour
 
     public void GetHealthpac()
     {
-        health++;
-        if (health > 4)  // Asegúrate de que la vida no exceda el valor máximo
-        {
-            health = 4;
-        }
         RefreshHealthText();
     }
 
