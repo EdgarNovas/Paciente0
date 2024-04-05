@@ -39,11 +39,15 @@ public class GameManager : MonoBehaviour
 
     public void Damage(int damage)
     {
-        life -= damage;
+        
+        
+            life -= damage;
         if (life <= 0)
         {
+            life = 0;
             SceneManager.LoadScene("GameOver");
-        }
+        }    
+        
     }
 
     public void GetHealthpack()
