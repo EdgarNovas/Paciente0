@@ -48,11 +48,13 @@ public class GameManager : MonoBehaviour
 
     public void GetHealthpack()
     {
-        if (life == 4)
-
-        life++;
+        if (life == 100)
         {
-            life = 4;
+            life = 100;
+        }
+        else
+        {
+            life += 10;
         }
         
     }
