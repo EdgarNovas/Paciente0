@@ -6,8 +6,12 @@ public class Rescue : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameManager.Instance.AddPeople();
-        gameObject.SetActive(false);
+        if (collision.CompareTag("Player"))
+        {
+            GameManager.Instance.AddPeople();
+            gameObject.SetActive(false);
+        }
+        
     }
 
 }
