@@ -34,11 +34,11 @@ public class Unit : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(Vector2.Distance(target.position, transform.position) < 8)
+        if(Vector2.Distance(target.position, transform.position) < 5)
         {
             PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
-
-            if (Vector2.Distance(target.position, transform.position) <= 4 && coolDownAttack <= 0) 
+            Debug.Log("SeePlayer");
+            if (Vector2.Distance(target.position, transform.position) <= 2 && coolDownAttack <= 0) 
             {
                 GameManager.Instance.Damage(typeOfZombie.zombieDamage);
                 coolDownAttack = typeOfZombie.cooldownResetTime;
@@ -60,7 +60,7 @@ public class Unit : MonoBehaviour
                 delay = resetDelay;
 
                 randomDegree = (float)Random.Range(1, 360) * Mathf.Deg2Rad;
-                distance = Random.Range(5, 20);
+                distance = Random.Range(2,4);
                 RaycastHit2D hit;
                 newPath.x =  Mathf.Cos(randomDegree);
                 newPath.y =  Mathf.Sin(randomDegree);
@@ -71,6 +71,8 @@ public class Unit : MonoBehaviour
                 {
                     //target.position = newPath;
                     PathRequestManager.RequestPath(transform.position, TransformToV2()+ direction * distance, OnPathFound);
+                    
+                    Debug.Log(direction.x);
                 }
 
             }
@@ -91,6 +93,10 @@ public class Unit : MonoBehaviour
         }
     }
 
+    public void StopCoroutinePath()
+    {
+        StopCoroutine("FollowPath");
+    }
 
     IEnumerator FollowPath()
     {
