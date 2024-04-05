@@ -71,7 +71,7 @@ public class Unit : MonoBehaviour
                 {
                     //target.position = newPath;
                     PathRequestManager.RequestPath(transform.position, TransformToV2()+ direction * distance, OnPathFound);
-                    Debug.Log("NEW PATH OK");
+                    
                     Debug.Log(direction.x);
                 }
 
@@ -93,6 +93,10 @@ public class Unit : MonoBehaviour
         }
     }
 
+    public void StopCoroutinePath()
+    {
+        StopCoroutine("FollowPath");
+    }
 
     IEnumerator FollowPath()
     {
