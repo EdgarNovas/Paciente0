@@ -15,6 +15,7 @@ public class UICanvas : MonoBehaviour
     private void Start()
     {
         ImageHUDWeapon.sprite = hudWeapon.ComprobarArma();
+        //GameManager.Instance.rescueEvent.AddListener(PeopleHasBeenRescued);
     }
 
     private void Update()
@@ -24,7 +25,7 @@ public class UICanvas : MonoBehaviour
     private TextMeshProUGUI GetPersonRescued()
     {
         personRescued.text = GameManager.Instance.rescuedPeople.ToString();
-        GameManager.Instance.rescueEvent.AddListener(PeopleHasBeenRescued);
+        
         return personRescued;
     }
 
