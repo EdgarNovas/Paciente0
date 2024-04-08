@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Unit : MonoBehaviour
@@ -34,10 +33,10 @@ public class Unit : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(Vector2.Distance(target.position, transform.position) < 5)
+        if(Vector2.Distance(target.position, transform.position) < 10f)
         {
             PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
-            Debug.Log("SeePlayer");
+            
             if (Vector2.Distance(target.position, transform.position) <= 2 && coolDownAttack <= 0) 
             {
                 GameManager.Instance.Damage(typeOfZombie.zombieDamage);
@@ -59,8 +58,8 @@ public class Unit : MonoBehaviour
             {
                 delay = resetDelay;
 
-                randomDegree = (float)Random.Range(1, 360) * Mathf.Deg2Rad;
-                distance = Random.Range(2,4);
+                randomDegree = Random.Range(1, 360) * Mathf.Deg2Rad;
+                distance = Random.Range(3,5);
                 RaycastHit2D hit;
                 newPath.x =  Mathf.Cos(randomDegree);
                 newPath.y =  Mathf.Sin(randomDegree);
@@ -71,8 +70,6 @@ public class Unit : MonoBehaviour
                 {
                     //target.position = newPath;
                     PathRequestManager.RequestPath(transform.position, TransformToV2()+ direction * distance, OnPathFound);
-                    
-                    Debug.Log(direction.x);
                 }
 
             }
@@ -113,7 +110,7 @@ public class Unit : MonoBehaviour
                 }
                 currentWaypoint = path[targetIndex];
             }
-            transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, typeOfZombie.zombieSpeed * Time.deltaTime);
             
             yield return null;
         }
