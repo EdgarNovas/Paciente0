@@ -13,5 +13,11 @@ public class ColisionBotiquin : MonoBehaviour
             GameManager.Instance.GetHealthpack();
             Destroy(collision.gameObject);
         }
+
+        if (collision.gameObject.CompareTag("Ammunition"))
+        {
+            GameManager.Instance.AddAmmunition(10);
+            Destroy(collision.gameObject);
+        }
     }
 }

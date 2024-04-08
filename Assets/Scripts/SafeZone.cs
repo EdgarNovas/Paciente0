@@ -37,7 +37,7 @@ public class SafeZone : MonoBehaviour
             if (elapsedTime > secondsToStay)
             {
                 // Cargar la escena que sea
-                SceneManager.LoadScene("SampleScene"); 
+                SceneManager.LoadScene("Victory"); 
             }
         }
     }
