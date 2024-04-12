@@ -22,9 +22,14 @@ public class ZombiesHP : MonoBehaviour
             {
                 //GET KILLED AND GO TO OBJECT POOL
                 GetComponent<Unit>().StopCoroutinePath();
-                gameObject.SetActive(false);
-                
+                Invoke("SetInactive", 0.1f);
             }
         }
+    }
+
+
+    void SetInactive()
+    {
+        gameObject.SetActive(false);
     }
 }
