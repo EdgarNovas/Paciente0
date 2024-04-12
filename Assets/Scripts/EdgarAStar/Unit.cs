@@ -39,7 +39,7 @@ public class Unit : MonoBehaviour
             
             if (Vector2.Distance(target.position, transform.position) <= 2 && coolDownAttack <= 0) 
             {
-                GameManager.Instance.Damage(typeOfZombie.zombieDamage);
+                GameManager.Instance.Damage(typeOfZombie.zombieDamage, transform.position);
                 coolDownAttack = typeOfZombie.cooldownResetTime;
 
             }
