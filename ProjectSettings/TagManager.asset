@@ -7,6 +7,7 @@ TagManager:
   - Armas
   - Bullet
   - Curar
+  - Ammunition
   layers:
   - Default
   - TransparentFX

@@ -5,33 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
-    public int health { get; private set; } = 4;
     public TextMeshProUGUI healthText;  // Asigna el objeto Text en el Inspector
 
     void Start()
     {
         RefreshHealthText();
     }
-
- 
-
-    public void Damage(int damage)
-    {
-        if (health > 0)
-        {
-            health -= damage;
-            RefreshHealthText();
-        }
-        else
-        {
-            //MORISTE
-            SceneManager.LoadScene(1);
-        }
-
-
-    }
-
-    public void GetHealthpac()
+    void Update()
     {
         RefreshHealthText();
     }
@@ -40,7 +20,9 @@ public class Health : MonoBehaviour
     {
         if (healthText != null)
         {
-            healthText.text = "Health: " + health.ToString();
+            healthText.text = "Health: " + GameManager.Instance.life.ToString(); 
+
+            
         }
     }
 }
