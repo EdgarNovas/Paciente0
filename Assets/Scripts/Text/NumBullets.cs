@@ -21,7 +21,7 @@ public class NumBullets : MonoBehaviour
     {
         if (bulletsText != null)
         {
-            bulletsText.text = "Bullets: " + GameManager.Instance.amountBullets.ToString();
+            bulletsText.text = GameManager.Instance.amountBullets.ToString();
         }
     }
 }

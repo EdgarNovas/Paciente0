@@ -20,7 +20,7 @@ public class Health : MonoBehaviour
     {
         if (healthText != null)
         {
-            healthText.text = "Health: " + GameManager.Instance.life.ToString(); 
+            healthText.text =  GameManager.Instance.life.ToString(); 
 
             
         }
