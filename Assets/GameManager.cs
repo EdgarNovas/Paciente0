@@ -11,9 +11,11 @@ public class GameManager : MonoBehaviour
     public UnityEvent rescueEvent;
 
     public int rescuedPeople = 0;
+    public int amountBullets = 25;
+
+    
 
     [SerializeField] Transform transformPlayer;
-
     [field: SerializeField] public int life { get; private set; } = 100;
 
     private void Awake()
@@ -37,21 +39,32 @@ public class GameManager : MonoBehaviour
 
     public void Damage(int damage)
     {
-        life -= damage;
+        
+            life -= damage;
+        if (life <= 0)
+        {
+            life = 0;
+            SceneManager.LoadScene("GameOver");
+        }    
         
     }
 
-    public void GetHealthpac()
+    public void GetHealthpack()
     {
-        life++;
-
-        if (life == 4)
+        life += 25;
+        if (life > 100)
         {
-            life = 4;
+            life = 100;
         }
+        
+    }
+
+    public void AddAmmunition(int ammunition)
+    {
+        amountBullets += ammunition;
     }
 
     public Transform PlayerTransform { get { return transformPlayer; } }
-
-
 }
+
+

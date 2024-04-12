@@ -11,13 +11,14 @@ public class NumRescued : MonoBehaviour
     void Start()
     {
         RefreshRescuedText();
+        GameManager.Instance.rescueEvent.AddListener(RefreshRescuedText);
     }
+    /*
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameManager.Instance.AddPeople();
         RefreshRescuedText();
     }
-
+    */
     void RefreshRescuedText()
     {
         if (rescueText != null)

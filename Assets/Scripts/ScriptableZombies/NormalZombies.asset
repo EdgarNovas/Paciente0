@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80beae9660fc12c42afe29f73ba1f35c, type: 3}
   m_Name: NormalZombies
   m_EditorClassIdentifier: 
-  zombieHp: 60
-  zombieSpeed: 12
-  zombieDamage: 10
+  zombieHp: 100
+  zombieSpeed: 5
+  zombieDamage: 20
   cooldownResetTime: 0.5

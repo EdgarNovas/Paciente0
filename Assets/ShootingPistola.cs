@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ShootingPistola : MonoBehaviour
 {
+    //CameraShake
+    
     public Transform firePoint;
     public GameObject bulletPrefab;
 
@@ -14,7 +17,11 @@ public class ShootingPistola : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            Shoot();
+            if (GameManager.Instance.amountBullets > 0)
+            {
+                Shoot();
+                GameManager.Instance.amountBullets--;
+            }
         }
     }
 

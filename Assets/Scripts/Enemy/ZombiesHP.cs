@@ -1,11 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ZombiesHP : MonoBehaviour
 {
-    [SerializeField] TypesOfZombies typesOfZombies;
-    int zombieHp;
+    public TypesOfZombies typesOfZombies;
+    [NonSerialized] public int zombieHp;
 
     private void Awake()
     {
@@ -16,10 +17,13 @@ public class ZombiesHP : MonoBehaviour
     {
         if(collision.transform.tag == "Bullet")//Enemy gets hit by bullet
         {
-            zombieHp -= 50;
+            zombieHp -= 20;
             if(zombieHp <= 0)//If zombie is dead we deactivate him and sent him back to the pool of enemies
             {
                 //GET KILLED AND GO TO OBJECT POOL
+                GetComponent<Unit>().StopCoroutinePath();
+                gameObject.SetActive(false);
+                
             }
         }
     }

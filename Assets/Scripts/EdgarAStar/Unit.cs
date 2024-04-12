@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Unit : MonoBehaviour
@@ -34,11 +33,11 @@ public class Unit : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(Vector2.Distance(target.position, transform.position) < 8)
+        if(Vector2.Distance(target.position, transform.position) < 10f)
         {
             PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
-
-            if (Vector2.Distance(target.position, transform.position) <= 4 && coolDownAttack <= 0) 
+            
+            if (Vector2.Distance(target.position, transform.position) <= 2 && coolDownAttack <= 0) 
             {
                 GameManager.Instance.Damage(typeOfZombie.zombieDamage);
                 coolDownAttack = typeOfZombie.cooldownResetTime;
@@ -59,8 +58,8 @@ public class Unit : MonoBehaviour
             {
                 delay = resetDelay;
 
-                randomDegree = (float)Random.Range(1, 360) * Mathf.Deg2Rad;
-                distance = Random.Range(5, 20);
+                randomDegree = Random.Range(1, 360) * Mathf.Deg2Rad;
+                distance = Random.Range(3,5);
                 RaycastHit2D hit;
                 newPath.x =  Mathf.Cos(randomDegree);
                 newPath.y =  Mathf.Sin(randomDegree);
@@ -91,6 +90,10 @@ public class Unit : MonoBehaviour
         }
     }
 
+    public void StopCoroutinePath()
+    {
+        StopCoroutine("FollowPath");
+    }
 
     IEnumerator FollowPath()
     {
@@ -107,7 +110,7 @@ public class Unit : MonoBehaviour
                 }
                 currentWaypoint = path[targetIndex];
             }
-            transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, typeOfZombie.zombieSpeed * Time.deltaTime);
             
             yield return null;
         }
