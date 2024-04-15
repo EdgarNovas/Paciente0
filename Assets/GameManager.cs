@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public int amountBullets = 25;
 
     Rigidbody2D playerRB;
+    float pushStrength = 6;
 
     [SerializeField] Transform transformPlayer;
     [field: SerializeField] public int life { get; private set; } = 100;
@@ -42,8 +43,8 @@ public class GameManager : MonoBehaviour
     {
         life -= damage;
         
-        Vector3 pushDirection = (transform.position - attackerPosition).normalized;
-        playerRB.AddForce(pushDirection * -damage * damage * 10);
+        Vector3 pushDirection = (playerRB.transform.position - attackerPosition).normalized;
+        playerRB.AddForce(pushDirection * damage * damage * pushStrength);
 
         if (life <= 0)
         {
