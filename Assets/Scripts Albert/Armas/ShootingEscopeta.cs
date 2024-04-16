@@ -20,9 +20,9 @@ public class ShootingEscopeta : MonoBehaviour
     {
         if(Input.GetButtonDown("Fire1"))
         {
-            if(GameManager.Instance.amountBullets > 0) { 
+            if(GameManager.Instance.amountBulletsEscopeta > 0) { 
             Shoot();
-              GameManager.Instance.amountBullets--;
+              GameManager.Instance.amountBulletsEscopeta -= 3;
             }
         }
     }

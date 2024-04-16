@@ -26379,7 +26379,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   rescuedPeople: 0
-  amountBullets: 150
+  amountBulletsPistola: 100
+  amountBulletsEscopeta: 99
   transformPlayer: {fileID: 1069288236}
   <life>k__BackingField: 100
 --- !u!4 &1265631704
@@ -29288,7 +29289,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -206.36307, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

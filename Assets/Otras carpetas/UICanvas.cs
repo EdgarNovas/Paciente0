@@ -21,6 +21,7 @@ public class UICanvas : MonoBehaviour
     private void Update()
     {
         ImageHUDWeapon.sprite = hudWeapon.ComprobarArma();
+        NumBullets.text = hudWeapon.BulletsNumber();
     }
     private TextMeshProUGUI GetPersonRescued()
     {

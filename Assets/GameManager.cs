@@ -11,9 +11,12 @@ public class GameManager : MonoBehaviour
     public UnityEvent rescueEvent;
 
     public int rescuedPeople = 0;
-    public int amountBullets = 25;
+    //public int amountBullets = 25;
+    public int amountBulletsPistola = 100;
+    public int amountBulletsEscopeta = 99;
 
-    
+
+
 
     [SerializeField] Transform transformPlayer;
     [field: SerializeField] public int life { get; private set; } = 100;
@@ -61,7 +64,7 @@ public class GameManager : MonoBehaviour
 
     public void AddAmmunition(int ammunition)
     {
-        amountBullets += ammunition;
+        amountBulletsPistola += ammunition;
     }
 
     public Transform PlayerTransform { get { return transformPlayer; } }

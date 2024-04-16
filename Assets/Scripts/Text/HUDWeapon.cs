@@ -20,4 +20,18 @@ public class HUDWeapon : MonoBehaviour
             return escopetaSprite; // Asigna el sprite de la escopeta
         }
     }
+
+    public string BulletsNumber()
+    {
+
+        if (playerGun.gunUsing == 0)
+        {
+            return "Bullets Pistol: " + GameManager.Instance.amountBulletsPistola;
+        }
+        else
+        {
+            return "Bullets Shotgun: " + GameManager.Instance.amountBulletsEscopeta;
+        }
+    }
+
 }
