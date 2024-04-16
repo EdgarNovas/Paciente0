@@ -6,34 +6,29 @@ using UnityEngine.UI;
 
 public class UICanvas : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI personRescued;
     [SerializeField] TextMeshProUGUI health;
-    [SerializeField] TextMeshProUGUI NumBullets;
-    [SerializeField] Image ImageHUDWeapon;
+    [SerializeField] TextMeshProUGUI numBullets;
+    [SerializeField] Image imageHUDWeapon;
     [SerializeField] HUDWeapon hudWeapon;
+    [SerializeField] NumRescued hudRescued;
+    [SerializeField] Image personIcon1;
+    [SerializeField] Image personIcon2;
+    [SerializeField] Image personIcon3;
 
     private void Start()
     {
-        ImageHUDWeapon.sprite = hudWeapon.ComprobarArma();
+        imageHUDWeapon.sprite = hudWeapon.ComprobarArma();
         //GameManager.Instance.rescueEvent.AddListener(PeopleHasBeenRescued);
     }
 
     private void Update()
     {
-        ImageHUDWeapon.sprite = hudWeapon.ComprobarArma();
+        imageHUDWeapon.sprite = hudWeapon.ComprobarArma();
+        personIcon1.sprite = hudRescued.changeHUDrescued();
     }
-    private TextMeshProUGUI GetPersonRescued()
+    private void  GetPersonRescued()
     {
-        personRescued.text = GameManager.Instance.rescuedPeople.ToString();
         
-        return personRescued;
     }
-
-    void PeopleHasBeenRescued()
-    {
-        personRescued.text = GameManager.Instance.rescuedPeople.ToString();
-    }
-
-
 
 }
