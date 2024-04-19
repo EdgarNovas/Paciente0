@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ZombiesHP : MonoBehaviour
@@ -9,7 +11,8 @@ public class ZombiesHP : MonoBehaviour
     [NonSerialized] public int zombieHp;
 
     Rigidbody2D rb;
-    float pushStrength = 100;
+    float pushStrength = 1000;
+    Vector2 pushDirection;
 
     private void Awake()
     {
@@ -22,11 +25,14 @@ public class ZombiesHP : MonoBehaviour
         if(collision.transform.tag == "Bullet")//Enemy gets hit by bullet
         {
             zombieHp -= 20;
-
-            print(transform.position + " " + collision.transform.position);
-            Debug.Log("Rigidbody2D reference: " + rb);
-            Vector3 pushDirection = (transform.position - collision.transform.position).normalized;
-            rb.AddForce(pushDirection * pushStrength);
+            GetComponent<Unit>().enabled = false;
+            GetComponent<Unit>().StopCoroutinePath();
+            pushDirection = collision.relativeVelocity.normalized;
+            rb.AddForce(pushDirection * pushStrength, ForceMode2D.Impulse);
+            
+            //StartCoroutine("KnockBack",pushDirection);
+            
+            //Invoke( "Activate", .2f);
             
             if (zombieHp <= 0)//If zombie is dead we deactivate him and sent him back to the pool of enemies
             {
@@ -39,4 +45,24 @@ public class ZombiesHP : MonoBehaviour
             
         }
     }
+
+
+    void Activate()
+    {
+        GetComponent<Unit>().enabled = true;
+        StopCoroutine("KnockBack");
+    }
+
+
+    IEnumerator KnockBack(Vector2 pushDirection)
+    {
+        GetComponent<Unit>().StopCoroutinePath();
+       
+
+        GetComponent<Unit>().enabled = true;
+
+
+        yield return null;
+    }
+
 }
