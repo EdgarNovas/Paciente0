@@ -8,7 +8,7 @@ public class NumRescued : MonoBehaviour
     public Sprite personIcon;
     public Sprite notRescued;
     public int numPerson;
-    public Sprite changeHUDrescued()
+    public Sprite ChangeHUDrescued()
     {
         if (GameManager.Instance.rescuedPeople >= 1 && numPerson == 1)
         {

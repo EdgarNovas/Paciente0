@@ -8,8 +8,10 @@ public class UICanvas : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI health;
     [SerializeField] TextMeshProUGUI numBullets;
-    //[SerializeField] Image imageHUDWeapon;
-    //[SerializeField] HUDWeapon hudWeapon;
+    [SerializeField] HUDWeapon hudWeapon1;
+    [SerializeField] HUDWeapon hudWeapon2;
+    [SerializeField] Image gunHUD;
+    [SerializeField] Image shotgunHUD;
     [SerializeField] NumRescued hudRescued1;
     [SerializeField] NumRescued hudRescued2;
     [SerializeField] NumRescued hudRescued3;
@@ -25,14 +27,12 @@ public class UICanvas : MonoBehaviour
 
     private void Update()
     {
-        //imageHUDWeapon.sprite = hudWeapon.ComprobarArma();
-        personIcon1.sprite = hudRescued1.changeHUDrescued();
-        personIcon2.sprite = hudRescued2.changeHUDrescued();
-        personIcon3.sprite = hudRescued3.changeHUDrescued();
-    }
-    private void  GetPersonRescued()
-    {
-        
+        gunHUD.sprite = hudWeapon1.CheckWeapon();
+        shotgunHUD.sprite = hudWeapon2.CheckWeapon();
+
+        personIcon1.sprite = hudRescued1.ChangeHUDrescued();
+        personIcon2.sprite = hudRescued2.ChangeHUDrescued();
+        personIcon3.sprite = hudRescued3.ChangeHUDrescued();
     }
 
 }
