@@ -3492,9 +3492,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e09180ef4fe892a48ac293171e255e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  personIcon: {fileID: 21300000, guid: b7a3710244013d84da61c7bb3b271b33, type: 3}
-  notRescued: {fileID: 21300000, guid: 4cc55876639b3fc43a6d2839677368d2, type: 3}
-  numPerson: 1
+  personIcon: {fileID: 0}
+  notRescued: {fileID: 0}
+  numPerson: 0
 --- !u!1 &695480002
 GameObject:
   m_ObjectHideFlags: 0
@@ -25010,9 +25010,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e09180ef4fe892a48ac293171e255e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  personIcon: {fileID: 21300000, guid: b7a3710244013d84da61c7bb3b271b33, type: 3}
-  notRescued: {fileID: 21300000, guid: 4cc55876639b3fc43a6d2839677368d2, type: 3}
-  numPerson: 3
+  personIcon: {fileID: 0}
+  notRescued: {fileID: 0}
+  numPerson: 0
 --- !u!1 &870836652
 GameObject:
   m_ObjectHideFlags: 0
@@ -25362,9 +25362,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e09180ef4fe892a48ac293171e255e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  personIcon: {fileID: 21300000, guid: b7a3710244013d84da61c7bb3b271b33, type: 3}
-  notRescued: {fileID: 21300000, guid: 4cc55876639b3fc43a6d2839677368d2, type: 3}
-  numPerson: 2
+  personIcon: {fileID: 0}
+  notRescued: {fileID: 0}
+  numPerson: 0
 --- !u!1 &895412786
 GameObject:
   m_ObjectHideFlags: 0
@@ -28806,10 +28806,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc9c5530e29e23c44b2552e25b58a4fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponSelectSprite: {fileID: 21300000, guid: 137a805d3c8da7d4ead4ba31d12cdcc4, type: 3}
-  defaultSprite: {fileID: 21300000, guid: 8dfada5b267388b4db8a90328bc60e83, type: 3}
+  weaponSelectSprite: {fileID: 0}
+  defaultSprite: {fileID: 0}
   playerGun: {fileID: 1069288243}
-  numWeapon: 1
+  numWeapon: 0
 --- !u!114 &1794626802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36741,17 +36741,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 325044619}
-  numBullets: {fileID: 1957210397}
-  hudWeapon1: {fileID: 2141085109}
-  hudWeapon2: {fileID: 1794626801}
-  gunHUD: {fileID: 2141085110}
-  shotgunHUD: {fileID: 1794626802}
-  hudRescued1: {fileID: 676677568}
-  hudRescued2: {fileID: 889416435}
-  hudRescued3: {fileID: 857933170}
-  personIcon1: {fileID: 676677566}
-  personIcon2: {fileID: 889416433}
-  personIcon3: {fileID: 857933168}
+  numBullets: {fileID: 0}
+  hudWeapon1: {fileID: 0}
+  hudWeapon2: {fileID: 0}
+  gunHUD: {fileID: 0}
+  shotgunHUD: {fileID: 0}
+  hudRescued1: {fileID: 0}
+  hudRescued2: {fileID: 0}
+  hudRescued3: {fileID: 0}
+  personIcon1: {fileID: 0}
+  personIcon2: {fileID: 0}
+  personIcon3: {fileID: 0}
 --- !u!114 &2133001839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36890,8 +36890,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc9c5530e29e23c44b2552e25b58a4fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponSelectSprite: {fileID: 21300000, guid: e55f5bff38bf8fd4aa932ffced593b76, type: 3}
-  defaultSprite: {fileID: 21300000, guid: 4e393918bef38b14bab1502cddbdb82e, type: 3}
+  weaponSelectSprite: {fileID: 0}
+  defaultSprite: {fileID: 0}
   playerGun: {fileID: 1069288243}
   numWeapon: 0
 --- !u!114 &2141085110
