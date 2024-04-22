@@ -10,10 +10,20 @@ public class ShootingPistola : MonoBehaviour
     public Transform firePoint;
     public GameObject bulletPrefab;
 
-    public float bulletForce = 20f;
+	public float bulletForce = 20f;
 
-    // Update is called once per frame
-    void Update()
+	//Sonido
+	private SoundManager soundManager;
+	private void Awake()
+	{
+		soundManager = FindObjectOfType<SoundManager>();
+	}
+
+
+
+
+	// Update is called once per frame
+	void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
@@ -21,6 +31,7 @@ public class ShootingPistola : MonoBehaviour
             {
                 Shoot();
                 GameManager.Instance.amountBulletsPistola--;
+
             }
         }
     }
@@ -30,5 +41,7 @@ public class ShootingPistola : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
-    }
+		//Sonido
+		soundManager.seleccionAudio(0, 0.5f);
+	}
 }
