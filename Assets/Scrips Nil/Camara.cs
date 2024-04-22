@@ -60,6 +60,7 @@ public class Camara : MonoBehaviour
         transform.position = tempPos;   
     }
     
+
 }
 
     

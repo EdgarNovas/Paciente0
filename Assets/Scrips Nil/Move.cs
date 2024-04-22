@@ -30,6 +30,8 @@ public class Move : MonoBehaviour
 
         vertical = Input.GetAxisRaw("Vertical");
 
+        animator.SetFloat("Vertical", vertical);
+
         Velocity();
     }
 
