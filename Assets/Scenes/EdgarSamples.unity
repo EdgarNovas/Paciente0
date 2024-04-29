@@ -1612,6 +1612,14 @@ PrefabInstance:
       propertyPath: bulletsText
       value: 
       objectReference: {fileID: 1957210397}
+    - target: {fileID: 858893755183256136, guid: a584a09cee3e1bd44a9b2d13ab2b7260, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 858893755183256136, guid: a584a09cee3e1bd44a9b2d13ab2b7260, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1114701699025434938, guid: a584a09cee3e1bd44a9b2d13ab2b7260, type: 3}
       propertyPath: rescueText
       value: 

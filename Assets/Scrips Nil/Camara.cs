@@ -17,14 +17,10 @@ public class Camara : MonoBehaviour
 
     private float smoothTime;
 
-    [Header("Animation")]
-    private Animator animator;
-
     void Start()
     {
         target = player.position;
         zStart = transform.position.z;
-        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -32,7 +28,6 @@ public class Camara : MonoBehaviour
         mousePos = CaptureMousePos();
         target = UpdateTargetPos();
         UpdateCameraPosition();
-        //AnimateMouse();
     }
 
     // position mouse
@@ -65,17 +60,5 @@ public class Camara : MonoBehaviour
         tempPos = Vector3.SmoothDamp(transform.position, target, ref refVel, smoothTime);
         transform.position = tempPos;
     }
-
-    //Vector3 AnimateMouse()
-    //{
-        //if (player.position <= mousePos)
-        //{
-            
-        //}
-        //else
-        //{
-            
-        //}
-    //}
 }
     
