@@ -27,4 +27,14 @@ public class ZombiesHP : MonoBehaviour
             }
         }
     }
+
+    void SetInactive()
+    {
+        gameObject.SetActive (false);
+    }
+
+    public void ResetHPZombie()
+    {
+        zombieHp = typesOfZombies.zombieHp;
+    }
 }
