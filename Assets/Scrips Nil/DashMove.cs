@@ -1,11 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 
 public class DashMove : MonoBehaviour
 {
-    [Header("Dash")]
+	//Sonido
+	private SoundManager soundManager;
+	private void Awake()
+	{
+		soundManager = FindObjectOfType<SoundManager>();
+	}
+    //
+
+	[Header("Dash")]
 
     public float dashSpeed;
 
@@ -43,8 +52,7 @@ public class DashMove : MonoBehaviour
             direction = direction.normalized;
             //Dash
             rb.AddForce( direction * dashSpeed,ForceMode2D.Impulse);
-
-        }
+		}
 
         if (dash) 
         {
@@ -56,6 +64,12 @@ public class DashMove : MonoBehaviour
                 normalColision.enabled = true;
                 dashColision.enabled = false;
             }
-        }
+		}
+
+		//Sonido
+		if (Input.GetKeyDown(KeyCode.Space) && ((Input.GetAxisRaw("Horizontal") != 0) || (Input.GetAxisRaw("Vertical") !=0)))
+        {
+			soundManager.seleccionAudio(7, 0.5f);
+		}
     }
 }
