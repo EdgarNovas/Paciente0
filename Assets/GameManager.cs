@@ -52,8 +52,8 @@ public class GameManager : MonoBehaviour
     {
         life -= damage;
         
-        Vector3 pushDirection = (playerRB.transform.position - attackerPosition).normalized;
-        playerRB.AddForce(pushDirection * damage * damage * pushStrength);
+        //Vector3 pushDirection = (playerRB.transform.position - attackerPosition).normalized;
+        //playerRB.AddForce(pushDirection * damage * damage * pushStrength);
 
         if (life <= 0)
         {
