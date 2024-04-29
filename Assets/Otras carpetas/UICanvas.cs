@@ -6,34 +6,33 @@ using UnityEngine.UI;
 
 public class UICanvas : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI personRescued;
     [SerializeField] TextMeshProUGUI health;
-    [SerializeField] TextMeshProUGUI NumBullets;
-    [SerializeField] Image ImageHUDWeapon;
-    [SerializeField] HUDWeapon hudWeapon;
+    [SerializeField] TextMeshProUGUI numBullets;
+    [SerializeField] HUDWeapon hudWeapon1;
+    [SerializeField] HUDWeapon hudWeapon2;
+    [SerializeField] Image gunHUD;
+    [SerializeField] Image shotgunHUD;
+    [SerializeField] NumRescued hudRescued1;
+    [SerializeField] NumRescued hudRescued2;
+    [SerializeField] NumRescued hudRescued3;
+    [SerializeField] Image personIcon1;
+    [SerializeField] Image personIcon2;
+    [SerializeField] Image personIcon3;
 
     private void Start()
     {
-        ImageHUDWeapon.sprite = hudWeapon.ComprobarArma();
+        //imageHUDWeapon.sprite = hudWeapon.ComprobarArma();
         //GameManager.Instance.rescueEvent.AddListener(PeopleHasBeenRescued);
     }
 
     private void Update()
     {
-        ImageHUDWeapon.sprite = hudWeapon.ComprobarArma();
-    }
-    private TextMeshProUGUI GetPersonRescued()
-    {
-        personRescued.text = GameManager.Instance.rescuedPeople.ToString();
-        
-        return personRescued;
-    }
+        gunHUD.sprite = hudWeapon1.CheckWeapon();
+        shotgunHUD.sprite = hudWeapon2.CheckWeapon();
 
-    void PeopleHasBeenRescued()
-    {
-        personRescued.text = GameManager.Instance.rescuedPeople.ToString();
+        personIcon1.sprite = hudRescued1.ChangeHUDrescued();
+        personIcon2.sprite = hudRescued2.ChangeHUDrescued();
+        personIcon3.sprite = hudRescued3.ChangeHUDrescued();
     }
-
-
 
 }
