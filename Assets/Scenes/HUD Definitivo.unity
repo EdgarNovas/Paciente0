@@ -3492,8 +3492,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e09180ef4fe892a48ac293171e255e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  personIcon: {fileID: 0}
-  notRescued: {fileID: 0}
+  personIcon: {fileID: 21300000, guid: b7a3710244013d84da61c7bb3b271b33, type: 3}
+  notRescued: {fileID: 21300000, guid: 4cc55876639b3fc43a6d2839677368d2, type: 3}
   numPerson: 0
 --- !u!1 &695480002
 GameObject:
@@ -24809,6 +24809,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7774911558495765373, guid: bd552aea943609b468f81fad543bbebf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2efc261aa56b19448b2b3a88e879d131, type: 3}
+    - target: {fileID: 7774911558495765373, guid: bd552aea943609b468f81fad543bbebf, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7774911558495765373, guid: bd552aea943609b468f81fad543bbebf, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7774911558495765373, guid: bd552aea943609b468f81fad543bbebf, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24872,6 +24888,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6701572165281491663, guid: bd552aea943609b468f81fad543bbebf, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7774911558495765373, guid: bd552aea943609b468f81fad543bbebf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5fc2e5771fd3f74418a675e35db7eb73, type: 3}
+    - target: {fileID: 7774911558495765373, guid: bd552aea943609b468f81fad543bbebf, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7774911558495765373, guid: bd552aea943609b468f81fad543bbebf, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7774911558495765373, guid: bd552aea943609b468f81fad543bbebf, type: 3}
+      propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -25010,8 +25042,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e09180ef4fe892a48ac293171e255e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  personIcon: {fileID: 0}
-  notRescued: {fileID: 0}
+  personIcon: {fileID: 21300000, guid: b7a3710244013d84da61c7bb3b271b33, type: 3}
+  notRescued: {fileID: 21300000, guid: 4cc55876639b3fc43a6d2839677368d2, type: 3}
   numPerson: 0
 --- !u!1 &870836652
 GameObject:
@@ -25362,8 +25394,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e09180ef4fe892a48ac293171e255e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  personIcon: {fileID: 0}
-  notRescued: {fileID: 0}
+  personIcon: {fileID: 21300000, guid: b7a3710244013d84da61c7bb3b271b33, type: 3}
+  notRescued: {fileID: 21300000, guid: 4cc55876639b3fc43a6d2839677368d2, type: 3}
   numPerson: 0
 --- !u!1 &895412786
 GameObject:
@@ -26747,7 +26779,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 194.3}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1309077906
@@ -28791,7 +28823,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 264.39215, y: -175.42273}
+  m_AnchoredPosition: {x: 264.2, y: 18.9}
   m_SizeDelta: {x: 23.061, y: 15.8207}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1794626801
@@ -28806,8 +28838,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc9c5530e29e23c44b2552e25b58a4fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponSelectSprite: {fileID: 0}
-  defaultSprite: {fileID: 0}
+  weaponSelectSprite: {fileID: 21300000, guid: 8dfada5b267388b4db8a90328bc60e83, type: 3}
+  defaultSprite: {fileID: 21300000, guid: 137a805d3c8da7d4ead4ba31d12cdcc4, type: 3}
   playerGun: {fileID: 1069288243}
   numWeapon: 0
 --- !u!114 &1794626802
@@ -29635,7 +29667,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 400.00006, y: 224.92752}
+  m_AnchoredPosition: {x: 400.00006, y: 0}
   m_SizeDelta: {x: 690, y: 388}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2067636685
@@ -36741,17 +36773,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 325044619}
-  numBullets: {fileID: 0}
-  hudWeapon1: {fileID: 0}
-  hudWeapon2: {fileID: 0}
-  gunHUD: {fileID: 0}
-  shotgunHUD: {fileID: 0}
-  hudRescued1: {fileID: 0}
-  hudRescued2: {fileID: 0}
-  hudRescued3: {fileID: 0}
-  personIcon1: {fileID: 0}
-  personIcon2: {fileID: 0}
-  personIcon3: {fileID: 0}
+  numBullets: {fileID: 1957210397}
+  hudWeapon1: {fileID: 2141085109}
+  hudWeapon2: {fileID: 1794626801}
+  gunHUD: {fileID: 2141085110}
+  shotgunHUD: {fileID: 1794626802}
+  hudRescued1: {fileID: 676677568}
+  hudRescued2: {fileID: 889416435}
+  hudRescued3: {fileID: 857933170}
+  personIcon1: {fileID: 676677566}
+  personIcon2: {fileID: 889416433}
+  personIcon3: {fileID: 857933168}
 --- !u!114 &2133001839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36875,7 +36907,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 215.64984, y: -175.42232}
+  m_AnchoredPosition: {x: 215.45772, y: 18.900423}
   m_SizeDelta: {x: 22.9514, y: 15.6869}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2141085109
@@ -36890,8 +36922,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc9c5530e29e23c44b2552e25b58a4fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponSelectSprite: {fileID: 0}
-  defaultSprite: {fileID: 0}
+  weaponSelectSprite: {fileID: 21300000, guid: e55f5bff38bf8fd4aa932ffced593b76, type: 3}
+  defaultSprite: {fileID: 21300000, guid: 4e393918bef38b14bab1502cddbdb82e, type: 3}
   playerGun: {fileID: 1069288243}
   numWeapon: 0
 --- !u!114 &2141085110
