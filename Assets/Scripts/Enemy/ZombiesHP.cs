@@ -38,8 +38,7 @@ public class ZombiesHP : MonoBehaviour
             {
                 //GET KILLED AND GO TO OBJECT POOL
                 GetComponent<Unit>().StopCoroutinePath();
-                gameObject.SetActive(false);
-                
+                Invoke("SetInactive", 0.1f);
             }
 
             
@@ -65,4 +64,16 @@ public class ZombiesHP : MonoBehaviour
         yield return null;
     }
 
+
+
+    void SetInactive()
+    {
+        gameObject.SetActive(false);
+    }
+
+
+    public void ResetHPZombie()
+    {
+        zombieHp = typesOfZombies.zombieHp;
+    }
 }
