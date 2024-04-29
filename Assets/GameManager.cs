@@ -13,8 +13,8 @@ public class GameManager : MonoBehaviour
     public int rescuedPeople = 0;
     public int amountBullets = 25;
 
-
-    
+    Rigidbody2D playerRB;
+    float pushStrength = 6;
 
     [SerializeField] Transform transformPlayer;
     [field: SerializeField] public int life { get; private set; } = 100;
@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
         if(Instance != null) { return; }
 
         Instance = this;
+        playerRB = GameObject.Find("Player (1)").GetComponent<Rigidbody2D>();
     }
 
     
@@ -38,10 +39,13 @@ public class GameManager : MonoBehaviour
         return rescuedPeople;
     }
 
-    public void Damage(int damage)
+    public void Damage(int damage, Vector3 attackerPosition)
     {
+        life -= damage;
         
-            life -= damage;
+        Vector3 pushDirection = (playerRB.transform.position - attackerPosition).normalized;
+        playerRB.AddForce(pushDirection * damage * damage * pushStrength);
+
         if (life <= 0)
         {
             life = 0;
