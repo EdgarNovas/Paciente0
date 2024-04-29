@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8372961473861968213}
   - component: {fileID: 1144921331472129266}
   - component: {fileID: 4730223632915165948}
+  - component: {fileID: 405641616383185668}
   m_Layer: 0
   m_Name: Municion
   m_TagString: Curar
@@ -32,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8372961473861968213
 SpriteRenderer:
@@ -158,3 +159,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &405641616383185668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3822162220551499542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e8661d19e2388646aa2751e13d2eff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
