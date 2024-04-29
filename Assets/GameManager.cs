@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance != null) { return; }
+        if (Instance != null) { return; }
 
         Instance = this;
 
@@ -48,13 +48,14 @@ public class GameManager : MonoBehaviour
         return rescuedPeople;
     }
 
-    public void Damage(int damage, Vector3 attackerPosition)
+    public void Damage(int damage)
     {
         life -= damage;
         
         //Vector3 pushDirection = (playerRB.transform.position - attackerPosition).normalized;
         //playerRB.AddForce(pushDirection * damage * damage * pushStrength);
 
+        life -= damage;
         if (life <= 0)
         {
             life = 0;
