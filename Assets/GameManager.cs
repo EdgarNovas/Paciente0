@@ -11,12 +11,16 @@ public class GameManager : MonoBehaviour
     public UnityEvent rescueEvent;
 
     public int rescuedPeople = 0;
-    public int amountBullets = 25;
+    //public int amountBullets = 25;
+    public int amountBulletsPistola = 100;
+    public int amountBulletsEscopeta = 99;
 
-    Rigidbody2D playerRB;
-    float pushStrength = 6;
+	//Sonido
+	private SoundManager soundManager;
+    //
 
-    [SerializeField] Transform transformPlayer;
+
+	[SerializeField] Transform transformPlayer;
     [field: SerializeField] public int life { get; private set; } = 100;
 
     private void Awake()
@@ -24,15 +28,20 @@ public class GameManager : MonoBehaviour
         if(Instance != null) { return; }
 
         Instance = this;
-        playerRB = GameObject.Find("Player (1)").GetComponent<Rigidbody2D>();
-    }
+
+		//sonido
+		soundManager = FindObjectOfType<SoundManager>();
+        //
+	}
 
     
    public void AddPeople()
     {
         rescuedPeople++;
         rescueEvent.Invoke();
-    }
+		//Sonido
+		soundManager.seleccionAudio(6, 0.5f);
+	}
 
     public int GetRescuedPeople()
     {
@@ -50,9 +59,11 @@ public class GameManager : MonoBehaviour
         {
             life = 0;
             SceneManager.LoadScene("GameOver");
-        }    
-        
-    }
+        }
+		//Sonido
+		soundManager.seleccionAudio(5, 0.5f);
+
+	}
 
     public void GetHealthpack()
     {
@@ -61,13 +72,17 @@ public class GameManager : MonoBehaviour
         {
             life = 100;
         }
-        
-    }
+		//Sonido
+		soundManager.seleccionAudio(4, 0.5f);
+
+	}
 
     public void AddAmmunition(int ammunition)
     {
-        amountBullets += ammunition;
-    }
+        amountBulletsPistola += ammunition;
+		//Sonido
+		soundManager.seleccionAudio(3, 0.5f);
+	}
 
     public Transform PlayerTransform { get { return transformPlayer; } }
 }
