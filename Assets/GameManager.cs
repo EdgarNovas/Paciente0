@@ -13,22 +13,21 @@ public class GameManager : MonoBehaviour
     public int rescuedPeople = 0;
     public int amountBullets = 25;
 
-    Rigidbody2D playerRB;
-    float pushStrength = 6;
+
+
 
     [SerializeField] Transform transformPlayer;
     [field: SerializeField] public int life { get; private set; } = 100;
 
     private void Awake()
     {
-        if(Instance != null) { return; }
+        if (Instance != null) { return; }
 
         Instance = this;
-        playerRB = GameObject.Find("Player (1)").GetComponent<Rigidbody2D>();
     }
 
-    
-   public void AddPeople()
+
+    public void AddPeople()
     {
         rescuedPeople++;
         rescueEvent.Invoke();
@@ -39,19 +38,16 @@ public class GameManager : MonoBehaviour
         return rescuedPeople;
     }
 
-    public void Damage(int damage, Vector3 attackerPosition)
+    public void Damage(int damage)
     {
-        life -= damage;
-        
-        Vector3 pushDirection = (playerRB.transform.position - attackerPosition).normalized;
-        playerRB.AddForce(pushDirection * damage * damage * pushStrength);
 
+        life -= damage;
         if (life <= 0)
         {
             life = 0;
             SceneManager.LoadScene("GameOver");
-        }    
-        
+        }
+
     }
 
     public void GetHealthpack()
@@ -61,7 +57,7 @@ public class GameManager : MonoBehaviour
         {
             life = 100;
         }
-        
+
     }
 
     public void AddAmmunition(int ammunition)
