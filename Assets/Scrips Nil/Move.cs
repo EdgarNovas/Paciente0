@@ -25,12 +25,8 @@ public class Move : MonoBehaviour
     {
         //Determinate direction 1,0,-1
         horitzontal = Input.GetAxisRaw("Horizontal");
-
         animator.SetFloat("Horizontal", horitzontal);
-
         vertical = Input.GetAxisRaw("Vertical");
-
-        animator.SetFloat("Vertical", vertical);
 
         Velocity();
     }

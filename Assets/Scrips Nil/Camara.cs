@@ -2,10 +2,11 @@ using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class Camara : MonoBehaviour
 {
-    
+
     public Transform player;
 
     Vector3 target, mousePos, refVel;
@@ -16,17 +17,22 @@ public class Camara : MonoBehaviour
 
     private float smoothTime;
 
-    void Start ()
+    [Header("Animation")]
+    private Animator animator;
+
+    void Start()
     {
         target = player.position;
         zStart = transform.position.z;
+        animator = GetComponent<Animator>();
     }
 
-    void Update ()
+    void Update()
     {
         mousePos = CaptureMousePos();
         target = UpdateTargetPos();
         UpdateCameraPosition();
+        //AnimateMouse();
     }
 
     // position mouse
@@ -57,10 +63,19 @@ public class Camara : MonoBehaviour
     {
         Vector3 tempPos;
         tempPos = Vector3.SmoothDamp(transform.position, target, ref refVel, smoothTime);
-        transform.position = tempPos;   
+        transform.position = tempPos;
     }
-    
 
+    //Vector3 AnimateMouse()
+    //{
+        //if (player.position <= mousePos)
+        //{
+            
+        //}
+        //else
+        //{
+            
+        //}
+    //}
 }
-
     
