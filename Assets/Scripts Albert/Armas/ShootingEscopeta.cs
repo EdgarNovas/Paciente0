@@ -47,6 +47,6 @@ public class ShootingEscopeta : MonoBehaviour
         rb3.AddForce(firePoint3.up *  bulletForce, ForceMode2D.Impulse);
 
 		//Sonido
-		soundManager.seleccionAudio(1, 0.5f); //Pista de audio(1) y volumen(0,5)
+		soundManager.seleccionAudio(1, 1.0f); //Pista de audio(1) y volumen(0,5)
 	}
 }
