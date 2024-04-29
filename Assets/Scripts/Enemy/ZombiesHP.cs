@@ -32,4 +32,10 @@ public class ZombiesHP : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
+
+    public void ResetHPZombie()
+    {
+        zombieHp = typesOfZombies.zombieHp;
+    }
 }

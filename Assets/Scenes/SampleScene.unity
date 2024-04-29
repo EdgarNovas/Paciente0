@@ -23516,7 +23516,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &848200661
 Transform:
   m_ObjectHideFlags: 0
@@ -24716,7 +24716,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   rescuedPeople: 0
-  amountBullets: 25
+  amountBullets: 250
   transformPlayer: {fileID: 1069288236}
   <life>k__BackingField: 100
 --- !u!4 &1265631704
@@ -34194,6 +34194,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2262930654696411401, guid: df52723daf4e3b146ae5a23ff865bb42, type: 3}
+      propertyPath: gridWorldSize.x
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 2262930654696411401, guid: df52723daf4e3b146ae5a23ff865bb42, type: 3}
+      propertyPath: gridWorldSize.y
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4600005168962366221, guid: df52723daf4e3b146ae5a23ff865bb42, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -34352,6 +34360,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 59042783052124715, guid: 3772b49fbbb4c4544bf938a8af42a933, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 59042783052124715, guid: 3772b49fbbb4c4544bf938a8af42a933, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443636536100720881, guid: 3772b49fbbb4c4544bf938a8af42a933, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443636536100720881, guid: 3772b49fbbb4c4544bf938a8af42a933, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 13.9
+      objectReference: {fileID: 0}
     - target: {fileID: 2698335521229379929, guid: 3772b49fbbb4c4544bf938a8af42a933, type: 3}
       propertyPath: m_RootOrder
       value: 34
@@ -34399,6 +34423,14 @@ PrefabInstance:
     - target: {fileID: 7311207634236943614, guid: 3772b49fbbb4c4544bf938a8af42a933, type: 3}
       propertyPath: m_Name
       value: ObjectPoolEnemies
+      objectReference: {fileID: 0}
+    - target: {fileID: 7821475564174474578, guid: 3772b49fbbb4c4544bf938a8af42a933, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 14.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7821475564174474578, guid: 3772b49fbbb4c4544bf938a8af42a933, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.92
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -36580,11 +36580,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1805542793590305317, guid: 3772b49fbbb4c4544bf938a8af42a933, type: 3}
       propertyPath: maxTime
-      value: 0.8
+      value: 0.87
       objectReference: {fileID: 0}
     - target: {fileID: 1805542793590305317, guid: 3772b49fbbb4c4544bf938a8af42a933, type: 3}
       propertyPath: enemiesInPool
-      value: 46
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1805542793590305317, guid: 3772b49fbbb4c4544bf938a8af42a933, type: 3}
       propertyPath: maxEnemiesAlive
