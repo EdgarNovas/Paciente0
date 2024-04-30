@@ -81,6 +81,18 @@ public class GameManager : MonoBehaviour
     public void AddAmmunition(int ammunition)
     {
         amountBulletsPistola += ammunition;
+        amountBulletsEscopeta += ammunition - 1;
+
+        if (amountBulletsPistola >100)
+        {
+            amountBulletsPistola = 100;
+        }
+
+        if(amountBulletsEscopeta > 99)
+        {
+            amountBulletsEscopeta = 99;
+        }
+       
 		//Sonido
 		soundManager.seleccionAudio(3, 0.5f);
 	}
