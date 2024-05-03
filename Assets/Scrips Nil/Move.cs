@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 
 public class Move : MonoBehaviour
@@ -15,9 +14,9 @@ public class Move : MonoBehaviour
     [Header("Animation")]
     private Animator animator;
 
-    public SpriteRenderer sprite;
+    private SpriteRenderer sprite;
 
-    public Camera cam;
+    private Camera cam;
 
     Vector2 mousePos;
 
