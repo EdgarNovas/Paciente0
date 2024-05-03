@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: NormalZombies
   m_EditorClassIdentifier: 
   zombieHp: 100
-  zombieSpeed: 5
-  zombieDamage: 20
-  cooldownResetTime: 0.5
+  zombieSpeed: 4
+  zombieDamage: 10
+  cooldownResetTime: 1

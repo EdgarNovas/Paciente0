@@ -756,7 +756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0851fa4ae0f9da418fd7b29ff354e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: EdgarSamples
+  sceneToLoad: New
 --- !u!114 &1302169304
 MonoBehaviour:
   m_ObjectHideFlags: 0
