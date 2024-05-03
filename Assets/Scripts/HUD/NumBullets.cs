@@ -6,7 +6,7 @@ using UnityEngine;
 public class NumBullets : MonoBehaviour
 {
     public TextMeshProUGUI bulletsText;
-
+    public ChangeGun playerGun;
 
     void Start()
     {
@@ -19,9 +19,15 @@ public class NumBullets : MonoBehaviour
 
     void RefreshBulletsText()
     {
+
         if (bulletsText != null)
         {
-            bulletsText.text = GameManager.Instance.amountBullets.ToString();
+            if (playerGun.gunUsing == 0) { 
+                bulletsText.text = GameManager.Instance.amountBulletsPistola.ToString();
+            }
+            else
+                bulletsText.text = GameManager.Instance.amountBulletsEscopeta.ToString();
         }
     }
 }
+

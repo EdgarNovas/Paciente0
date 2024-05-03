@@ -55,9 +55,22 @@ public class ObjectPoolEnemies : MonoBehaviour
 
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
+        currentTime -= Time.deltaTime;
+        if (currentTime <= 0f)
+        {
+            for (int i = 0; i< poolTransform.childCount; i++)
+            {
+                if (!poolTransform.GetChild(i).gameObject.activeSelf)
+                {
+                    ReactivateEnemy(i);
+                }
+            }
+        }
+
+        /*
         if(enemiesAlive < maxEnemiesAlive)
         {
             currentTime -= Time.deltaTime;
@@ -69,18 +82,25 @@ public class ObjectPoolEnemies : MonoBehaviour
                     currentTime = maxTime;
                     
                     Debug.Log("TRUEEE");
-                        
-                    
-                }
-                
-            }
-            
-            
+                                      
+                }         
+            }   
         }
+        */
+    }
+
+    private void ReactivateEnemy(int i)
+    {
+        ResetEnemies(i);
+        //ChoosseSpawn
+        int spawnerType = Random.Range(0, allSpawners.Count);
+        poolTransform.GetChild(i).transform.position = allSpawners[spawnerType].position;
+        currentTime = maxTime;
+        poolTransform.GetChild(i).gameObject.SetActive(true);
     }
 
     void ResetEnemies(int i)
     {
-        enemyPool[i].GetComponent<ZombiesHP>().zombieHp = GetComponent<ZombiesHP>().typesOfZombies.zombieHp;
+        poolTransform.GetChild(i).GetComponent<ZombiesHP>().ResetHPZombie();
     }
 }
