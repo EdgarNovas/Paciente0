@@ -96,6 +96,7 @@ public class TwoDAPath : MonoBehaviour
         
     }
 
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(transform.position, new Vector3(gridWorldSize.x, gridWorldSize.y, 1));
@@ -114,6 +115,7 @@ public class TwoDAPath : MonoBehaviour
         
     }
 
-    
+#endif
+
 
 }
