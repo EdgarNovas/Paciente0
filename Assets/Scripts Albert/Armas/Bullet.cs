@@ -16,7 +16,8 @@ public class Bullet : MonoBehaviour
     {
         //GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
         //Destroy(effect, 5f);
-        if (collider.CompareTag("Armas") || collider.transform.CompareTag("Bullet") || collider.transform.CompareTag("Water")) return;
+
+        if (!collider.isTrigger && !collider.CompareTag("Water"))
             Destroy(gameObject);
     }
 }
