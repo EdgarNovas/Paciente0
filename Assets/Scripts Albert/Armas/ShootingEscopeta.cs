@@ -12,11 +12,17 @@ public class ShootingEscopeta : MonoBehaviour
     public GameObject bulletPrefab2;
     public GameObject bulletPrefab3;
 
- 
     public float bulletForce = 20f;
 
-    // Update is called once per frame
-    void Update()
+	//Sonido
+	private SoundManager soundManager;
+	private void Awake()
+	{
+		soundManager = FindObjectOfType<SoundManager>();
+	}
+
+	// Update is called once per frame
+	void Update()
     {
         if(Input.GetButtonDown("Fire1"))
         {
@@ -39,5 +45,8 @@ public class ShootingEscopeta : MonoBehaviour
         rb.AddForce(firePoint.up *  bulletForce, ForceMode2D.Impulse);
         rb2.AddForce(firePoint2.up *  bulletForce, ForceMode2D.Impulse);
         rb3.AddForce(firePoint3.up *  bulletForce, ForceMode2D.Impulse);
-    }
+
+		//Sonido
+		soundManager.seleccionAudio(1, 1.0f); //Pista de audio(1) y volumen(0,5)
+	}
 }

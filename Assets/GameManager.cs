@@ -15,25 +15,33 @@ public class GameManager : MonoBehaviour
     public int amountBulletsPistola = 100;
     public int amountBulletsEscopeta = 99;
 
+	//Sonido
+	private SoundManager soundManager;
+    //
 
 
-
-    [SerializeField] Transform transformPlayer;
+	[SerializeField] Transform transformPlayer;
     [field: SerializeField] public int life { get; private set; } = 100;
 
     private void Awake()
     {
-        if(Instance != null) { return; }
+        if (Instance != null) { return; }
 
         Instance = this;
-    }
+
+		//sonido
+		soundManager = FindObjectOfType<SoundManager>();
+        //
+	}
 
     
    public void AddPeople()
     {
         rescuedPeople++;
         rescueEvent.Invoke();
-    }
+		//Sonido
+		soundManager.seleccionAudio(6, 0.5f);
+	}
 
     public int GetRescuedPeople()
     {
@@ -42,15 +50,21 @@ public class GameManager : MonoBehaviour
 
     public void Damage(int damage)
     {
+        life -= damage;
         
-            life -= damage;
+        //Vector3 pushDirection = (playerRB.transform.position - attackerPosition).normalized;
+        //playerRB.AddForce(pushDirection * damage * damage * pushStrength);
+
+        life -= damage;
         if (life <= 0)
         {
             life = 0;
             SceneManager.LoadScene("GameOver");
-        }    
-        
-    }
+        }
+		//Sonido
+		soundManager.seleccionAudio(5, 0.5f);
+
+	}
 
     public void GetHealthpack()
     {
@@ -59,13 +73,29 @@ public class GameManager : MonoBehaviour
         {
             life = 100;
         }
-        
-    }
+		//Sonido
+		soundManager.seleccionAudio(4, 0.5f);
+
+	}
 
     public void AddAmmunition(int ammunition)
     {
         amountBulletsPistola += ammunition;
-    }
+        amountBulletsEscopeta += ammunition - 1;
+
+        if (amountBulletsPistola >100)
+        {
+            amountBulletsPistola = 100;
+        }
+
+        if(amountBulletsEscopeta > 99)
+        {
+            amountBulletsEscopeta = 99;
+        }
+       
+		//Sonido
+		soundManager.seleccionAudio(3, 0.5f);
+	}
 
     public Transform PlayerTransform { get { return transformPlayer; } }
 }

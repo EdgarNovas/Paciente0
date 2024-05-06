@@ -37,7 +37,7 @@ public class Unit : MonoBehaviour
         {
             PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
             
-            if (Vector2.Distance(target.position, transform.position) <= 2 && coolDownAttack <= 0) 
+            if (Vector2.Distance(target.position, transform.position) <= 1f && coolDownAttack <= 0) 
             {
                 GameManager.Instance.Damage(typeOfZombie.zombieDamage);
                 coolDownAttack = typeOfZombie.cooldownResetTime;
@@ -82,6 +82,7 @@ public class Unit : MonoBehaviour
 
     public void OnPathFound(Vector3[] newPath, bool pathSuccessful)
     {
+        if (!gameObject.activeSelf) return;
         if (pathSuccessful && newPath.Length >= 1)
         {
             path = newPath;

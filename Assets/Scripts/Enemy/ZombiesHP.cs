@@ -15,16 +15,26 @@ public class ZombiesHP : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.transform.tag == "Bullet")//Enemy gets hit by bullet
+        if (collision.transform.tag == "Bullet")//Enemy gets hit by bullet
         {
             zombieHp -= 20;
-            if(zombieHp <= 0)//If zombie is dead we deactivate him and sent him back to the pool of enemies
+            if (zombieHp <= 0)//If zombie is dead we deactivate him and sent him back to the pool of enemies
             {
                 //GET KILLED AND GO TO OBJECT POOL
                 GetComponent<Unit>().StopCoroutinePath();
                 gameObject.SetActive(false);
-                
+
             }
         }
+    }
+
+    void SetInactive()
+    {
+        gameObject.SetActive (false);
+    }
+
+    public void ResetHPZombie()
+    {
+        zombieHp = typesOfZombies.zombieHp;
     }
 }

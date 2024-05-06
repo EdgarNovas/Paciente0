@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: LittleZombies
   m_EditorClassIdentifier: 
   zombieHp: 60
-  zombieSpeed: 10
-  zombieDamage: 8
-  cooldownResetTime: 0.3
+  zombieSpeed: 8
+  zombieDamage: 5
+  cooldownResetTime: 0.5

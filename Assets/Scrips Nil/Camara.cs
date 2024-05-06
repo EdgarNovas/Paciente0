@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Camara : MonoBehaviour
 {
-    
+
     public Transform player;
 
     Vector3 target, mousePos, refVel;
@@ -16,13 +16,13 @@ public class Camara : MonoBehaviour
 
     private float smoothTime;
 
-    void Start ()
+    void Start()
     {
         target = player.position;
         zStart = transform.position.z;
     }
 
-    void Update ()
+    void Update()
     {
         mousePos = CaptureMousePos();
         target = UpdateTargetPos();
@@ -57,9 +57,7 @@ public class Camara : MonoBehaviour
     {
         Vector3 tempPos;
         tempPos = Vector3.SmoothDamp(transform.position, target, ref refVel, smoothTime);
-        transform.position = tempPos;   
+        transform.position = tempPos;
     }
-    
 }
-
     
