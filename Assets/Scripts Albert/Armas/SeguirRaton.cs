@@ -11,14 +11,20 @@ public class SeguirRaton : MonoBehaviour
 
     Vector2 mousePos;
 
+    public Texture2D cursorTexture; // Asigna la textura del cursor en el inspector
+
     private void Start()
     {
         cam = Camera.main;
+
+        Cursor.visible = false;
+ 
     }
     // Update is called once per frame
     void Update()
     {
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        Cursor.SetCursor(cursorTexture, mousePos, CursorMode.Auto);
     }
 
     void FixedUpdate()
