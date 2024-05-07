@@ -18,7 +18,7 @@ public class SeguirRaton : MonoBehaviour
     private void Start()
     {
         cam = Camera.main;
-
+        Cursor.SetCursor(weaponTexture, mousePos, CursorMode.Auto);
 
 
     }
@@ -31,14 +31,23 @@ public class SeguirRaton : MonoBehaviour
 
         if (playerGun.gunUsing == 0)
         {
-            weaponTexture = gunTexture; // Asigna el sprite de la pistola
+            if (weaponTexture != gunTexture)// Asigna el sprite de la pistola
+            {
+                weaponTexture = gunTexture;
+                Cursor.SetCursor(weaponTexture, mousePos, CursorMode.Auto);
+            }
         }
-        else if (playerGun.gunUsing == 1)
+        else
         {
-            weaponTexture = shotgunTexture; // Asigna el sprite de la escopeta
+            if (weaponTexture != shotgunTexture)// Asigna el sprite de la escopeta
+            {
+                weaponTexture = shotgunTexture;
+                Cursor.SetCursor(weaponTexture, mousePos, CursorMode.Auto);
+            }
+            
         }
 
-        Cursor.SetCursor(weaponTexture, mousePos, CursorMode.Auto);
+        
 
     }
 
