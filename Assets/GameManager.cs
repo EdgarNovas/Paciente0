@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour
     public void AddAmmunition(int ammunition)
     {
         amountBulletsPistola += ammunition;
-        amountBulletsEscopeta += ammunition - 1;
+        amountBulletsEscopeta += ammunition - 2;
 
         if (amountBulletsPistola >100)
         {

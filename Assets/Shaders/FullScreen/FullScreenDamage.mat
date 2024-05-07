@@ -38,7 +38,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AmountCellsVoronoi: 30
-    - _AmountMultiply: 1
+    - _AmountMultiply: 0
     - _PowerAmount: 3.82
     - _VoronoiScale: 7.3
     - _VoronoiSpeed: 4.61

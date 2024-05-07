@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
         //GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
         //Destroy(effect, 5f);
 
-        if (!collider.isTrigger && !collider.CompareTag("Water"))
+        if (!collider.isTrigger && !collider.CompareTag("Water") && !collider.CompareTag("Player"))
             Destroy(gameObject);
     }
 }
