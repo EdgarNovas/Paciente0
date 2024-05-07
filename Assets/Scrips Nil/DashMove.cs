@@ -26,6 +26,8 @@ public class DashMove : MonoBehaviour
     public BoxCollider2D dashColision;
     bool dash;
     float contador;
+    public float dhasCooldown;
+    float lastDash;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +41,12 @@ public class DashMove : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
+            if (Time.time - lastDash < dhasCooldown)
+            {
+                return;
+            }
+            lastDash = Time.time;
+
             contador = 0;
             dash = true;
             //BoxCollider2D1 NO
@@ -57,7 +65,6 @@ public class DashMove : MonoBehaviour
         if (dash) 
         {
             contador += Time.deltaTime;
-
             if (contador > 1f)
             {
                 dash = false;
