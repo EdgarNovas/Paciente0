@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class UICanvas : MonoBehaviour
 {
+    [SerializeField] Bar healthBar;
+    [SerializeField] Bar ammoBar;
+    [SerializeField] ChangeGun playerGun;
     [SerializeField] TextMeshProUGUI health;
     [SerializeField] TextMeshProUGUI numBullets;
     [SerializeField] HUDWeapon hudWeapon1;
@@ -29,6 +32,12 @@ public class UICanvas : MonoBehaviour
     {
         gunHUD.sprite = hudWeapon1.CheckWeapon();
         shotgunHUD.sprite = hudWeapon2.CheckWeapon();
+        healthBar.UpdateValue(GameManager.Instance.life);
+        if (playerGun.gunUsing == 0)
+            ammoBar.UpdateValue(GameManager.Instance.amountBulletsPistola);
+        else
+            ammoBar.UpdateValue(GameManager.Instance.amountBulletsEscopeta);
+
 
         personIcon1.sprite = hudRescued1.ChangeHUDrescued();
         personIcon2.sprite = hudRescued2.ChangeHUDrescued();

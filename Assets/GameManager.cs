@@ -54,12 +54,9 @@ public class GameManager : MonoBehaviour
     public void Damage(int damage)
     {
         life -= damage;
-        
+
         //Vector3 pushDirection = (playerRB.transform.position - attackerPosition).normalized;
         //playerRB.AddForce(pushDirection * damage * damage * pushStrength);
-        
-
-        life -= damage;
 
         if (life <= 30)
         {
@@ -88,6 +85,7 @@ public class GameManager : MonoBehaviour
         {
             damageMat.SetFloat("_AmountMultiply", 0);
         }
+
         //Sonido
         soundManager.seleccionAudio(4, 0.5f);
 
