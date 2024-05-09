@@ -8,9 +8,12 @@ public class ZombiesHP : MonoBehaviour
     public TypesOfZombies typesOfZombies;
     [NonSerialized] public int zombieHp;
 
+    private ParticleSystem bloodEffect;
+
     private void Awake()
     {
         zombieHp = typesOfZombies.zombieHp;//We put the hp of the scriptable object into the scripts hp
+        bloodEffect = GetComponentInChildren<ParticleSystem>();
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -23,8 +26,9 @@ public class ZombiesHP : MonoBehaviour
                 //GET KILLED AND GO TO OBJECT POOL
                 GetComponent<Unit>().StopCoroutinePath();
                 gameObject.SetActive(false);
-
             }
+
+            bloodEffect.Play();
         }
     }
 
