@@ -400,11 +400,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9186588036344191722, guid: 83531b490563d474287852bdc6140283, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.44
+      value: -23.69
       objectReference: {fileID: 0}
     - target: {fileID: 9186588036344191722, guid: 83531b490563d474287852bdc6140283, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.67
+      value: 3.49
       objectReference: {fileID: 0}
     - target: {fileID: 9186588036344191722, guid: 83531b490563d474287852bdc6140283, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1612,6 +1612,14 @@ PrefabInstance:
       propertyPath: bulletsText
       value: 
       objectReference: {fileID: 1957210397}
+    - target: {fileID: 858893755183256136, guid: a584a09cee3e1bd44a9b2d13ab2b7260, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 858893755183256136, guid: a584a09cee3e1bd44a9b2d13ab2b7260, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1114701699025434938, guid: a584a09cee3e1bd44a9b2d13ab2b7260, type: 3}
       propertyPath: rescueText
       value: 
@@ -1667,10 +1675,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 246454679691696166, guid: a584a09cee3e1bd44a9b2d13ab2b7260, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1069288244}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a584a09cee3e1bd44a9b2d13ab2b7260, type: 3}
 --- !u!1001 &287620067
 PrefabInstance:
@@ -2856,11 +2861,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &554508703 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 246454679691696166, guid: a584a09cee3e1bd44a9b2d13ab2b7260, type: 3}
-  m_PrefabInstance: {fileID: 281072750}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &564644518
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26188,20 +26188,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8727714217576158086, guid: a584a09cee3e1bd44a9b2d13ab2b7260, type: 3}
   m_PrefabInstance: {fileID: 281072750}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 554508703}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bec6abcdff726c346aed4b0f05091355, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!81 &1069288244
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 554508703}
-  m_Enabled: 1
 --- !u!1 &1083215071
 GameObject:
   m_ObjectHideFlags: 0
@@ -26454,9 +26446,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc9c5530e29e23c44b2552e25b58a4fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pistolaSprite: {fileID: 21300000, guid: c1ffde4de95e82f4b81a45408b1e46ff, type: 3}
-  escopetaSprite: {fileID: 21300000, guid: 756d21cd5b0e3fd45b403b2f19c698c8, type: 3}
+  weaponSelectSprite: {fileID: 0}
+  defaultSprite: {fileID: 0}
   playerGun: {fileID: 1069288243}
+  numWeapon: 0
 --- !u!4 &1181719716
 Transform:
   m_ObjectHideFlags: 0
@@ -27175,11 +27168,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9186588036344191722, guid: d618a8d67231bf846bd641db7ff33d65, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 28
+      value: 7.37
       objectReference: {fileID: 0}
     - target: {fileID: 9186588036344191722, guid: d618a8d67231bf846bd641db7ff33d65, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.4
+      value: -12.73
       objectReference: {fileID: 0}
     - target: {fileID: 9186588036344191722, guid: d618a8d67231bf846bd641db7ff33d65, type: 3}
       propertyPath: m_LocalPosition.z
@@ -27398,6 +27391,7 @@ GameObject:
   - component: {fileID: 1495713495}
   - component: {fileID: 1495713494}
   - component: {fileID: 1495713496}
+  - component: {fileID: 1495713497}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -27526,6 +27520,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05b186eca2ca184428238630b752031b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1495713497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495713493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa438fa3f551424e9f28001b77eff88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   audios:
@@ -36871,11 +36877,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93145a285a187749b88968f1ad8ca1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  personRescued: {fileID: 703581648}
   health: {fileID: 325044619}
-  NumBullets: {fileID: 1957210397}
-  ImageHUDWeapon: {fileID: 988755674}
-  hudWeapon: {fileID: 1181719715}
+  numBullets: {fileID: 0}
+  hudWeapon1: {fileID: 0}
+  hudWeapon2: {fileID: 0}
+  gunHUD: {fileID: 0}
+  shotgunHUD: {fileID: 0}
+  hudRescued1: {fileID: 0}
+  hudRescued2: {fileID: 0}
+  hudRescued3: {fileID: 0}
+  personIcon1: {fileID: 0}
+  personIcon2: {fileID: 0}
+  personIcon3: {fileID: 0}
 --- !u!114 &2133001839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37059,11 +37072,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1805542793590305317, guid: 3772b49fbbb4c4544bf938a8af42a933, type: 3}
       propertyPath: maxTime
-      value: 0.8
+      value: 0.87
       objectReference: {fileID: 0}
     - target: {fileID: 1805542793590305317, guid: 3772b49fbbb4c4544bf938a8af42a933, type: 3}
       propertyPath: enemiesInPool
-      value: 46
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1805542793590305317, guid: 3772b49fbbb4c4544bf938a8af42a933, type: 3}
       propertyPath: maxEnemiesAlive

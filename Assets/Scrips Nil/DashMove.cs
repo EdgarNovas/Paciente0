@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
+//using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 
@@ -42,9 +42,9 @@ public class DashMove : MonoBehaviour
             contador = 0;
             dash = true;
             //BoxCollider2D1 NO
-            normalColision.enabled = false;
+            //normalColision.enabled = false;
             //BoxCollider2D2 SI
-            dashColision.enabled = true;
+            //dashColision.enabled = true;
             //Move direction
             float horizontalDir = Input.GetAxisRaw("Horizontal");
             float verticalDir = Input.GetAxisRaw("Vertical");
@@ -61,8 +61,8 @@ public class DashMove : MonoBehaviour
             if (contador > 1f)
             {
                 dash = false;
-                normalColision.enabled = true;
-                dashColision.enabled = false;
+                //normalColision.enabled = true;
+                //dashColision.enabled = false;
             }
 		}
 
