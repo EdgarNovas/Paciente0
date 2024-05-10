@@ -102,7 +102,7 @@ public class Unit : MonoBehaviour
 
         while (true)
         {
-            if(transform.position == currentWaypoint)
+            if( transform.position == currentWaypoint)
             {
                 targetIndex++;
                 if(targetIndex >= path.Length)
