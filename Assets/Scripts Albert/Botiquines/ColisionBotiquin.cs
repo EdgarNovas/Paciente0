@@ -14,7 +14,7 @@ public class ColisionBotiquin : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Ammunition"))
         {
-            GameManager.Instance.AddAmmunition(10);
+            GameManager.Instance.AddAmmunition(30);
         }
     }
 }

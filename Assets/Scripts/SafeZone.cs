@@ -10,7 +10,7 @@ public class SafeZone : MonoBehaviour
 {
     public Image barProgress;
     public Image barBackground;
-    float barYSpacing = 0.8f;
+    float barYSpacing = 1f;
     bool playerInsideRange = false;
     float secondsToStay = 2.0f;
     float startTime;
