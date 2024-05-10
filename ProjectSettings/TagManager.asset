@@ -8,7 +8,6 @@ TagManager:
   - Bullet
   - Curar
   - Ammunition
-  - Water
   layers:
   - Default
   - TransparentFX
@@ -45,10 +44,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Background
-    uniqueID: 2536655889
-    locked: 0
-  - name: Foreground
-    uniqueID: 853073059
     locked: 0

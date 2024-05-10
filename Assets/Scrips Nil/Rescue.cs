@@ -10,8 +10,6 @@ public class Rescue : MonoBehaviour
         {
             GameManager.Instance.AddPeople();
             gameObject.SetActive(false);
-            //Sonido
-            MusicManager.State.soundState++;
         }
         
     }

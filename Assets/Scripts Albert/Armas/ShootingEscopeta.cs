@@ -14,8 +14,10 @@ public class ShootingEscopeta : MonoBehaviour
 
     public float bulletForce = 20f;
 
-	//Sonido
-	private SoundManager soundManager;
+    public float shootCooldown;
+    float lastShoot;
+    //Sonido
+    private SoundManager soundManager;
 	private void Awake()
 	{
 		soundManager = FindObjectOfType<SoundManager>();
@@ -36,6 +38,11 @@ public class ShootingEscopeta : MonoBehaviour
 
     void Shoot()
     {
+        if (Time.time - lastShoot < shootCooldown)
+        {
+            return;
+        }
+        lastShoot = Time.time;
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         GameObject bullet2 = Instantiate(bulletPrefab2, firePoint2.position, firePoint2.rotation);
         GameObject bullet3 = Instantiate(bulletPrefab3, firePoint3.position, firePoint3.rotation);

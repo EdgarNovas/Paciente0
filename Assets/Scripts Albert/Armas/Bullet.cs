@@ -12,12 +12,11 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject,4);
     }
 
-    void OnTriggerEnter2D(Collider2D collider)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         //GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
         //Destroy(effect, 5f);
-
-        if (!collider.isTrigger && !collider.CompareTag("Water") && !collider.CompareTag("Player"))
-            Destroy(gameObject);
+        if (collision.transform.CompareTag("Armas") || collision.transform.CompareTag("Bullet")) return;
+        Destroy(gameObject);
     }
 }
