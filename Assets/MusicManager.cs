@@ -30,13 +30,13 @@ public class MusicManager : MonoBehaviour
 	void Update()
 	{
 		//Bajo
-		source[0].volume = 1.0f;
+		source[0].volume = 0.8f;
 
         //Bateria
-        source[1].volume = 1.0f;
+        source[1].volume = 0.8f;
 
         //Caja
-        source[2].volume = 1.0f;
+        source[2].volume = 0.8f;
 
         //Cuerdas
         if (soundState == 0)
@@ -44,7 +44,7 @@ public class MusicManager : MonoBehaviour
             source[3].volume = 0.0f;
         }
 		else if (soundState > 0)
-            source[3].volume = 1.0f;
+            source[3].volume = 0.8f;
 
         //Acordes
         if (soundState == 0)
@@ -52,7 +52,7 @@ public class MusicManager : MonoBehaviour
             source[4].volume = 0.0f;
         }
 		else if (soundState > 1)
-            source[4].volume = 1.0f;
+            source[4].volume = 0.8f;
 
         //Organo
         if (soundState == 0)
@@ -60,7 +60,7 @@ public class MusicManager : MonoBehaviour
             source[6].volume = 0.0f;
         }
         else if (soundState > 1)
-            source[6].volume = 1.0f;
+            source[6].volume = 0.8f;
 
         //Melodia
         if (soundState == 0)
@@ -68,7 +68,7 @@ public class MusicManager : MonoBehaviour
             source[5].volume = 0.0f;
         }
 		else if (soundState > 2)
-            source[5].volume = 1.0f;
+            source[5].volume = 0.8f;
 
 
 
