@@ -9,61 +9,71 @@ public class MusicManager : MonoBehaviour
 	public static MusicManager State;
 	public int soundState = 0;
 
-	private void Awake()
+	List<AudioSource> source = new List<AudioSource>();
+
+
+    private void Awake()
 	{
 		if (State != null)
 			return;
 		State = this;
+
+		for (int i = 0; i < pista.Count; i++)
+		{
+            source.Add(pista[i].GetComponent<AudioSource>());
+			source[i] = pista[i].GetComponent<AudioSource>();
+		}
+
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
 		//Bajo
-		pista[0].SetActive(true);
+		source[0].volume = 1.0f;
 
-		//Bateria
-		pista[1].SetActive(true);
+        //Bateria
+        source[1].volume = 1.0f;
 
-		//Caja
-		pista[2].SetActive(true);
+        //Caja
+        source[2].volume = 1.0f;
 
-		//Cuerdas
-		if (soundState == 0)
+        //Cuerdas
+        if (soundState == 0)
 		{
-			pista[3].SetActive(false);
-		}
+            source[3].volume = 0.0f;
+        }
 		else if (soundState > 0)
-			pista[3].SetActive(true);
+            source[3].volume = 1.0f;
 
-
-		//Acordes
-		if (soundState == 0)
+        //Acordes
+        if (soundState == 0)
 		{
-			pista[4].SetActive(false);
-		}
-		else if (soundState > 0)
-			pista[4].SetActive(true);
-	
-		//Melodia
-		if (soundState == 0)
-		{
-			pista[5].SetActive(false);
-		}
+            source[4].volume = 0.0f;
+        }
 		else if (soundState > 1)
-			pista[5].SetActive(true);
+            source[4].volume = 1.0f;
 
-		//Organo
-		if (soundState == 0)
+        //Organo
+        if (soundState == 0)
+        {
+            source[6].volume = 0.0f;
+        }
+        else if (soundState > 1)
+            source[6].volume = 1.0f;
+
+        //Melodia
+        if (soundState == 0)
 		{
-			pista[6].SetActive(false);
-		}
+            source[5].volume = 0.0f;
+        }
 		else if (soundState > 2)
-			pista[6].SetActive(true);
+            source[5].volume = 1.0f;
 
-		
 
-	}
+
+
+    }
 
 }
 
