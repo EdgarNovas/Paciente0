@@ -20,8 +20,6 @@ public class ZombiesHP : MonoBehaviour
     {
         if (collider.transform.tag == "Bullet")//Enemy gets hit by bullet
         {
-            if (!bloodEffect.gameObject.activeSelf)
-                bloodEffect.gameObject.SetActive(true);
             bloodEffect.Play();
 
             zombieHp -= 20;
@@ -29,7 +27,6 @@ public class ZombiesHP : MonoBehaviour
             {
                 //GET KILLED AND GO TO OBJECT POOL
                 GetComponent<Unit>().StopCoroutinePath();
-                bloodEffect.gameObject.SetActive(false);
                 gameObject.SetActive(false);
 
             }
