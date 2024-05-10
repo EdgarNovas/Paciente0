@@ -16,25 +16,27 @@ public class ZombiesHP : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.transform.tag == "Bullet")//Enemy gets hit by bullet
-        {
+        {
+            bloodEffect.Play();
+
             zombieHp -= 20;
             if (zombieHp <= 0)//If zombie is dead we deactivate him and sent him back to the pool of enemies
             {
                 //GET KILLED AND GO TO OBJECT POOL
-                GetComponent<Unit>().StopCoroutinePath();
+                GetComponent<Unit>().StopCoroutinePath();
                 gameObject.SetActive(false);
 
             }
         }
     }
 
-    void SetInactive()
-    {
-        gameObject.SetActive (false);
+    void SetInactive()
+    {
+        gameObject.SetActive (false);
     }
 
     public void ResetHPZombie()
-    {
+    {
         zombieHp = typesOfZombies.zombieHp;
     }
 }
