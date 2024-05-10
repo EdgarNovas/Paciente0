@@ -13,9 +13,9 @@ public class ZombiesHP : MonoBehaviour
         zombieHp = typesOfZombies.zombieHp;//We put the hp of the scriptable object into the scripts hp
     }
 
-    private void OnTriggerEnter2D(Collider2D collider)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collider.transform.tag == "Bullet")//Enemy gets hit by bullet
+        if (collision.transform.tag == "Bullet")//Enemy gets hit by bullet
         {
             zombieHp -= 20;
             if (zombieHp <= 0)//If zombie is dead we deactivate him and sent him back to the pool of enemies

@@ -8,47 +8,17 @@ public class SeguirRaton : MonoBehaviour
 
     public Rigidbody2D rb;
     public Camera cam;
-    public ChangeGun playerGun;
-    Vector2 mousePos;
 
-    public Texture2D weaponTexture;
-    public Texture2D gunTexture; // Asigna la textura del cursor en el inspector
-    public Texture2D shotgunTexture; // Asigna la textura del cursor en el inspector
+    Vector2 mousePos;
 
     private void Start()
     {
         cam = Camera.main;
-        Cursor.SetCursor(weaponTexture, mousePos, CursorMode.Auto);
-
-
     }
-
-
     // Update is called once per frame
     void Update()
     {
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-
-        if (playerGun.gunUsing == 0)
-        {
-            if (weaponTexture != gunTexture)// Asigna el sprite de la pistola
-            {
-                weaponTexture = gunTexture;
-                Cursor.SetCursor(weaponTexture, mousePos, CursorMode.Auto);
-            }
-        }
-        else
-        {
-            if (weaponTexture != shotgunTexture)// Asigna el sprite de la escopeta
-            {
-                weaponTexture = shotgunTexture;
-                Cursor.SetCursor(weaponTexture, mousePos, CursorMode.Auto);
-            }
-            
-        }
-
-        
-
     }
 
     void FixedUpdate()
