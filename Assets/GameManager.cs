@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
 
 
 	[SerializeField] Transform transformPlayer;
+    [SerializeField] ParticleSystem playerBloodEffect;
     [field: SerializeField] public int life { get; private set; } = 100;
 
     private void Awake()
@@ -53,6 +54,8 @@ public class GameManager : MonoBehaviour
 
     public void Damage(int damage)
     {
+        playerBloodEffect.Play();
+
         life -= damage;
         
         //Vector3 pushDirection = (playerRB.transform.position - attackerPosition).normalized;
@@ -60,6 +63,7 @@ public class GameManager : MonoBehaviour
         
 
         life -= damage;
+
 
         if (life <= 30)
         {
