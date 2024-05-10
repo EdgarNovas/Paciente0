@@ -9,8 +9,6 @@ public class SeguirRaton : MonoBehaviour
 
     public Camera cam;
     public ChangeGun playerGun;
-    public Image pistol;
-    public Image shotgun;
     Vector2 mousePos;
     Vector2 cursorHotSpot;
 
