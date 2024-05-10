@@ -33,9 +33,9 @@ public class GameManager : MonoBehaviour
 
 		//sonido
 		soundManager = FindObjectOfType<SoundManager>();
-		//
-		damageMat.SetFloat("_AmountMultiply", 0);		
-	}
+        //
+        damageMat.SetFloat("_AmountMultiply", 0);
+    }
 
     
    public void AddPeople()
@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
         if (life <= 30)
         {
             damageMat.SetFloat("_AmountMultiply", 1);
-		}
+        }
 
         if (life <= 0)
         {
@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour
         if (life > 30)
         {
             damageMat.SetFloat("_AmountMultiply", 0);
-		}
+        }
         //Sonido
         soundManager.seleccionAudio(4, 0.5f);
 
