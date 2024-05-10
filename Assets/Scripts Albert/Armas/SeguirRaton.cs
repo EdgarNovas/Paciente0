@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SeguirRaton : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class SeguirRaton : MonoBehaviour
 
     public Camera cam;
     public ChangeGun playerGun;
+    public Image pistol;
+    public Image shotgun;
     Vector2 mousePos;
     Vector2 cursorHotSpot;
 
