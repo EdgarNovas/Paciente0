@@ -17,4 +17,5 @@ public class SoundManager : MonoBehaviour
 		controlAudio.PlayOneShot(audios[indice], volumen);
 	}
 
+
 }
