@@ -73,6 +73,7 @@ public class GameManager : MonoBehaviour
         if (life <= 0)
         {
             life = 0;
+            damageMat.SetFloat("_AmountMultiply", 0);
             SceneManager.LoadScene("GameOver");
         }
 		//Sonido
