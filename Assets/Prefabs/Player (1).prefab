@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 956786047, guid: 526ef21f046081c469aa7b73ceb8ade9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -123,6 +123,7 @@ MonoBehaviour:
   dashSpeed: 150
   normalColision: {fileID: 2565245448258526393}
   dashColision: {fileID: 5269871791115460756}
+  dhasCooldown: 0
 --- !u!114 &8727714217576158086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,7 +187,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -651,7 +652,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1570072889333465333, guid: e443345f81cea60409cde92726eb6390, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 1570072889333465333, guid: e443345f81cea60409cde92726eb6390, type: 3}
       propertyPath: m_LocalPosition.z
