@@ -5,13 +5,14 @@ using UnityEngine.AI;
 
 public class TemporalEnemy : MonoBehaviour
 {
-    [SerializeField] Transform target;
+    Transform target;
     NavMeshAgent agent;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        target = GameManager.Instance.PlayerTransform;
     }
 
     // Update is called once per frame

@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 995225219281767973}
   - component: {fileID: 24369670362913092}
   - component: {fileID: 6298344471522009370}
+  - component: {fileID: 6494409467603384196}
+  - component: {fileID: 8214702924102473570}
   m_Layer: 0
   m_Name: LittleZombie
   m_TagString: Untagged
@@ -35,7 +37,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6951109335328192451
 SpriteRenderer:
@@ -158,7 +160,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6598708011183296485}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f409dad0314ec1a41ab8568ed0a606bc, type: 3}
   m_Name: 
@@ -206,3 +208,36 @@ NavMeshAgent:
   m_BaseOffset: 0.37
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!95 &6494409467603384196
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6598708011183296485}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 60f8e2570e165bd4fa57c0ade30d220e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8214702924102473570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6598708011183296485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c8ce18355a401644a1a17bcc43f3dff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
