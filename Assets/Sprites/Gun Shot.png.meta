@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: eaea8f388f9217f47afda13eb4216261
+guid: 69e48b585e38ea64e9c80046fad334f4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,7 +136,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gun Shot 1_0
+      name: Gun Shot_0
       rect:
         serializedVersion: 2
         x: 0
@@ -146,26 +146,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: -8}
-        - {x: 8, y: 0}
-        - {x: 0, y: 8}
-        - {x: -8, y: 0}
-      physicsShape:
-      - - {x: 0, y: -8}
-        - {x: 8, y: 0}
-        - {x: 0, y: 8}
-        - {x: -8, y: 0}
+      outline: []
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5767745d2385f0c44a8fea96a309665d
-      internalID: -1330631203
+      spriteID: e7a5de39e056adc4e9c6393add5c9daa
+      internalID: -1532632829
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gun Shot 1_1
+      name: Gun Shot_1
       rect:
         serializedVersion: 2
         x: 0
@@ -175,26 +167,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: -8}
-        - {x: 8, y: 0}
-        - {x: 0, y: 8}
-        - {x: -8, y: 0}
-      physicsShape:
-      - - {x: 0, y: -8}
-        - {x: 8, y: 0}
-        - {x: 0, y: 8}
-        - {x: -8, y: 0}
+      outline: []
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a602fb3a3c376144ca499c827c001c94
-      internalID: 412586314
+      spriteID: 87446c5f0199e9c468ddc2559f10d232
+      internalID: -669191441
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gun Shot 1_2
+      name: Gun Shot_2
       rect:
         serializedVersion: 2
         x: 0
@@ -204,26 +188,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: -8}
-        - {x: 8, y: 0}
-        - {x: 0, y: 8}
-        - {x: -8, y: 0}
-      physicsShape:
-      - - {x: 0, y: -8}
-        - {x: 8, y: 0}
-        - {x: 0, y: 8}
-        - {x: -8, y: 0}
+      outline: []
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52a993f1f4f95a44ca615e4d02a2933b
-      internalID: -1572202862
+      spriteID: 9ecb64d9b5ad2f04ca253a5cb960eb2c
+      internalID: -2063020855
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gun Shot 1_3
+      name: Gun Shot_3
       rect:
         serializedVersion: 2
         x: 0
@@ -233,26 +209,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: -8}
-        - {x: 8, y: 0}
-        - {x: 0, y: 8}
-        - {x: -8, y: 0}
-      physicsShape:
-      - - {x: 0, y: -8}
-        - {x: 8, y: 0}
-        - {x: 0, y: 8}
-        - {x: -8, y: 0}
+      outline: []
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa8ba7ed16c798248a4fdecb7704fa6b
-      internalID: -727354755
+      spriteID: 82cfd32f5b8428145b2c5e887b8344f7
+      internalID: -1679942901
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gun Shot 1_4
+      name: Gun Shot_4
       rect:
         serializedVersion: 2
         x: 0
@@ -262,20 +230,12 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: -8}
-        - {x: 8, y: 0}
-        - {x: 0, y: 8}
-        - {x: -8, y: 0}
-      physicsShape:
-      - - {x: 0, y: -8}
-        - {x: 8, y: 0}
-        - {x: 0, y: 8}
-        - {x: -8, y: 0}
+      outline: []
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c928ab7dd676e314789d3f2a2a2fdc81
-      internalID: 1495350688
+      spriteID: a28b856fa68571449b8aaf419fc20781
+      internalID: 1520579236
       vertices: []
       indices: 
       edges: []
@@ -291,11 +251,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Gun Shot 1_0: -1330631203
-      Gun Shot 1_1: 412586314
-      Gun Shot 1_2: -1572202862
-      Gun Shot 1_3: -727354755
-      Gun Shot 1_4: 1495350688
+      Gun Shot_0: -1532632829
+      Gun Shot_1: -669191441
+      Gun Shot_2: -2063020855
+      Gun Shot_3: -1679942901
+      Gun Shot_4: 1520579236
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
