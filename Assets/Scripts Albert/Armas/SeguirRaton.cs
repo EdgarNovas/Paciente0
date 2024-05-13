@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class SeguirRaton : MonoBehaviour
 {
@@ -58,5 +57,13 @@ public class SeguirRaton : MonoBehaviour
         //rb.rotation = angle;
         transform.rotation = new Quaternion();
         transform.Rotate(new Vector3(0, 0, angle), Space.Self);
-    }
+        if (lookDir.x >=0)
+        {
+            gameObject.transform.localScale = new Vector3(1, 1, 1);
+        }
+        else
+        {
+			gameObject.transform.localScale = new Vector3(-1, 1, 1);
+		}
+	}
 }
