@@ -14,7 +14,8 @@ public class SafeZone : MonoBehaviour
     public TextMeshProUGUI textNumToRescue;
     public Image NumToRescue;
 
-    float barYSpacing = 1f;
+    float barYSpacing = -0.8f;
+    float barXSpacing = -0.45f;
     bool playerInsideRange = false;
     float secondsToStay = 2.0f;
     float startTime;
@@ -30,8 +31,8 @@ public class SafeZone : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        barProgress.transform.position = this.gameObject.transform.position + new Vector3(0, barYSpacing, 0);
-        barBackground.transform.position = this.gameObject.transform.position + new Vector3(0, barYSpacing, 0);
+        barProgress.transform.position = this.gameObject.transform.position + new Vector3(barXSpacing, barYSpacing, 0);
+        barBackground.transform.position = this.gameObject.transform.position + new Vector3(barXSpacing, barYSpacing, 0);
 
         if (playerInsideRange && GameManager.Instance.GetRescuedPeople() >= 3)
         {
