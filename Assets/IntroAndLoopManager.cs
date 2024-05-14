@@ -9,15 +9,18 @@ public class IntroAndLoopManager : MonoBehaviour
 
 	void Start()
 	{
-		// Suscribir la función al evento de finalización de reproducción del primer audio
-		audioSource1.Play();
+        // Suscribir la función al evento de finalización de reproducción del primer audio
+        //audioSource1.PlayOneShot(audioSource1.clip);
+        audioSource2.priority = 1;
 	}
 
 	void Update()
 	{
 		if (!audioSource1.isPlaying)
 		{
-			audioSource2.Play();
+			audioSource1.clip = audioSource2.clip;
+			audioSource1.Play();
+			audioSource1.loop = true;
 		}
 	}
 }

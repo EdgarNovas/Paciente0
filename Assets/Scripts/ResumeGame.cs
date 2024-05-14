@@ -6,6 +6,6 @@ public class ResumeGame : MonoBehaviour
 {
 	public void Resume()
 	{
-		MenuDePausa.pausa.active = 1;
+		MenuDePausa.pausa.active = 0;
 	}
 }
