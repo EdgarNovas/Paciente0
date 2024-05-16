@@ -10,7 +10,7 @@ public class ChangeGun : MonoBehaviour
     float lastGunChange;
     public float changeCooldown;
 
-    public SoundManager soundManager;
+    SoundManager soundManager;
 
     private void Start()
     {
