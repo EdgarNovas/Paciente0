@@ -9,8 +9,7 @@ using TMPro;
 
 public class SafeZone : MonoBehaviour
 {
-    public Image barProgress;
-    public Image barBackground;
+    public Bar bar;
     public TextMeshProUGUI textNumToRescue;
     public Image NumToRescue;
 
@@ -25,19 +24,21 @@ public class SafeZone : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        bar.gameObject.transform.position = this.gameObject.transform.position + new Vector3(barXSpacing, barYSpacing, 0);
+        bar.gameObject.transform.position = this.gameObject.transform.position + new Vector3(barXSpacing, barYSpacing, 0);
+        bar.UpdateValue(0);
+        bar.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        barProgress.transform.position = this.gameObject.transform.position + new Vector3(barXSpacing, barYSpacing, 0);
-        barBackground.transform.position = this.gameObject.transform.position + new Vector3(barXSpacing, barYSpacing, 0);
-
+       
         if (playerInsideRange && GameManager.Instance.GetRescuedPeople() >= 3)
         {
             barFilledPercentage = elapsedTime / secondsToStay;
-            barProgress.fillAmount = barFilledPercentage; 
+            int barFillAmount = (int)(barFilledPercentage * 100.0f);
+            bar.UpdateValue(barFillAmount);
             elapsedTime = Time.time - startTime;
             if (elapsedTime > secondsToStay)
             {
@@ -53,8 +54,9 @@ public class SafeZone : MonoBehaviour
         {
             startTime = Time.time;
             playerInsideRange = true;
-            barProgress.enabled = true;
-            barBackground.enabled = true;
+            bar.gameObject.SetActive(true);
+            barFilledPercentage = 0;
+            bar.UpdateValue(0);
         }
         if (collision.gameObject.CompareTag("Player") && GameManager.Instance.GetRescuedPeople() < 3)
         {
@@ -66,17 +68,17 @@ public class SafeZone : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player")) 
+        if (collision.gameObject.CompareTag("Player"))
         {
             playerInsideRange = false;
-            barProgress.enabled = false;
-            barBackground.enabled = false;
-        }
+            
+            bar.gameObject.SetActive(false);
 
-        if (collision.gameObject.CompareTag("Player") && GameManager.Instance.GetRescuedPeople() < 3)
-        {
-            textNumToRescue.enabled = false;
-            NumToRescue.enabled = false;
+            if (GameManager.Instance.GetRescuedPeople() < 3)
+            {
+                textNumToRescue.enabled = false;
+                NumToRescue.enabled = false;
+            }
         }
     }
 }

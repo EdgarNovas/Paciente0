@@ -23,7 +23,7 @@ public class ZombiesHP : MonoBehaviour
         if (collider.transform.tag == "Bullet")//Enemy gets hit by bullet
         {
             bloodEffect.Play();
-            soundManager.seleccionAudio(8, 0.15f);
+            soundManager.seleccionAudio(8, 0.2f);
 
 
             zombieHp -= 20;
