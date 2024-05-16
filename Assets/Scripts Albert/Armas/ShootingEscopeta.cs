@@ -14,8 +14,12 @@ public class ShootingEscopeta : MonoBehaviour
 
     public float bulletForce = 20f;
 
+    bool canShoot;
+    bool canPlaySound;
     public float shootCooldown;
     float lastShoot;
+
+
     //Sonido
     private SoundManager soundManager;
 	private void Awake()
@@ -26,11 +30,27 @@ public class ShootingEscopeta : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+
+        if (Time.time - lastShoot > shootCooldown - 0.5f && !canShoot)
         {
-            if(GameManager.Instance.amountBulletsEscopeta > 0) { 
-            Shoot();
-              GameManager.Instance.amountBulletsEscopeta -= 3;
+            if (canPlaySound)
+            {
+                int audio = UnityEngine.Random.Range(10, 13);
+                soundManager.seleccionAudio(audio, 0.2f);
+                canPlaySound = false;
+            }
+            
+            if (Time.time - lastShoot > shootCooldown)
+                canShoot = true;
+
+        }
+       
+        if (canShoot && Input.GetButtonDown("Fire1"))
+        { 
+            if(GameManager.Instance.amountBulletsEscopeta > 0)
+            {
+                Shoot();
+                GameManager.Instance.amountBulletsEscopeta -= 3;
             }
         }
     }
@@ -38,11 +58,9 @@ public class ShootingEscopeta : MonoBehaviour
 
     void Shoot()
     {
-        if (Time.time - lastShoot < shootCooldown)
-        {
-            return;
-        }
         lastShoot = Time.time;
+        canShoot = false;
+        canPlaySound = true;
 
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         GameObject bullet2 = Instantiate(bulletPrefab2, firePoint2.position, firePoint2.rotation);
