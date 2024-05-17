@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -141,7 +141,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 12
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -150,8 +150,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a857f72a17edfca4198dc334ec114301
-      internalID: -1544484928
+      spriteID: d375d99aeb0dd1b4eaf6d60e0b3513b3
+      internalID: -1355795487
       vertices: []
       indices: 
       edges: []
@@ -160,9 +160,9 @@ TextureImporter:
       name: Gun_1
       rect:
         serializedVersion: 2
-        x: 12
+        x: 16
         y: 0
-        width: 12
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -171,8 +171,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3bdaa525eb298b24a92638dc37d861c7
-      internalID: -1305431760
+      spriteID: 89e11b94ded18724b9434e329458d95c
+      internalID: -1234975605
       vertices: []
       indices: 
       edges: []
@@ -181,9 +181,9 @@ TextureImporter:
       name: Gun_2
       rect:
         serializedVersion: 2
-        x: 36
+        x: 32
         y: 0
-        width: 12
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -192,8 +192,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c0a1eeef49a8964995da3d01fbf2682
-      internalID: 176793814
+      spriteID: 79cfaf9701773374693db7c4de3495c4
+      internalID: 1372023736
       vertices: []
       indices: 
       edges: []
@@ -209,9 +209,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Gun_0: -1544484928
-      Gun_1: -1305431760
-      Gun_2: 176793814
+      Gun_0: -1355795487
+      Gun_1: -1234975605
+      Gun_2: 1372023736
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

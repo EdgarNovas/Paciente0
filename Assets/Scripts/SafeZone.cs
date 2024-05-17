@@ -5,12 +5,16 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 using JetBrains.Annotations;
+using TMPro;
 
 public class SafeZone : MonoBehaviour
 {
     public Image barProgress;
     public Image barBackground;
-    float barYSpacing = 0.8f;
+    public TextMeshProUGUI textNumToRescue;
+    public Image NumToRescue;
+
+    float barYSpacing = 1f;
     bool playerInsideRange = false;
     float secondsToStay = 2.0f;
     float startTime;
@@ -51,6 +55,12 @@ public class SafeZone : MonoBehaviour
             barProgress.enabled = true;
             barBackground.enabled = true;
         }
+        if (collision.gameObject.CompareTag("Player") && GameManager.Instance.GetRescuedPeople() < 3)
+        {
+            textNumToRescue.enabled = true;
+            textNumToRescue.text = GameManager.Instance.rescuedPeople.ToString() + "/3";
+            NumToRescue.enabled = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -60,6 +70,12 @@ public class SafeZone : MonoBehaviour
             playerInsideRange = false;
             barProgress.enabled = false;
             barBackground.enabled = false;
+        }
+
+        if (collision.gameObject.CompareTag("Player") && GameManager.Instance.GetRescuedPeople() < 3)
+        {
+            textNumToRescue.enabled = false;
+            NumToRescue.enabled = false;
         }
     }
 }

@@ -8,15 +8,20 @@ public class ZombiesHP : MonoBehaviour
     public TypesOfZombies typesOfZombies;
     [NonSerialized] public int zombieHp;
 
+    public ParticleSystem bloodEffect;
+
     private void Awake()
     {
         zombieHp = typesOfZombies.zombieHp;//We put the hp of the scriptable object into the scripts hp
+        bloodEffect = GetComponentInChildren<ParticleSystem>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collision.transform.tag == "Bullet")//Enemy gets hit by bullet
+        if (collider.transform.tag == "Bullet")//Enemy gets hit by bullet
         {
+            bloodEffect.Play();
+
             zombieHp -= 20;
             if (zombieHp <= 0)//If zombie is dead we deactivate him and sent him back to the pool of enemies
             {

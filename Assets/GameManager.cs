@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 
     public UnityEvent rescueEvent;
 
+    [SerializeField] Material damageMat;
+
     public int rescuedPeople = 0;
     //public int amountBullets = 25;
     public int amountBulletsPistola = 100;
@@ -21,6 +23,7 @@ public class GameManager : MonoBehaviour
 
 
 	[SerializeField] Transform transformPlayer;
+    [SerializeField] ParticleSystem playerBloodEffect;
     [field: SerializeField] public int life { get; private set; } = 100;
 
     private void Awake()
@@ -32,7 +35,8 @@ public class GameManager : MonoBehaviour
 		//sonido
 		soundManager = FindObjectOfType<SoundManager>();
         //
-	}
+        damageMat.SetFloat("_AmountMultiply", 0);
+    }
 
     
    public void AddPeople()
@@ -50,15 +54,26 @@ public class GameManager : MonoBehaviour
 
     public void Damage(int damage)
     {
+        playerBloodEffect.Play();
+
         life -= damage;
         
         //Vector3 pushDirection = (playerRB.transform.position - attackerPosition).normalized;
         //playerRB.AddForce(pushDirection * damage * damage * pushStrength);
+        
 
         life -= damage;
+
+
+        if (life <= 30)
+        {
+            damageMat.SetFloat("_AmountMultiply", 1);
+        }
+
         if (life <= 0)
         {
             life = 0;
+            damageMat.SetFloat("_AmountMultiply", 0);
             SceneManager.LoadScene("GameOver");
         }
 		//Sonido
@@ -73,15 +88,20 @@ public class GameManager : MonoBehaviour
         {
             life = 100;
         }
-		//Sonido
-		soundManager.seleccionAudio(4, 0.5f);
+
+        if (life > 30)
+        {
+            damageMat.SetFloat("_AmountMultiply", 0);
+        }
+        //Sonido
+        soundManager.seleccionAudio(4, 0.5f);
 
 	}
 
     public void AddAmmunition(int ammunition)
     {
         amountBulletsPistola += ammunition;
-        amountBulletsEscopeta += ammunition - 1;
+        amountBulletsEscopeta += ammunition - 2;
 
         if (amountBulletsPistola >100)
         {

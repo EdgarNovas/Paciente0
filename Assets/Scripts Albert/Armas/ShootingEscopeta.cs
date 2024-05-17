@@ -43,6 +43,7 @@ public class ShootingEscopeta : MonoBehaviour
             return;
         }
         lastShoot = Time.time;
+
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         GameObject bullet2 = Instantiate(bulletPrefab2, firePoint2.position, firePoint2.rotation);
         GameObject bullet3 = Instantiate(bulletPrefab3, firePoint3.position, firePoint3.rotation);

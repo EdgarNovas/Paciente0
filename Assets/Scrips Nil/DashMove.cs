@@ -39,7 +39,7 @@ public class DashMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) 
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.LeftShift)) 
         {
             if (Time.time - lastDash < dhasCooldown)
             {
@@ -65,6 +65,7 @@ public class DashMove : MonoBehaviour
         if (dash) 
         {
             contador += Time.deltaTime;
+
             if (contador > 1f)
             {
                 dash = false;

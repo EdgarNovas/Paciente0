@@ -6,19 +6,47 @@ public class SeguirRaton : MonoBehaviour
 {
     public float moveSpeed = 5f;
 
-    public Rigidbody2D rb;
     public Camera cam;
-
+    public ChangeGun playerGun;
     Vector2 mousePos;
+    Vector2 cursorHotSpot;
+
+    public Texture2D weaponTexture;
+    public Texture2D gunTexture; // Asigna la textura del cursor en el inspector
+    public Texture2D shotgunTexture; // Asigna la textura del cursor en el inspector
 
     private void Start()
     {
         cam = Camera.main;
+        cursorHotSpot = new Vector2(weaponTexture.width / 2, weaponTexture.height / 2);
+        Cursor.SetCursor(weaponTexture, cursorHotSpot, CursorMode.Auto);
+
+
     }
+
+
     // Update is called once per frame
     void Update()
     {
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+
+        if (playerGun.gunUsing == 0)
+        {
+            if (weaponTexture != gunTexture)// Asigna el sprite de la pistola
+            {
+                weaponTexture = gunTexture;
+
+            }
+        }
+        else
+        {
+            if (weaponTexture != shotgunTexture)// Asigna el sprite de la escopeta
+            {
+                weaponTexture = shotgunTexture;  
+            } 
+        }
+        cursorHotSpot = new Vector2(weaponTexture.width / 2, weaponTexture.height / 2);
+        Cursor.SetCursor(weaponTexture, cursorHotSpot, CursorMode.Auto);
     }
 
     void FixedUpdate()
@@ -29,9 +57,13 @@ public class SeguirRaton : MonoBehaviour
         //rb.rotation = angle;
         transform.rotation = new Quaternion();
         transform.Rotate(new Vector3(0, 0, angle), Space.Self);
-        if (lookDir.y >=0)
+        if (lookDir.x >=0)
         {
-            
+            gameObject.transform.localScale = new Vector3(1, 1, 1);
         }
-    }
+        else
+        {
+			gameObject.transform.localScale = new Vector3(-1, 1, 1);
+		}
+	}
 }

@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -140,7 +140,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -150,8 +150,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fedcb7c2390f0a04bb3948f007350e7a
-      internalID: -597995585
+      spriteID: e7a5de39e056adc4e9c6393add5c9daa
+      internalID: -1532632829
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,8 @@ TextureImporter:
       name: Gun Shot_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
+        x: 0
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -171,8 +171,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 199f95a790ae3c74a99a6f7eb89955a8
-      internalID: -1688243635
+      spriteID: 87446c5f0199e9c468ddc2559f10d232
+      internalID: -669191441
       vertices: []
       indices: 
       edges: []
@@ -181,8 +181,8 @@ TextureImporter:
       name: Gun Shot_2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
+        x: 0
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -192,8 +192,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 188506b921061fd43a7a3da7888a8f5b
-      internalID: 1230189432
+      spriteID: 9ecb64d9b5ad2f04ca253a5cb960eb2c
+      internalID: -2063020855
       vertices: []
       indices: 
       edges: []
@@ -202,8 +202,8 @@ TextureImporter:
       name: Gun Shot_3
       rect:
         serializedVersion: 2
-        x: 48
-        y: 0
+        x: 0
+        y: 16
         width: 16
         height: 16
       alignment: 0
@@ -213,8 +213,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d76613e540ad7f846905aeb9b4125c1a
-      internalID: -714370392
+      spriteID: 82cfd32f5b8428145b2c5e887b8344f7
+      internalID: -1679942901
       vertices: []
       indices: 
       edges: []
@@ -223,7 +223,7 @@ TextureImporter:
       name: Gun Shot_4
       rect:
         serializedVersion: 2
-        x: 64
+        x: 0
         y: 0
         width: 16
         height: 16
@@ -234,8 +234,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9a19e828e947b94bb160b3a927c719f
-      internalID: 1040969501
+      spriteID: a28b856fa68571449b8aaf419fc20781
+      internalID: 1520579236
       vertices: []
       indices: 
       edges: []
@@ -251,11 +251,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Gun Shot_0: -597995585
-      Gun Shot_1: -1688243635
-      Gun Shot_2: 1230189432
-      Gun Shot_3: -714370392
-      Gun Shot_4: 1040969501
+      Gun Shot_0: -1532632829
+      Gun Shot_1: -669191441
+      Gun Shot_2: -2063020855
+      Gun Shot_3: -1679942901
+      Gun Shot_4: 1520579236
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
