@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Unit : MonoBehaviour
 {
@@ -23,19 +24,30 @@ public class Unit : MonoBehaviour
     private float resetDelay = 1.2f;
     float coolDownAttack = 1f;
     [SerializeField] TypesOfZombies typeOfZombie;
+    NavMeshAgent agent;
 
     private void Awake()
     {
         delay = resetDelay;
         coolDownAttack = typeOfZombie.cooldownResetTime;
         target= GameManager.Instance.PlayerTransform;
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
+    }
+
+    private void Start()
+    {
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
     }
 
     private void FixedUpdate()
     {
         if(Vector2.Distance(target.position, transform.position) < 10f)
         {
-            PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+            //PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+            agent.SetDestination(target.position);
             
             if (Vector2.Distance(target.position, transform.position) <= 1f && coolDownAttack <= 0) 
             {
@@ -69,7 +81,8 @@ public class Unit : MonoBehaviour
                 if (!hit)
                 {
                     //target.position = newPath;
-                    PathRequestManager.RequestPath(transform.position, TransformToV2()+ direction * distance, OnPathFound);
+                    //PathRequestManager.RequestPath(transform.position, TransformToV2()+ direction * distance, OnPathFound);
+                    agent.SetDestination(TransformToV2() + direction * distance);
                 }
 
             }
