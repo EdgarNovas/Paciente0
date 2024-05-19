@@ -12,8 +12,11 @@ public class ShootingPistola : MonoBehaviour
 
 	public float bulletForce = 20f;
 
-	//Sonido
-	private SoundManager soundManager;
+    public float shootInterval; 
+    private float lastShootTime;
+
+    //Sonido
+    private SoundManager soundManager;
 	private void Awake()
 	{
 		soundManager = FindObjectOfType<SoundManager>();
@@ -22,8 +25,8 @@ public class ShootingPistola : MonoBehaviour
 
 
 
-	// Update is called once per frame
-	void Update()
+    // Update is called once per frame
+    void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
@@ -32,6 +35,15 @@ public class ShootingPistola : MonoBehaviour
                 Shoot();
                 GameManager.Instance.amountBulletsPistola--;
 
+            }
+        }
+        else if (Input.GetButton("Fire1"))
+        {
+            if (GameManager.Instance.amountBulletsPistola > 0 && Time.time >= lastShootTime + shootInterval)
+            {
+                Shoot();
+                GameManager.Instance.amountBulletsPistola--;
+                lastShootTime = Time.time;
             }
         }
     }

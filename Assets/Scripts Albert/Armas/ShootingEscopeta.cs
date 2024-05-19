@@ -16,6 +16,9 @@ public class ShootingEscopeta : MonoBehaviour
 
     public float shootCooldown;
     float lastShoot;
+
+    public float shootInterval = 0.5f; // Intervalo de tiempo entre disparos
+    private float lastShootTime;
     //Sonido
     private SoundManager soundManager;
 	private void Awake()
@@ -23,14 +26,24 @@ public class ShootingEscopeta : MonoBehaviour
 		soundManager = FindObjectOfType<SoundManager>();
 	}
 
-	// Update is called once per frame
-	void Update()
+    // Update is called once per frame
+    void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1"))
         {
-            if(GameManager.Instance.amountBulletsEscopeta > 0) { 
-            Shoot();
-              GameManager.Instance.amountBulletsEscopeta -= 3;
+            if (GameManager.Instance.amountBulletsEscopeta > 0)
+            {
+                Shoot();
+                GameManager.Instance.amountBulletsEscopeta -= 3;
+            }
+        }
+        if (Input.GetButton("Fire1"))
+        {
+            if (GameManager.Instance.amountBulletsEscopeta > 0 && Time.time >= lastShootTime + shootInterval)
+            {
+                Shoot();
+                GameManager.Instance.amountBulletsEscopeta -= 3;
+                lastShootTime = Time.time;
             }
         }
     }
