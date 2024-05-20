@@ -6,6 +6,8 @@ public class ChangeGun : MonoBehaviour
 {
     public int gunUsing = 0;
     public List<GameObject> guns = new List<GameObject>();
+    public float changeInterval = 2;
+    private float lastChangeTime;
 
     float lastGunChange;
     public float changeCooldown;
@@ -20,7 +22,10 @@ public class ChangeGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ComprobarRuedaRaton();
+        if (Time.time >= lastChangeTime + changeInterval)
+        {
+            ComprobarRuedaRaton();
+        }
     }
 
     void CambiarArmaActual()
@@ -31,6 +36,7 @@ public class ChangeGun : MonoBehaviour
             guns[i].SetActive(false);
         }
         guns[gunUsing].SetActive(true);
+            lastChangeTime = Time.time; 
     }
 
     void ComprobarRuedaRaton()
