@@ -8,36 +8,47 @@ public class MenuDePausa : MonoBehaviour
     public static MenuDePausa pausa;
     
     public GameObject menuDePausa;
-    public int active;
-    public int esc;
-    // Start is called before the first frame update
+    public bool active;
+
+    void Awake()
+    {
+        if (pausa == null)
+        {
+            pausa = this;
+        }
+        else if (pausa != this)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+  
     void Start()
     {
         menuDePausa.SetActive(false);
-        esc = 0;
-        active = 0;
+        active = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && esc == 0)
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            active = !active;
+            TogglePauseMenu();
+        }
+    }
+
+    public void TogglePauseMenu()
+    {
+        if (active)
         {
             menuDePausa.SetActive(true);
-            Time.timeScale = 0.0f;
-            esc = 1;
+            Time.timeScale = 0f;
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && esc == 1)
+        else
         {
             menuDePausa.SetActive(false);
             Time.timeScale = 1.0f;
-            esc = 0;
         }
-        else if (active == 1) {
-			menuDePausa.SetActive(false);
-			Time.timeScale = 1.0f;
-			esc = 0;
-            active = 0;
-		}
     }
 }
