@@ -2082,7 +2082,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Restart Level
+  m_text: 'Next
+
+    Level'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2dd07fc4b2f63424f94cc1605a1b559a, type: 2}
   m_sharedMaterial: {fileID: 47833071441932365, guid: 2dd07fc4b2f63424f94cc1605a1b559a, type: 2}
@@ -5590,7 +5592,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ebdac574aeb10b4389791ae1ed59c50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetText: {fileID: 1294568737}
   normalScale: {x: 1, y: 1, z: 1}
   maxScale: {x: 1.25, y: 1.25, z: 1.25}
   cycleDuration: 1
@@ -5648,7 +5649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0851fa4ae0f9da418fd7b29ff354e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: New
+  sceneToLoad: Level 2
 --- !u!114 &1302169304
 MonoBehaviour:
   m_ObjectHideFlags: 0
