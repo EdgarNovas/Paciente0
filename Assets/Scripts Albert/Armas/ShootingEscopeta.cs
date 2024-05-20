@@ -47,7 +47,7 @@ public class ShootingEscopeta : MonoBehaviour
        
         if (canShoot && Input.GetButtonDown("Fire1"))
         { 
-            if(GameManager.Instance.amountBulletsEscopeta > 0)
+            if(GameManager.Instance.amountBulletsEscopeta > 0 && (MenuDePausa.pausa.active == false && MenuDePausa.pausa.ControlsActive == false))
             {
                 Shoot();
                 GameManager.Instance.amountBulletsEscopeta -= 3;

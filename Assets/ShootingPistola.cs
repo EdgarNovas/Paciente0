@@ -27,7 +27,7 @@ public class ShootingPistola : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            if (GameManager.Instance.amountBulletsPistola > 0)
+            if (GameManager.Instance.amountBulletsPistola > 0 && (MenuDePausa.pausa.active == false && MenuDePausa.pausa.ControlsActive == false))
             {
                 Shoot();
                 GameManager.Instance.amountBulletsPistola--;
