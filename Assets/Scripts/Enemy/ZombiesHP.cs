@@ -30,7 +30,7 @@ public class ZombiesHP : MonoBehaviour
             if (zombieHp <= 0)//If zombie is dead we deactivate him and sent him back to the pool of enemies
             {
                 //GET KILLED AND GO TO OBJECT POOL
-                GetComponent<Unit>().StopCoroutinePath();
+                
                 gameObject.SetActive(false);
 
             }

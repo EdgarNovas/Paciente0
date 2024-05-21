@@ -19,7 +19,6 @@ public class ShootingEscopeta : MonoBehaviour
     public float shootCooldown;
     float lastShoot;
 
-
     //Sonido
     private SoundManager soundManager;
 	private void Awake()
@@ -27,10 +26,9 @@ public class ShootingEscopeta : MonoBehaviour
 		soundManager = FindObjectOfType<SoundManager>();
 	}
 
-	// Update is called once per frame
-	void Update()
+    // Update is called once per frame
+    void Update()
     {
-
         if (Time.time - lastShoot > shootCooldown - 0.5f && !canShoot)
         {
             if (canPlaySound)
@@ -39,20 +37,21 @@ public class ShootingEscopeta : MonoBehaviour
                 soundManager.seleccionAudio(audio, 0.2f);
                 canPlaySound = false;
             }
-            
+
             if (Time.time - lastShoot > shootCooldown)
                 canShoot = true;
 
         }
        
-        if (canShoot && Input.GetButtonDown("Fire1"))
+        if (canShoot && Input.GetButton("Fire1"))
         { 
-            if(GameManager.Instance.amountBulletsEscopeta > 0)
+            if(GameManager.Instance.amountBulletsEscopeta > 0 && (MenuDePausa.pausa.active == false && MenuDePausa.pausa.ControlsActive == false))
             {
                 Shoot();
                 GameManager.Instance.amountBulletsEscopeta -= 3;
             }
         }
+
     }
 
 

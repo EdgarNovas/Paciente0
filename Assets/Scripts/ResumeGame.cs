@@ -1,11 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ResumeGame : MonoBehaviour
-{
-	public void Resume()
-	{
-		MenuDePausa.pausa.active = 0;
-	}
+{ 
+    public void Resume()
+    {
+        print("AAAAAAAAAa");
+
+            MenuDePausa.pausa.active = false;
+            MenuDePausa.pausa.TogglePauseMenu();
+       
+    }
 }
