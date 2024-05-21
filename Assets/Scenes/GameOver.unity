@@ -556,7 +556,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1245207946}
   - {fileID: 2028988381}
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -7405,7 +7404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0851fa4ae0f9da418fd7b29ff354e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 
+  sceneToLoad: New
 --- !u!114 &1243661124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8435,7 +8434,7 @@ Tilemap:
       - {fileID: 632540647, guid: 2d9d16e3619981543818cc9c0687a633, type: 3}
       - {fileID: 1209994518, guid: 2d9d16e3619981543818cc9c0687a633, type: 3}
       - {fileID: 413755912, guid: 2d9d16e3619981543818cc9c0687a633, type: 3}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
