@@ -9,8 +9,15 @@ public class ChangeGun : MonoBehaviour
     public float changeInterval = 2;
     private float lastChangeTime;
 
-    
+    float lastGunChange;
+    public float changeCooldown;
 
+    SoundManager soundManager;
+
+    private void Start()
+    {
+        soundManager = FindObjectOfType<SoundManager>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -23,27 +30,32 @@ public class ChangeGun : MonoBehaviour
 
     void CambiarArmaActual()
     {
-        
-            for (int i = 0; i < guns.Count; i++)
-            {
-                guns[i].SetActive(false);
-            }
-            guns[gunUsing].SetActive(true);
+        soundManager.seleccionAudio(9, 0.5f);
+        for (int i = 0; i < guns.Count; i++)
+        {
+            guns[i].SetActive(false);
+        }
+        guns[gunUsing].SetActive(true);
             lastChangeTime = Time.time; 
-        
     }
 
     void ComprobarRuedaRaton()
     {
-        float ruedaRaton = Input.GetAxis("Mouse ScrollWheel");
-        if (ruedaRaton > 0f)
+        if (Time.time - lastGunChange > changeCooldown)
         {
-            SeleccionarArmaAnterior();
+            float ruedaRaton = Input.GetAxis("Mouse ScrollWheel");
+            if (ruedaRaton > 0f)
+            {
+                lastGunChange = Time.time;
+                SeleccionarArmaAnterior();
+            }
+            else if (ruedaRaton < 0f)
+            {
+                lastGunChange = Time.time;
+                SeleccionarArmaSiguiente();
+            }
         }
-        else if (ruedaRaton < 0f)
-        {
-            SeleccionarArmaSiguiente();
-        }
+        
     }
 
 

@@ -13,6 +13,7 @@ public class ChangeScene : MonoBehaviour
     {
         lastScene = sceneToLoad;
         SceneManager.LoadScene(sceneToLoad);
+        Time.timeScale = 1.0f;
     }
 
     public void Restart()

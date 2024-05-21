@@ -28,18 +28,9 @@ public class ShootingPistola : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1"))
         {
-            if (GameManager.Instance.amountBulletsPistola > 0)
-            {
-                Shoot();
-                GameManager.Instance.amountBulletsPistola--;
-
-            }
-        }
-        else if (Input.GetButton("Fire1"))
-        {
-            if (GameManager.Instance.amountBulletsPistola > 0 && Time.time >= lastShootTime + shootInterval)
+            if (GameManager.Instance.amountBulletsPistola > 0 && (MenuDePausa.pausa.active == false && MenuDePausa.pausa.ControlsActive == false))
             {
                 Shoot();
                 GameManager.Instance.amountBulletsPistola--;
