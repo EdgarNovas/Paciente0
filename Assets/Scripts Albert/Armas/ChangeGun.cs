@@ -6,7 +6,6 @@ public class ChangeGun : MonoBehaviour
 {
     public int gunUsing = 0;
     public List<GameObject> guns = new List<GameObject>();
-    public float changeInterval = 2;
     private float lastChangeTime;
 
     float lastGunChange;
@@ -22,7 +21,7 @@ public class ChangeGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time >= lastChangeTime + changeInterval)
+        if (Time.time >= lastChangeTime + changeCooldown)
         {
             ComprobarRuedaRaton();
         }
@@ -41,19 +40,16 @@ public class ChangeGun : MonoBehaviour
 
     void ComprobarRuedaRaton()
     {
-        if (Time.time - lastGunChange > changeCooldown)
+        float ruedaRaton = Input.GetAxis("Mouse ScrollWheel");
+        if (ruedaRaton > 0f)
         {
-            float ruedaRaton = Input.GetAxis("Mouse ScrollWheel");
-            if (ruedaRaton > 0f)
-            {
-                lastGunChange = Time.time;
-                SeleccionarArmaAnterior();
-            }
-            else if (ruedaRaton < 0f)
-            {
-                lastGunChange = Time.time;
-                SeleccionarArmaSiguiente();
-            }
+            lastGunChange = Time.time;
+            SeleccionarArmaAnterior();
+        }
+        else if (ruedaRaton < 0f)
+        {
+            lastGunChange = Time.time;
+            SeleccionarArmaSiguiente();
         }
         
     }
