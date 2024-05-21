@@ -75,7 +75,7 @@ public class DashMove : MonoBehaviour
 		}
 
 		//Sonido
-		if (Input.GetKeyDown(KeyCode.Space) && ((Input.GetAxisRaw("Horizontal") != 0) || (Input.GetAxisRaw("Vertical") !=0)))
+		if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.LeftShift)) && ((Input.GetAxisRaw("Horizontal") != 0) || (Input.GetAxisRaw("Vertical") !=0)))
         {
 			soundManager.seleccionAudio(7, 0.5f);
 		}
