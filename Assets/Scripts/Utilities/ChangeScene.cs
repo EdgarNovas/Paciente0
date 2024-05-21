@@ -7,6 +7,7 @@ public class ChangeScene : MonoBehaviour
 {
     public string sceneToLoad;
     private static string lastScene;
+    private static string nextScene;
 
     public void SceneToLoad()
     {
@@ -14,25 +15,31 @@ public class ChangeScene : MonoBehaviour
 
         SceneManager.LoadScene(sceneToLoad);
         Time.timeScale = 1.0f;
+
+
     }
 
     public void Restart()
     {
         SceneManager.LoadScene(lastScene);
+
     }
 
 
 public void LoadNextScene()
     {
-        if (lastScene == "Level 2" ) 
+        if (nextScene == "New")
         {
+            SceneManager.LoadScene("DemoEnd");
+        }
+        else if (lastScene == "Level 2") 
+        {
+            nextScene = "New";
             SceneManager.LoadScene("New");
+            
         }
 
-        if (lastScene == "New")
-        {
-            SceneManager.LoadScene("Level 2");
-        }
+        
 
     }
 }
