@@ -678,6 +678,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd552aea943609b468f81fad543bbebf, type: 3}
+--- !u!198 &253982737 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5868574981268304497, guid: 9673db9073f332c46a492cb5d50ecdf2, type: 3}
+  m_PrefabInstance: {fileID: 127086699}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &307492700
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2444,12 +2449,12 @@ MonoBehaviour:
   rescueEvent:
     m_PersistentCalls:
       m_Calls: []
-  damageMat: {fileID: 0}
+  damageMat: {fileID: 2100000, guid: af6c5c0300dd7ca4e9db13120a74a6e9, type: 2}
   rescuedPeople: 0
   amountBulletsPistola: 100
   amountBulletsEscopeta: 99
   transformPlayer: {fileID: 948231949}
-  playerBloodEffect: {fileID: 0}
+  playerBloodEffect: {fileID: 253982737}
   <life>k__BackingField: 100
 --- !u!4 &804839341
 Transform:
