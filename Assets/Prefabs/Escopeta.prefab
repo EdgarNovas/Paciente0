@@ -100,7 +100,7 @@ Transform:
   - {fileID: 3174105828173280717}
   - {fileID: 1308014178448814978}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5041810515985518400
 SpriteRenderer:
@@ -196,15 +196,15 @@ MonoBehaviour:
   firePoint: {fileID: 5158203445342324616}
   firePoint2: {fileID: 7169056322122641869}
   firePoint3: {fileID: 1473587916930043583}
-  firePoint4: {fileID: 0}
-  firePoint5: {fileID: 0}
+  firePoint4: {fileID: 3174105828173280717}
+  firePoint5: {fileID: 1308014178448814978}
   bulletPrefab: {fileID: 3734071787719130839, guid: c1376edb812d3014192d4518bddd3edc, type: 3}
   bulletPrefab2: {fileID: 3734071787719130839, guid: c1376edb812d3014192d4518bddd3edc, type: 3}
   bulletPrefab3: {fileID: 3734071787719130839, guid: c1376edb812d3014192d4518bddd3edc, type: 3}
-  bulletPrefab4: {fileID: 0}
-  bulletPrefab5: {fileID: 0}
+  bulletPrefab4: {fileID: 3734071787719130839, guid: c1376edb812d3014192d4518bddd3edc, type: 3}
+  bulletPrefab5: {fileID: 3734071787719130839, guid: c1376edb812d3014192d4518bddd3edc, type: 3}
   bulletForce: 20
-  shootCooldown: 0
+  shootCooldown: 1
 --- !u!114 &17712096271797645
 MonoBehaviour:
   m_ObjectHideFlags: 0
