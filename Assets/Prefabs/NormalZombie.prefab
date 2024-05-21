@@ -35,7 +35,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2169387161313745517}
+  - {fileID: 5302977484620346612}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -186,6 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typesOfZombies: {fileID: 11400000, guid: 597f698d1c72a12478e231a02a6b28b1, type: 2}
+  bloodEffect: {fileID: 5868574981268304497}
 --- !u!195 &7314784840109547246
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -290,8 +291,13 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e443345f81cea60409cde92726eb6390, type: 3}
---- !u!4 &2169387161313745517 stripped
+--- !u!4 &5302977484620346612 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4775723487281540716, guid: e443345f81cea60409cde92726eb6390, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1570072889333465333, guid: e443345f81cea60409cde92726eb6390, type: 3}
+  m_PrefabInstance: {fileID: 6655740894379111425}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &5868574981268304497 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 949323623686735472, guid: e443345f81cea60409cde92726eb6390, type: 3}
   m_PrefabInstance: {fileID: 6655740894379111425}
   m_PrefabAsset: {fileID: 0}
