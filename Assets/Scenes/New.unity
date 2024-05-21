@@ -4523,10 +4523,6 @@ PrefabInstance:
     - target: {fileID: 7536257541897277854, guid: a584a09cee3e1bd44a9b2d13ab2b7260, type: 3}
       propertyPath: healthText
       value: 
-      objectReference: {fileID: 1730234853}
-    - target: {fileID: 8727714217576158086, guid: a584a09cee3e1bd44a9b2d13ab2b7260, type: 3}
-      propertyPath: changeCooldown
-      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 8727714217576158086, guid: a584a09cee3e1bd44a9b2d13ab2b7260, type: 3}
       propertyPath: changeInterval
