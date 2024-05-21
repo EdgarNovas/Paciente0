@@ -93,43 +93,6 @@ public class Unit : MonoBehaviour
 
 
 
-    public void OnPathFound(Vector3[] newPath, bool pathSuccessful)
-    {
-        if (!gameObject.activeSelf) return;
-        if (pathSuccessful && newPath.Length >= 1)
-        {
-            path = newPath;
-            StopCoroutine("FollowPath");
-            StartCoroutine("FollowPath");
-        }
-    }
-
-    public void StopCoroutinePath()
-    {
-        StopCoroutine("FollowPath");
-    }
-
-    IEnumerator FollowPath()
-    {
-        Vector3 currentWaypoint = path[0];
-
-        while (true)
-        {
-            if( transform.position == currentWaypoint)
-            {
-                targetIndex++;
-                if(targetIndex >= path.Length)
-                {
-                    yield break;
-                }
-                currentWaypoint = path[targetIndex];
-            }
-            transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, typeOfZombie.zombieSpeed * Time.deltaTime);
-            
-            yield return null;
-        }
-    }
-
     Vector2 TransformToV2()
     {
         return new Vector2(transform.position.x, transform.position.y);
