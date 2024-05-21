@@ -8,7 +8,10 @@ public class MenuDePausa : MonoBehaviour
     public static MenuDePausa pausa;
     
     public GameObject menuDePausa;
-    public bool active;
+	public GameObject controls;
+	public bool active;
+	public bool ControlsActive;
+
 
     void Awake()
     {
@@ -27,7 +30,10 @@ public class MenuDePausa : MonoBehaviour
     {
         menuDePausa.SetActive(false);
         active = false;
-    }
+
+		controls.SetActive(false);
+		ControlsActive = false;
+	}
 
     void Update()
     {
@@ -35,6 +41,12 @@ public class MenuDePausa : MonoBehaviour
         {
             active = !active;
             TogglePauseMenu();
+
+            if(ControlsActive == true)
+            {
+                controls.SetActive(false);
+                ControlsActive = false;
+			}
         }
     }
 
@@ -51,4 +63,17 @@ public class MenuDePausa : MonoBehaviour
             Time.timeScale = 1.0f;
         }
     }
+
+	public void MenuControls()
+	{
+		if (ControlsActive)
+		{
+			controls.SetActive(true);
+			Time.timeScale = 0f;
+		}
+		else
+		{
+			controls.SetActive(false);
+		}
+	}
 }

@@ -30,7 +30,7 @@ public class ShootingPistola : MonoBehaviour
     {
         if (Input.GetButton("Fire1"))
         {
-            if (GameManager.Instance.amountBulletsPistola > 0 && Time.time >= lastShootTime + shootInterval)
+            if (GameManager.Instance.amountBulletsPistola > 0 && (MenuDePausa.pausa.active == false && MenuDePausa.pausa.ControlsActive == false))
             {
                 Shoot();
                 GameManager.Instance.amountBulletsPistola--;
