@@ -1817,7 +1817,7 @@ Tilemap:
       - {fileID: -181667929, guid: 6eee5d6e3224fae49923e4a72b9c7408, type: 3}
       - {fileID: -1946021847, guid: 6eee5d6e3224fae49923e4a72b9c7408, type: 3}
       - {fileID: -1737368075, guid: 6eee5d6e3224fae49923e4a72b9c7408, type: 3}
-      m_AnimationSpeed: 3
+      m_AnimationSpeed: 3.0000002
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
@@ -6022,7 +6022,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1302169303}
         m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
-        m_MethodName: SceneToLoad
+        m_MethodName: LoadNextScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
