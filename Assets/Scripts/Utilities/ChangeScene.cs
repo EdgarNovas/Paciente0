@@ -28,7 +28,7 @@ public class ChangeScene : MonoBehaviour
 
 public void LoadNextScene()
     {
-        if (nextScene == "New")
+        if (nextScene == "New" || lastScene == "New")
         {
             SceneManager.LoadScene("DemoEnd");
         }
