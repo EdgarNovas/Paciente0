@@ -28,13 +28,13 @@ public class ChangeScene : MonoBehaviour
 
 public void LoadNextScene()
     {
-        if (nextScene == "New" || lastScene == "New")
+        if (lastScene == "New")
         {
             SceneManager.LoadScene("DemoEnd");
         }
         else if (lastScene == "Level 2") 
         {
-            nextScene = "New";
+            lastScene = "New";
             SceneManager.LoadScene("New");
             
         }
