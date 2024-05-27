@@ -143,7 +143,7 @@ MonoBehaviour:
   guns:
   - {fileID: 1623647319758742121}
   - {fileID: 1641820377867875585}
-  changeCooldown: 0
+  changeCooldown: 0.15
 --- !u!114 &4575111721322875457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,7 +163,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 246454679691696166}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
