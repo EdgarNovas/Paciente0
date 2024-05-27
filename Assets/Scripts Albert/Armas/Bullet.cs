@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    //---> Codigo para si mas adelante queremos añadir efecto de explosion a la bullet
+    public float bulletDuration = 2;
 
+    //---> Codigo para si mas adelante queremos añadir efecto de explosion a la bullet
     //public GameObject hitEffect;
     private void Start()
-    {
-        Destroy(gameObject,4);
+    { 
+        Destroy(gameObject, bulletDuration);
     }
 
     void OnTriggerEnter2D(Collider2D collider)
