@@ -1148,6 +1148,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 11edc0c19084f8543a9ecc7944ba62ca, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 9fd10d644d3242e46a735ea160e7058f, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 1
     m_Data: {fileID: 763862065, guid: f249777100dca3743a719efd0f1d50b9, type: 3}
@@ -1359,7 +1361,7 @@ Tilemap:
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -3, y: -9, z: 0}
-  m_Size: {x: 10, y: 11, z: 1}
+  m_Size: {x: 11, y: 11, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -1459,7 +1461,7 @@ Transform:
   m_Children:
   - {fileID: 8594339414688455971}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!156049354 &3645886062033478567
 Grid:
@@ -1473,7 +1475,7 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
---- !u!114 &7983897589048493737
+--- !u!114 &1531198252247077821
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
