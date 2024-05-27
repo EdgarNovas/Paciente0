@@ -34,12 +34,14 @@ public class Unit : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        agent.speed = typeOfZombie.zombieSpeed;
     }
 
     private void Start()
     {
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        agent.speed = typeOfZombie.zombieSpeed;
     }
 
     private void FixedUpdate()
