@@ -173,6 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletDuration: 1.5
+  hitEffect: {fileID: 1382528185631835082, guid: f4df8f7de0d9cd74388b333de159db9b, type: 3}
 --- !u!95 &3674025491206690274
 Animator:
   serializedVersion: 5

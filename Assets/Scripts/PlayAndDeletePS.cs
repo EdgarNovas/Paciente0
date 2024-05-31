@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeathParticleSystem : MonoBehaviour
+public class PlayAndDeletePS : MonoBehaviour
 {
     float startTime;
     public float duration;
@@ -19,8 +19,7 @@ public class DeathParticleSystem : MonoBehaviour
     {
         if (Time.time - startTime >= duration)
         {
-            Destroy(gameObject); print("DESTROY");
-
+            Destroy(gameObject);
         }
     }
 }
