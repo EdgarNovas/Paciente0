@@ -9,7 +9,8 @@ public class ZombiesHP : MonoBehaviour
     [NonSerialized] public int zombieHp;
 
     private SoundManager soundManager;
-    public ParticleSystem bloodEffect;
+    private ParticleSystem bloodEffect;
+    public ParticleSystem deathEffect;
 
     private void Awake()
     {
@@ -30,7 +31,7 @@ public class ZombiesHP : MonoBehaviour
             if (zombieHp <= 0)//If zombie is dead we deactivate him and sent him back to the pool of enemies
             {
                 //GET KILLED AND GO TO OBJECT POOL
-                
+                Instantiate(deathEffect, transform.position, transform.rotation);
                 gameObject.SetActive(false);
 
             }
