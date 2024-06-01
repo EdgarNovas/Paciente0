@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1305996797313663254}
   m_Layer: 0
   m_Name: BigZombie
-  m_TagString: Untagged
+  m_TagString: Zombie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typesOfZombies: {fileID: 11400000, guid: 1821c22ef25fabb4aaa00afc6cce546d, type: 2}
-  bloodEffect: {fileID: 5460789897907197502}
+  deathEffect: {fileID: 949323623686735472, guid: 973f26635d46a644ba60be00b6671094, type: 3}
 --- !u!195 &1305996797313663254
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -269,11 +269,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e443345f81cea60409cde92726eb6390, type: 3}
---- !u!198 &5460789897907197502 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 949323623686735472, guid: e443345f81cea60409cde92726eb6390, type: 3}
-  m_PrefabInstance: {fileID: 5108264728207085646}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5993788962076987579 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1570072889333465333, guid: e443345f81cea60409cde92726eb6390, type: 3}
