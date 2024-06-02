@@ -11,11 +11,11 @@ public class ChangeScene : MonoBehaviour
 
     public void SceneToLoad()
     {
+
         lastScene = sceneToLoad;
 
         SceneManager.LoadScene(sceneToLoad);
         Time.timeScale = 1.0f;
-
 
     }
 
@@ -26,20 +26,28 @@ public class ChangeScene : MonoBehaviour
     }
 
 
-public void LoadNextScene()
+    public void LoadNextScene()
     {
+        
         if (lastScene == "New")
         {
             SceneManager.LoadScene("DemoEnd");
         }
-        else if (lastScene == "Level 2") 
+        else if (lastScene == "Level 2")
         {
             lastScene = "New";
-            SceneManager.LoadScene("New");
             
+            SceneManager.LoadScene(lastScene);
+
+        }
+        else if (lastScene == "Lv1 Tutorial")
+        {
+            lastScene = "Level 2";
+            SceneManager.LoadScene("Level 2");
         }
 
-        
+
+
 
     }
 }

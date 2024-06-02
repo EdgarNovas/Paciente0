@@ -604,9 +604,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Ittai Manero
-
-    Dream Mix'
+  m_text: Dream Mix
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2dd07fc4b2f63424f94cc1605a1b559a, type: 2}
   m_sharedMaterial: {fileID: 47833071441932365, guid: 2dd07fc4b2f63424f94cc1605a1b559a, type: 2}
@@ -2143,9 +2141,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Ittai Manero
-
-    Dream Mix'
+  m_text: Ittai Manero
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2dd07fc4b2f63424f94cc1605a1b559a, type: 2}
   m_sharedMaterial: {fileID: 47833071441932365, guid: 2dd07fc4b2f63424f94cc1605a1b559a, type: 2}

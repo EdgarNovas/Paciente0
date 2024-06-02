@@ -100,7 +100,7 @@ public class Unit : MonoBehaviour
 
         coolDownAttack -= Time.fixedDeltaTime;
 
-		if (agent.velocity.x > 0.5f || agent.velocity.y > 0.5f)
+		if (agent.velocity.x > 0.5f || agent.velocity.x < -0.5f || agent.velocity.y > 0.5f || agent.velocity.y < -0.5f)
 		{
 			animator.SetBool("IsWalking", true);
 		}

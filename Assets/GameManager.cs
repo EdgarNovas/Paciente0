@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     public UnityEvent rescueEvent;
 
-    [SerializeField] Material damageMat;
+    public Material damageMat;
     bool godMode = false;
     public int rescuedPeople = 0;
     //public int amountBullets = 25;
