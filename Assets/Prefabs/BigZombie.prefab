@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 995225219281767973}
   - component: {fileID: 8071017014925045481}
   - component: {fileID: 1305996797313663254}
+  - component: {fileID: 1874240172731285388}
   m_Layer: 0
   m_Name: BigZombie
   m_TagString: Zombie
@@ -208,6 +209,27 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!95 &1874240172731285388
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6598708011183296485}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e3fc7684896cf124db983e3e3cc7edd9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &5108264728207085646
 PrefabInstance:
   m_ObjectHideFlags: 0
