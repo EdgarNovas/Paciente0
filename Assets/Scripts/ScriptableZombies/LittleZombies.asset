@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80beae9660fc12c42afe29f73ba1f35c, type: 3}
   m_Name: LittleZombies
   m_EditorClassIdentifier: 
+  nameZombie: Little
   zombieHp: 60
   zombieSpeed: 8
   zombieDamage: 5
