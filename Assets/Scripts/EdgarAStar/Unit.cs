@@ -54,6 +54,23 @@ public class Unit : MonoBehaviour
         {
             //PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
             agent.SetDestination(target.position);
+
+            switch(typeOfZombie.nameZombie)
+            {
+                
+                case "Big":
+
+                break;
+
+                case "Normal":
+
+                break;
+
+                default:
+                    Debug.Log("No zombie name correct");
+                break;
+
+            }
             
             if (Vector2.Distance(target.position, transform.position) <= 1f && coolDownAttack <= 0) 
             {
