@@ -25,6 +25,8 @@ public class Unit : MonoBehaviour
     float coolDownAttack = 1f;
     [SerializeField] TypesOfZombies typeOfZombie;
     NavMeshAgent agent;
+    Animator animator;
+    SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
@@ -35,6 +37,8 @@ public class Unit : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
         agent.speed = typeOfZombie.zombieSpeed;
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
@@ -53,9 +57,10 @@ public class Unit : MonoBehaviour
             
             if (Vector2.Distance(target.position, transform.position) <= 1f && coolDownAttack <= 0) 
             {
+                animator.SetTrigger("CanDamage");
                 GameManager.Instance.Damage(typeOfZombie.zombieDamage);
                 coolDownAttack = typeOfZombie.cooldownResetTime;
-
+                
             }
         }
         else
@@ -88,9 +93,30 @@ public class Unit : MonoBehaviour
                 }
 
             }
+            
+        }
+        coolDownAttack -= Time.fixedDeltaTime;
+
+        if (agent.velocity.x > 0.5f || agent.velocity.y > 0.5f)
+        {
+            animator.SetBool("IsWalking", true);
+        }
+        else
+        {
+            animator.SetBool("IsWalking", false);
         }
 
-        coolDownAttack -= Time.fixedDeltaTime;
+        
+        if (target.position.x - transform.position.x < 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else
+        {
+            spriteRenderer.flipX = true;
+        }
+
+        
     }
 
 
