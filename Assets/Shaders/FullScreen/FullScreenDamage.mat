@@ -38,10 +38,10 @@ Material:
     m_Ints: []
     m_Floats:
     - _AmountCellsVoronoi: 30
-    - _AmountMultiply: 0.65
-    - _PowerAmount: 1.9
+    - _AmountMultiply: 1
+    - _PowerAmount: 3.82
     - _VoronoiScale: 7.3
     - _VoronoiSpeed: 4.61
     m_Colors:
-    - _DamageColor: {r: 1, g: 0.1083837, b: 0, a: 0}
+    - _DamageColor: {r: 1, g: 0, b: 0.020870686, a: 0}
   m_BuildTextureStacks: []

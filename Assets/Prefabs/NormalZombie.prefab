@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -7106407319967839998}
   m_Layer: 0
   m_Name: NormalZombie
-  m_TagString: Untagged
+  m_TagString: Zombie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,7 +34,8 @@ Transform:
   m_LocalPosition: {x: -5.11, y: 2.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5302977484620346612}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 0
   m_Sprite: {fileID: -1998144415, guid: 6c6323725b3498f44adc11f7bc90df1e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -185,6 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typesOfZombies: {fileID: 11400000, guid: 597f698d1c72a12478e231a02a6b28b1, type: 2}
+  deathEffect: {fileID: 949323623686735472, guid: 973f26635d46a644ba60be00b6671094, type: 3}
 --- !u!195 &7314784840109547246
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -228,3 +230,69 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1001 &6655740894379111425
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3540117514626496629}
+    m_Modifications:
+    - target: {fileID: 1017438081641072811, guid: e443345f81cea60409cde92726eb6390, type: 3}
+      propertyPath: m_Name
+      value: BloodPS
+      objectReference: {fileID: 0}
+    - target: {fileID: 4775723487281540716, guid: e443345f81cea60409cde92726eb6390, type: 3}
+      propertyPath: m_RootOrder
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4775723487281540716, guid: e443345f81cea60409cde92726eb6390, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 27.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 4775723487281540716, guid: e443345f81cea60409cde92726eb6390, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -11.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4775723487281540716, guid: e443345f81cea60409cde92726eb6390, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4775723487281540716, guid: e443345f81cea60409cde92726eb6390, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4775723487281540716, guid: e443345f81cea60409cde92726eb6390, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4775723487281540716, guid: e443345f81cea60409cde92726eb6390, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4775723487281540716, guid: e443345f81cea60409cde92726eb6390, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4775723487281540716, guid: e443345f81cea60409cde92726eb6390, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4775723487281540716, guid: e443345f81cea60409cde92726eb6390, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4775723487281540716, guid: e443345f81cea60409cde92726eb6390, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e443345f81cea60409cde92726eb6390, type: 3}
+--- !u!4 &5302977484620346612 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1570072889333465333, guid: e443345f81cea60409cde92726eb6390, type: 3}
+  m_PrefabInstance: {fileID: 6655740894379111425}
+  m_PrefabAsset: {fileID: 0}

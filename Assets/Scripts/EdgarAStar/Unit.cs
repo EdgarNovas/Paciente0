@@ -25,6 +25,8 @@ public class Unit : MonoBehaviour
     float coolDownAttack = 1f;
     [SerializeField] TypesOfZombies typeOfZombie;
     NavMeshAgent agent;
+    Animator animator;
+    SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
@@ -34,12 +36,16 @@ public class Unit : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        agent.speed = typeOfZombie.zombieSpeed;
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
     {
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        agent.speed = typeOfZombie.zombieSpeed;
     }
 
     private void FixedUpdate()
@@ -51,9 +57,10 @@ public class Unit : MonoBehaviour
             
             if (Vector2.Distance(target.position, transform.position) <= 1f && coolDownAttack <= 0) 
             {
+                animator.SetTrigger("CanDamage");
                 GameManager.Instance.Damage(typeOfZombie.zombieDamage);
                 coolDownAttack = typeOfZombie.cooldownResetTime;
-
+                
             }
         }
         else
@@ -86,49 +93,33 @@ public class Unit : MonoBehaviour
                 }
 
             }
-        }
-
-        coolDownAttack -= Time.fixedDeltaTime;
-    }
-
-
-
-    public void OnPathFound(Vector3[] newPath, bool pathSuccessful)
-    {
-        if (!gameObject.activeSelf) return;
-        if (pathSuccessful && newPath.Length >= 1)
-        {
-            path = newPath;
-            StopCoroutine("FollowPath");
-            StartCoroutine("FollowPath");
-        }
-    }
-
-    public void StopCoroutinePath()
-    {
-        StopCoroutine("FollowPath");
-    }
-
-    IEnumerator FollowPath()
-    {
-        Vector3 currentWaypoint = path[0];
-
-        while (true)
-        {
-            if( transform.position == currentWaypoint)
-            {
-                targetIndex++;
-                if(targetIndex >= path.Length)
-                {
-                    yield break;
-                }
-                currentWaypoint = path[targetIndex];
-            }
-            transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, typeOfZombie.zombieSpeed * Time.deltaTime);
             
-            yield return null;
         }
+        coolDownAttack -= Time.fixedDeltaTime;
+
+        if (agent.velocity.x > 0.5f || agent.velocity.y > 0.5f)
+        {
+            animator.SetBool("IsWalking", true);
+        }
+        else
+        {
+            animator.SetBool("IsWalking", false);
+        }
+
+        
+        if (target.position.x - transform.position.x < 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else
+        {
+            spriteRenderer.flipX = true;
+        }
+
+        
     }
+
+
 
     Vector2 TransformToV2()
     {

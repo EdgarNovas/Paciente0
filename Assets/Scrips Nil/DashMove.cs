@@ -26,6 +26,8 @@ public class DashMove : MonoBehaviour
     public BoxCollider2D dashColision;
     bool dash;
     float contador;
+    public float dhasCooldown;
+    float lastDash;
 
     // Start is called before the first frame update
     void Start()
@@ -37,8 +39,14 @@ public class DashMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) 
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.LeftShift)) 
         {
+            if (Time.time - lastDash < dhasCooldown)
+            {
+                return;
+            }
+            lastDash = Time.time;
+
             contador = 0;
             dash = true;
             //BoxCollider2D1 NO
@@ -67,7 +75,7 @@ public class DashMove : MonoBehaviour
 		}
 
 		//Sonido
-		if (Input.GetKeyDown(KeyCode.Space) && ((Input.GetAxisRaw("Horizontal") != 0) || (Input.GetAxisRaw("Vertical") !=0)))
+		if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.LeftShift)) && ((Input.GetAxisRaw("Horizontal") != 0) || (Input.GetAxisRaw("Vertical") !=0)))
         {
 			soundManager.seleccionAudio(7, 0.5f);
 		}

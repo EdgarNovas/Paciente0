@@ -10,6 +10,7 @@ public class Rescue : MonoBehaviour
         {
             GameManager.Instance.AddPeople();
             gameObject.SetActive(false);
+            MusicManager.State.soundState++;
         }
         
     }

@@ -1,22 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    //---> Codigo para si mas adelante queremos añadir efecto de explosion a la bullet
+    public float bulletDuration = 2;
+    public ParticleSystem hitEffect;
 
-    //public GameObject hitEffect;
     private void Start()
     {
-        Destroy(gameObject,4);
+        StartCoroutine(DestroyAfterTime());
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    IEnumerator DestroyAfterTime()
     {
-        //GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
-        //Destroy(effect, 5f);
-        if (collision.transform.CompareTag("Armas") || collision.transform.CompareTag("Bullet")) return;
+        yield return new WaitForSeconds(bulletDuration);
+        Instantiate(hitEffect, transform.position, transform.rotation);
         Destroy(gameObject);
+    }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (!collider.isTrigger && !collider.CompareTag("Water") && !collider.CompareTag("Player"))
+        {
+            if (!collider.CompareTag("Zombie"))
+                Instantiate(hitEffect, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
     }
 }
