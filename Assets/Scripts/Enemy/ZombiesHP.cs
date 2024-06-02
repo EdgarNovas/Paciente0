@@ -11,12 +11,14 @@ public class ZombiesHP : MonoBehaviour
     private SoundManager soundManager;
     private ParticleSystem bloodEffect;
     public ParticleSystem deathEffect;
+    Animator animator;
 
     private void Awake()
     {
         zombieHp = typesOfZombies.zombieHp;//We put the hp of the scriptable object into the scripts hp
         bloodEffect = GetComponentInChildren<ParticleSystem>();
         soundManager = FindObjectOfType<SoundManager>();
+        animator = GetComponent<Animator>();
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -28,6 +30,7 @@ public class ZombiesHP : MonoBehaviour
 
 
             zombieHp -= 20;
+            animator.SetTrigger("CanDamage");
             if (zombieHp <= 0)//If zombie is dead we deactivate him and sent him back to the pool of enemies
             {
                 //GET KILLED AND GO TO OBJECT POOL
