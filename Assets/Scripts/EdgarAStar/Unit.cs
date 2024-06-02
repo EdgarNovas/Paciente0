@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Unit : MonoBehaviour
 {
@@ -23,25 +24,60 @@ public class Unit : MonoBehaviour
     private float resetDelay = 1.2f;
     float coolDownAttack = 1f;
     [SerializeField] TypesOfZombies typeOfZombie;
+    NavMeshAgent agent;
+    Animator animator;
+    SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
         delay = resetDelay;
         coolDownAttack = typeOfZombie.cooldownResetTime;
         target= GameManager.Instance.PlayerTransform;
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
+        agent.speed = typeOfZombie.zombieSpeed;
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void Start()
+    {
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
+        agent.speed = typeOfZombie.zombieSpeed;
     }
 
     private void FixedUpdate()
     {
         if(Vector2.Distance(target.position, transform.position) < 10f)
         {
-            PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+            //PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+            agent.SetDestination(target.position);
+
+            switch(typeOfZombie.nameZombie)
+            {
+                
+                case "Big":
+
+                break;
+
+                case "Normal":
+
+                break;
+
+                default:
+                    Debug.Log("No zombie name correct");
+                break;
+
+            }
             
             if (Vector2.Distance(target.position, transform.position) <= 1f && coolDownAttack <= 0) 
             {
+                animator.SetTrigger("CanDamage");
                 GameManager.Instance.Damage(typeOfZombie.zombieDamage);
                 coolDownAttack = typeOfZombie.cooldownResetTime;
-
+                
             }
         }
         else
@@ -69,53 +105,38 @@ public class Unit : MonoBehaviour
                 if (!hit)
                 {
                     //target.position = newPath;
-                    PathRequestManager.RequestPath(transform.position, TransformToV2()+ direction * distance, OnPathFound);
+                    //PathRequestManager.RequestPath(transform.position, TransformToV2()+ direction * distance, OnPathFound);
+                    agent.SetDestination(TransformToV2() + direction * distance);
                 }
 
             }
-        }
-
-        coolDownAttack -= Time.fixedDeltaTime;
-    }
-
-
-
-    public void OnPathFound(Vector3[] newPath, bool pathSuccessful)
-    {
-        if (!gameObject.activeSelf) return;
-        if (pathSuccessful && newPath.Length >= 1)
-        {
-            path = newPath;
-            StopCoroutine("FollowPath");
-            StartCoroutine("FollowPath");
-        }
-    }
-
-    public void StopCoroutinePath()
-    {
-        StopCoroutine("FollowPath");
-    }
-
-    IEnumerator FollowPath()
-    {
-        Vector3 currentWaypoint = path[0];
-
-        while (true)
-        {
-            if(transform.position == currentWaypoint)
-            {
-                targetIndex++;
-                if(targetIndex >= path.Length)
-                {
-                    yield break;
-                }
-                currentWaypoint = path[targetIndex];
-            }
-            transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, typeOfZombie.zombieSpeed * Time.deltaTime);
             
-            yield return null;
         }
+        coolDownAttack -= Time.fixedDeltaTime;
+
+        if (agent.velocity.x > 0.5f || agent.velocity.y > 0.5f)
+        {
+            animator.SetBool("IsWalking", true);
+        }
+        else
+        {
+            animator.SetBool("IsWalking", false);
+        }
+
+        
+        if (target.position.x - transform.position.x < 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else
+        {
+            spriteRenderer.flipX = true;
+        }
+
+        
     }
+
+
 
     Vector2 TransformToV2()
     {
