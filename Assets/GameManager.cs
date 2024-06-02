@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public UnityEvent rescueEvent;
 
     [SerializeField] Material damageMat;
-
+    bool godMode = false;
     public int rescuedPeople = 0;
     //public int amountBullets = 25;
     public int amountBulletsPistola = 100;
@@ -54,30 +54,34 @@ public class GameManager : MonoBehaviour
 
     public void Damage(int damage)
     {
-        playerBloodEffect.Play();
-
-        life -= damage;
-        
-        //Vector3 pushDirection = (playerRB.transform.position - attackerPosition).normalized;
-        //playerRB.AddForce(pushDirection * damage * damage * pushStrength);
-        
-
-        life -= damage;
-
-
-        if (life <= 30)
+        if(!godMode) //falso //godmode == true
         {
-            damageMat.SetFloat("_AmountMultiply", 1);
-        }
+            playerBloodEffect.Play();
 
-        if (life <= 0)
-        {
-            life = 0;
-            damageMat.SetFloat("_AmountMultiply", 0);
-            SceneManager.LoadScene("GameOver");
+            life -= damage;
+
+            //Vector3 pushDirection = (playerRB.transform.position - attackerPosition).normalized;
+            //playerRB.AddForce(pushDirection * damage * damage * pushStrength);
+
+
+            life -= damage;
+
+
+            if (life <= 30)
+            {
+                damageMat.SetFloat("_AmountMultiply", 1);
+            }
+
+            if (life <= 0)
+            {
+                life = 0;
+                damageMat.SetFloat("_AmountMultiply", 0);
+                SceneManager.LoadScene("GameOver");
+            }
+            //Sonido
+            soundManager.seleccionAudio(5, 0.5f);
         }
-		//Sonido
-		soundManager.seleccionAudio(5, 0.5f);
+        
 
 	}
 
@@ -116,6 +120,11 @@ public class GameManager : MonoBehaviour
 		//Sonido
 		soundManager.seleccionAudio(3, 0.5f);
 	}
+
+    public void ChangeGodMode()
+    {
+        godMode = !godMode;
+    }
 
     public Transform PlayerTransform { get { return transformPlayer; } }
 }

@@ -32,6 +32,10 @@ public class Move : MonoBehaviour
     void Update()
     {
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        if(Input.GetKeyDown(KeyCode.V))
+        {
+            GameManager.Instance.ChangeGodMode();
+        }
     }
 
     // Update is called once per frame
